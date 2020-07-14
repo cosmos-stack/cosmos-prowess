@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\common.props"/>
+
+    <PropertyGroup>
+        <PackageId>Cosmos.Extensions.Prowess</PackageId>
+        <Description>Cosmos Prowess extension for Cosmos loops</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Extensions.Collections" Version="0.1.4.4-alpha3-301121"/>
+        <PackageReference Include="Cosmos.Extensions.Conversions" Version="0.1.4.4-alpha3-301121"/>
+        <PackageReference Include="Cosmos.Extensions.Disposables" Version="0.1.4.4-alpha3-301121"/>
+    </ItemGroup>
+
+</Project>

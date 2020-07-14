@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "asset", "asset", "{5ABECF80-731C-4D4B-B7B2-47C5AAA9D2E1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{E81D6DD2-6E9A-465D-B226-6A81875BE43B}"
+ProjectSection(SolutionItems) = preProject
+	asset\images\icon.back.png = asset\images\icon.back.png
+	asset\images\icon.png = asset\images\icon.png
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{A539D4BF-AE4C-407F-B9FA-0271F6CCF0A4}"
+ProjectSection(SolutionItems) = preProject
+	asset\props\misc.props = asset\props\misc.props
+	asset\props\package.props = asset\props\package.props
+	asset\props\version.props = asset\props\version.props
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{034E0D6E-05B3-4228-99E6-B278E81AFC6B}"
+ProjectSection(SolutionItems) = preProject
+	build\Publish.bat = build\Publish.bat
+	build\PublishToAlexinea.bat = build\PublishToAlexinea.bat
+	build\PublishToMyGet.bat = build\PublishToMyGet.bat
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2D5B1D61-417B-4251-A9FC-C38470CD6B2E}"
+ProjectSection(SolutionItems) = preProject
+	README.md = README.md
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{D03280C5-1F5A-4916-8548-052B7FD3598B}"
+ProjectSection(SolutionItems) = preProject
+	.gitignore = .gitignore
+	common.props = common.props
+	common.tests.props = common.tests.props
+	LICENSE = LICENSE
+	logo.png = logo.png
+	NuGet.config = NuGet.config
+EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{662E6957-33CA-4FFA-80D3-A6A1D16D3E3F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{088246B9-1B92-479C-8279-AF2F04EFA365}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Prowess", "src\Cosmos.Extensions.Prowess\Cosmos.Extensions.Prowess.csproj", "{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Test", "test\Cosmos.Test\Cosmos.Test.csproj", "{AC50EAE3-3A70-4EBD-8254-7AAD95522DCF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E81D6DD2-6E9A-465D-B226-6A81875BE43B} = {5ABECF80-731C-4D4B-B7B2-47C5AAA9D2E1}
+		{A539D4BF-AE4C-407F-B9FA-0271F6CCF0A4} = {5ABECF80-731C-4D4B-B7B2-47C5AAA9D2E1}
+		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE} = {662E6957-33CA-4FFA-80D3-A6A1D16D3E3F}
+		{AC50EAE3-3A70-4EBD-8254-7AAD95522DCF} = {088246B9-1B92-479C-8279-AF2F04EFA365}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC50EAE3-3A70-4EBD-8254-7AAD95522DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC50EAE3-3A70-4EBD-8254-7AAD95522DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC50EAE3-3A70-4EBD-8254-7AAD95522DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC50EAE3-3A70-4EBD-8254-7AAD95522DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
