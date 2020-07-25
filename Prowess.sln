@@ -12,14 +12,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{A539D4BF
 ProjectSection(SolutionItems) = preProject
 	asset\props\misc.props = asset\props\misc.props
 	asset\props\package.props = asset\props\package.props
-	asset\props\version.props = asset\props\version.props
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{034E0D6E-05B3-4228-99E6-B278E81AFC6B}"
 ProjectSection(SolutionItems) = preProject
-	build\Publish.bat = build\Publish.bat
-	build\PublishToAlexinea.bat = build\PublishToAlexinea.bat
-	build\PublishToMyGet.bat = build\PublishToMyGet.bat
+	build\PublishBetaVersion_Script.bat = build\PublishBetaVersion_Script.bat
+	build\PublishNightlyVersion_Script.bat = build\PublishNightlyVersion_Script.bat
+	build\PublishReleaseVersion_Script.bat = build\PublishReleaseVersion_Script.bat
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2D5B1D61-417B-4251-A9FC-C38470CD6B2E}"
@@ -34,7 +33,6 @@ ProjectSection(SolutionItems) = preProject
 	common.tests.props = common.tests.props
 	LICENSE = LICENSE
 	logo.png = logo.png
-	NuGet.config = NuGet.config
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{662E6957-33CA-4FFA-80D3-A6A1D16D3E3F}"

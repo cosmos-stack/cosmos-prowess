@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Prowess</AssemblyName>
+        <PackageId>Cosmos.Extensions.Prowess</PackageId>
+        <Description>Cosmos Prowess extension for Cosmos loops</Description>
+    </PropertyGroup>
+
+</Project>

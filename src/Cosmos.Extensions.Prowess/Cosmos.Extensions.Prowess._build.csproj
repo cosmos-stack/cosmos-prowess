@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="Cosmos.Extensions.Prowess._shared.props"/>
+
+    <Import Project="..\..\common.props" />
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\cosmos-standard\src\Cosmos.Extensions.Collections\Cosmos.Extensions.Collections._build.csproj" />
+        <ProjectReference Include="..\..\..\cosmos-standard\src\Cosmos.Extensions.Conversions\Cosmos.Extensions.Conversions._build.csproj" />
+        <ProjectReference Include="..\..\..\cosmos-standard\src\Cosmos.Extensions.Disposables\Cosmos.Extensions.Disposables._build.csproj" />
+    </ItemGroup>
+
+</Project>
