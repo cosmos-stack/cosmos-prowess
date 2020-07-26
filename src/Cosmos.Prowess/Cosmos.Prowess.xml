@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Prowess</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Enums">
+            <summary>
+            Enum utilities
+            </summary>
+        </member>
+        <member name="M:Cosmos.Enums.Of``1(System.String,System.Boolean,``0)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.Of``1(System.Object,``0)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.Of(System.String,System.Type,System.Boolean,System.Object)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.Of(System.Object,System.Type,System.Object)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.NameOf``1(``0)">
+            <summary>
+            Name of
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.NameOf(System.Type,System.Object)">
+            <summary>
+            Name of
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.DescriptionOf``1(``0)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.DescriptionOf(System.Type,System.Object)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

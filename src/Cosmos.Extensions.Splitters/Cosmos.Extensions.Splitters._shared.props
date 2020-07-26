@@ -1,0 +1,9 @@
+﻿<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Splitters</AssemblyName>
+        <PackageId>Cosmos.Extensions.Splitters</PackageId>
+        <Description>Splitters extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+</Project>

@@ -1,7 +1,7 @@
 @echo off
 
 echo =======================================================================
-echo Cosmos.Extensions.Prowess
+echo Cosmos.Prowess
 echo =======================================================================
 
 ::go to parent folder
@@ -21,7 +21,12 @@ echo Cleaned up all nuget packages.
 echo.
 
 ::start to package all projects
-dotnet pack src/Cosmos.Extensions.Prowess/Cosmos.Extensions.Prowess._build.csproj -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.CharMatchers/Cosmos.Extensions.CharMatchers._build.csproj -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.IdUtils/Cosmos.Extensions.IdUtils._build.csproj           -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Joiners/Cosmos.Extensions.Joiners._build.csproj           -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Splitters/Cosmos.Extensions.Splitters._build.csproj       -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Text/Cosmos.Extensions.Text._build.csproj                 -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Prowess/Cosmos.Prowess._build.csproj                                 -c Release -o nuget_packages --no-restore
 
 for /R "nuget_packages" %%s in (*symbols.nupkg) do (
     del "%%s"

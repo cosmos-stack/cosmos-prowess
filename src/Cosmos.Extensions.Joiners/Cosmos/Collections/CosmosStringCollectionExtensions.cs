@@ -1,18 +1,18 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Cosmos.Joiners;
 
-// ReSharper disable once CheckNamespace
 namespace Cosmos.Collections
 {
     /// <summary>
-    /// Collection extensions
+    /// Cosmos <see cref="IEnumerable{T}"/> with <see cref="String" /> extensions.
     /// </summary>
-    public static class CollectionExtensions
+    public static class CosmosStringCollectionExtensions
     {
         /// <summary>
-        /// Join to string
+        /// Combine collections into strings.<br />
+        /// 将集合合并为字符串。
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
@@ -20,7 +20,8 @@ namespace Cosmos.Collections
             JoinToString<string>(list, ",", t => true, s => s);
 
         /// <summary>
-        /// Join to string
+        /// Combine the collection into a string and split it with the specified separator. <br />
+        /// 将集合合并为字符串，并使用指定的分隔符分割。
         /// </summary>
         /// <param name="list"></param>
         /// <param name="delimiter"></param>

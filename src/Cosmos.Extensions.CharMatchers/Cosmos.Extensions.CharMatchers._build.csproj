@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="Cosmos.Extensions.CharMatchers._shared.props" />
+
+    <Import Project="..\..\common.props" />
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\cosmos-standard\src\Cosmos.Standard\Cosmos.Standard._build.csproj" />
+    </ItemGroup>
+
+</Project>
