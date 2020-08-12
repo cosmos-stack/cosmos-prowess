@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="Cosmos.Extensions.Validations._shared.props" />
+
+    <Import Project="..\..\common.props" />
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="$(TargetPkgVersion)" />
+    </ItemGroup>
+
+</Project>

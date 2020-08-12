@@ -1,0 +1,828 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.Validations</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Validations.CosmosValidationResultExtensions">
+            <summary>
+            Cosmos validation result extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToWrap(System.ComponentModel.DataAnnotations.ValidationResult)">
+            <summary>
+            To wrap in Cosmos validation result
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToWrap(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            To wrap in Cosmos validation result
+            </summary>
+            <param name="results"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToWrap(System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure)">
+            <summary>
+            To wrap in Cosmos validation result
+            </summary>
+            <param name="failure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToWrap(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure})">
+            <summary>
+            To wrap in Cosmos validation result
+            </summary>
+            <param name="failures"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToWrap(FluentValidation.Results.ValidationResult)">
+            <summary>
+            To wrap in Cosmos validation result
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToWrap(System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationFailure})">
+            <summary>
+            To wrap in Cosmos validation result
+            </summary>
+            <param name="failures"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToUnionWrap(System.ComponentModel.DataAnnotations.ValidationResult)">
+            <summary>
+            To union wrap in Cosmos validation result.
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToUnionWrap(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.ValidationResult})">
+            <summary>
+            To union wrap in Cosmos validation result.
+            </summary>
+            <param name="results"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToUnionWrap(System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure)">
+            <summary>
+            To union wrap in Cosmos validation result.
+            </summary>
+            <param name="failure"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToUnionWrap(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure})">
+            <summary>
+            To union wrap in Cosmos validation result.
+            </summary>
+            <param name="failures"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToUnionWrap(FluentValidation.Results.ValidationResult)">
+            <summary>
+            To union wrap in Cosmos validation result.
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.CosmosValidationResultExtensions.ToUnionWrap(System.Collections.Generic.IEnumerable{FluentValidation.Results.ValidationFailure})">
+            <summary>
+            To union wrap in Cosmos validation result.
+            </summary>
+            <param name="failures"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Cosmos.Validations.Internals.AbstractResultCollection`2.Count">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Validations.Internals.AbstractResultCollection`2.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Validations.Internals.AbstractResultCollection`2.ErrorCode">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Validations.Internals.AbstractResultCollection`2.Flag">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Validations.Internals.AbstractResultCollection`2.Add(`0)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Validations.Internals.AbstractResultCollection`2.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Validations.Internals.AbstractResultCollection`2.ToMessage">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Validations.Internals.AbstractResultCollection`2.ToValidationMessages">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Validations.Internals.AbstractResultCollection`2.GetEnumerator">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Validations.IValidationResult">
+            <summary>
+            Interface for validation result
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.IValidationResult.IsValid">
+            <summary>
+            Whether validation succeeded.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.IValidationResult.MemberNames">
+            <summary>
+            Property/Member names
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.IValidationResult.ErrorMessage">
+            <summary>
+            Error message
+            </summary>
+        </member>
+        <member name="M:Cosmos.Validations.IValidationResult.ToString(System.String)">
+            <summary>
+            To String
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.IValidationResult.ToString">
+            <summary>
+            To String
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.IValidationResult.ToUnionResult">
+            <summary>
+            To union result
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Cosmos.Validations.IValidationResultCollection.Count">
+            <summary>
+            Count
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.IValidationResultCollection.IsValid">
+            <summary>
+            Is valid
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.IValidationResultCollection.ErrorCode">
+            <summary>
+            Error code
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.IValidationResultCollection.Flag">
+            <summary>
+            Flag
+            </summary>
+        </member>
+        <member name="M:Cosmos.Validations.IValidationResultCollection.ToMessage">
+            <summary>
+            To message
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.IValidationResultCollection.ToValidationMessages">
+            <summary>
+            To validation messages
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Validations.IValidationResultCollection`1.Add(`0)">
+            <summary>
+            Add validated result
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="M:Cosmos.Validations.IValidationResultCollection`1.AddRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a set of validated results
+            </summary>
+            <param name="results"></param>
+        </member>
+        <member name="T:Cosmos.Validations.CosmosValidationFailure">
+            <summary>
+            A union validation failure for both <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure"/> and <see cref="T:FluentValidation.Results.ValidationFailure"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.CosmosValidationFailure.PropertyName">
+            <summary>
+            The name of the property.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.CosmosValidationFailure.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.CosmosValidationFailure.AttemptedValue">
+            <summary>
+            The property value that caused the failure.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.CosmosValidationFailure.IsValid">
+            <summary>
+            Is valid
+            </summary>
+        </member>
+        <member name="T:Cosmos.Validations.UnionValidationResult">
+            <summary>
+            A union validation failure for both <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResult"/> and <see cref="T:FluentValidation.FluentValidationResult"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.Validations.UnionValidationResult.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Validations.UnionValidationResult.MemberNames">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.Validations.UnionValidationResult.Errors">
+            <summary>A collection of errors</summary>
+        </member>
+        <member name="P:Cosmos.Validations.UnionValidationResult.ErrorMessage">
+            <inheritdoc />
+        </member>
+        <member name="T:Cosmos.Validations.ValidationResultCollection">
+            <summary>
+            A mixed validation result collection for both <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/> and <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+            <summary>
+            A mixed validation result collection for both <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/> and <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+            <summary>
+            A mixed validation result collection for both <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/> and <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(Cosmos.Validations.UnionValidationResult)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(Cosmos.Validations.UnionValidationResult,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{Cosmos.Validations.UnionValidationResult})">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{Cosmos.Validations.UnionValidationResult},System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(Cosmos.Validations.ValidationResultCollection)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="collection"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.ToValidationMessages">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(FluentValidation.FluentValidationResult)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(FluentValidation.FluentValidationResult,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.FluentValidationResult})">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.FluentValidationResult},System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(FluentValidation.FluentValidationResultCollection)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="collection"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.ComponentModel.DataAnnotations.DataAnnotationValidationResult)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.ComponentModel.DataAnnotations.DataAnnotationValidationResult,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.DataAnnotationValidationResult})">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.DataAnnotationValidationResult},System.String)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Validations.ValidationResultCollection.#ctor(System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection)">
+            <summary>
+            Create a new instance of <see cref="T:Cosmos.Validations.ValidationResultCollection"/>.
+            </summary>
+            <param name="collection"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:FluentValidation.CosmosFluentValidationExtensions">
+            <summary>
+            Extensions for fluent validation
+            </summary>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfEmpty``1(FluentValidation.IRuleBuilder{``0,System.String},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if empty
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to zero.
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.Double},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.String},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanZero``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanZero``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanZero``1(FluentValidation.IRuleBuilder{``0,System.Double},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanZero``1(FluentValidation.IRuleBuilder{``0,System.String},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to zero.
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.Double},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualToZero``1(FluentValidation.IRuleBuilder{``0,System.String},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanZero``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanZero``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanZero``1(FluentValidation.IRuleBuilder{``0,System.Double},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanZero``1(FluentValidation.IRuleBuilder{``0,System.String},System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than zero
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.Int32,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.Int64,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.Double},System.Double,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.String},System.String,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than or equal to ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThan``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.Int32,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThan``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.Int64,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThan``1(FluentValidation.IRuleBuilder{``0,System.Double},System.Double,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfLessThan``1(FluentValidation.IRuleBuilder{``0,System.String},System.String,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if less than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.Int32,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to ....
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.Int64,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.Double},System.Double,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThanOrEqualTo``1(FluentValidation.IRuleBuilder{``0,System.String},System.String,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than or equal to ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThan``1(FluentValidation.IRuleBuilder{``0,System.Int32},System.Int32,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThan``1(FluentValidation.IRuleBuilder{``0,System.Int64},System.Int64,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThan``1(FluentValidation.IRuleBuilder{``0,System.Double},System.Double,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentValidation.CosmosFluentValidationExtensions.RaiseExceptionIfGreaterThan``1(FluentValidation.IRuleBuilder{``0,System.String},System.String,System.ValueTuple{System.Int64,System.String,System.String})">
+            <summary>
+            Raise exception if greater than ...
+            </summary>
+            <param name="ruleBuilder"></param>
+            <param name="value"></param>
+            <param name="error"></param>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:FluentValidation.CosmosObjectValidateExtensions">
+            <summary>
+            Cosmos object validate extensions.
+            </summary>
+        </member>
+        <member name="T:FluentValidation.CosmosValidationFailureExtensions">
+            <summary>
+            Cosmos validation failure extensions
+            </summary>
+        </member>
+        <member name="P:FluentValidation.FluentValidationResult.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:FluentValidation.FluentValidationResult.MemberNames">
+            <inheritdoc />
+        </member>
+        <member name="P:FluentValidation.FluentValidationResult.Errors">
+            <summary>A collection of errors</summary>
+        </member>
+        <member name="P:FluentValidation.FluentValidationResult.ErrorMessage">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.#ctor(FluentValidation.FluentValidationResult)">
+            <summary>
+            Create a new instance of <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.#ctor(FluentValidation.FluentValidationResult,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.FluentValidationResult})">
+            <summary>
+            Create a new instance of <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{FluentValidation.FluentValidationResult},System.String)">
+            <summary>
+            Create a new instance of <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.#ctor(FluentValidation.FluentValidationResultCollection)">
+            <summary>
+            Create a new instance of <see cref="T:FluentValidation.FluentValidationResultCollection"/>.
+            </summary>
+            <param name="collection"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.ToValidationMessages">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentValidation.FluentValidationResultCollection.ToString">
+            <inheritdoc />
+        </member>
+        <member name="T:System.ComponentModel.DataAnnotations.CosmosDataAnnotationValidationExtensions">
+            <summary>
+            Cosmos Data annotation validation extensions
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure.#ctor(System.String,System.String)">
+            <summary>Creates a new validation failure.</summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure.#ctor(System.String,System.String,System.Object)">
+            <summary>Creates a new ValidationFailure.</summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure.PropertyName">
+            <summary>
+            The name of the property.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure.ErrorMessage">
+            <summary>
+            The error message
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure.AttemptedValue">
+            <summary>
+            The property value that caused the failure.
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure.IsValid">
+            <summary>
+            Is valid
+            </summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationResult.IsValid">
+            <inheritdoc />
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationResult.MemberNames">
+            <inheritdoc />
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationResult.Errors">
+            <summary>A collection of errors</summary>
+        </member>
+        <member name="P:System.ComponentModel.DataAnnotations.DataAnnotationValidationResult.ErrorMessage">
+            <inheritdoc />
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.#ctor">
+            <summary>
+            Create a new instance of <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/>.
+            </summary>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.#ctor(System.ComponentModel.DataAnnotations.DataAnnotationValidationResult)">
+            <summary>
+            Create a new instance of <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.#ctor(System.ComponentModel.DataAnnotations.DataAnnotationValidationResult,System.String)">
+            <summary>
+            Create a new instance of <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/>.
+            </summary>
+            <param name="result"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.DataAnnotationValidationResult})">
+            <summary>
+            Create a new instance of <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.#ctor(System.Collections.Generic.IEnumerable{System.ComponentModel.DataAnnotations.DataAnnotationValidationResult},System.String)">
+            <summary>
+            Create a new instance of <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/>.
+            </summary>
+            <param name="results"></param>
+            <param name="strategyName"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.#ctor(System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection)">
+            <summary>
+            Create a new instance of <see cref="T:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection"/>.
+            </summary>
+            <param name="collection"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.ToValidationMessages">
+            <inheritdoc />
+        </member>
+        <member name="M:System.ComponentModel.DataAnnotations.DataAnnotationValidationResultCollection.ToString">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

@@ -26,6 +26,7 @@ dotnet pack src/Cosmos.Extensions.IdUtils/Cosmos.Extensions.IdUtils._build.cspro
 dotnet pack src/Cosmos.Extensions.Joiners/Cosmos.Extensions.Joiners._build.csproj           -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.Extensions.Splitters/Cosmos.Extensions.Splitters._build.csproj       -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.Extensions.Text/Cosmos.Extensions.Text._build.csproj                 -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Validations/Cosmos.Extensions.Validations._build.csproj   -c Release -o nuget_packages --no-restore
 dotnet pack src/Cosmos.Prowess/Cosmos.Prowess._build.csproj                                 -c Release -o nuget_packages --no-restore
 
 for /R "nuget_packages" %%s in (*symbols.nupkg) do (

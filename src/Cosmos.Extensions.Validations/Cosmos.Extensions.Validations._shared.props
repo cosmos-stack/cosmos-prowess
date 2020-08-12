@@ -1,0 +1,14 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Validations</AssemblyName>
+        <PackageId>Cosmos.Extensions.Validations</PackageId>
+        <Description>Validation extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+        <PackageReference Include="FluentValidation" Version="9.1.1" />
+    </ItemGroup>
+
+</Project>
