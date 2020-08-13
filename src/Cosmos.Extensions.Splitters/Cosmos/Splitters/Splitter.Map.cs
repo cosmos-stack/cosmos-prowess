@@ -216,7 +216,11 @@ namespace Cosmos.Splitters
 
             public static (string, string) SplitMap(SplitterOptions options, string middleString)
             {
+#if NETSTANDARD2_0
+                var t = middleString.Split(new[] {options.MapSeparator}, StringSplitOptions.None);
+#else
                 var t = middleString.Split(options.MapSeparator);
+#endif
                 var key = t[0];
                 var value = t.Length > 1 ? t[1] : string.Empty;
                 return (key, value);

@@ -1460,5 +1460,203 @@
             <param name="groupName"></param>
             <returns></returns>
         </member>
+        <member name="T:Cosmos.Text.ValueString">
+            <summary>
+            The structure used for string parsing can more easily convert the string
+            to the type specified by the user through the Cosmos.Conversions and XConv toolset.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#GetTypeCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToBoolean(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToByte(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToChar(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToDateTime(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToDecimal(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToDouble(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToInt16(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToInt32(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToInt64(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToSByte(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToSingle(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToString(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToType(System.Type,System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToUInt16(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToUInt32(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#IConvertible#ToUInt64(System.IFormatProvider)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.Of``1(``0)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Text.ValueString"/> with a specified object.
+            </summary>
+            <param name="value"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.Of(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Text.ValueString"/> with a specified string.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.System#Dynamic#IDynamicMetaObjectProvider#GetMetaObject(System.Linq.Expressions.Expression)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.ValueStringMetaObject.BindConvert(System.Dynamic.ConvertBinder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.Text.ValueString.ToMaybe``1">
+            <summary>
+            Maybe
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.ToMaybe``1(System.Func{``0,System.Boolean})">
+            <summary>
+            Maybe
+            </summary>
+            <param name="condition"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.ToMaybe``1(``0)">
+            <summary>
+            Maybe
+            </summary>
+            <param name="defaultVal"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.ToMaybe``1(System.Func{``0,System.Boolean},``0)">
+            <summary>
+            Maybe
+            </summary>
+            <param name="condition"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.MaybeValue``1">
+            <summary>
+            Maybe value
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.MaybeValue``1(System.Func{``0,System.Boolean})">
+            <summary>
+            Maybe value
+            </summary>
+            <param name="condition"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.MaybeValue``1(``0)">
+            <summary>
+            Maybe value
+            </summary>
+            <param name="defaultVal"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueString.MaybeValue``1(System.Func{``0,System.Boolean},``0)">
+            <summary>
+            Maybe value
+            </summary>
+            <param name="condition"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Text.ValueString.Parser">
+            <summary>
+            Internal value string parser
+            </summary>
+        </member>
+        <member name="T:Cosmos.Text.ValueStringExtensions">
+            <summary>
+            Cosmos ValueString extensions
+            </summary>
+        </member>
+        <member name="M:Cosmos.Text.ValueStringExtensions.TryGetValue``2(System.Collections.Generic.IReadOnlyDictionary{``0,Cosmos.Text.ValueString},``0,``1@)">
+            <summary>
+            Try get value from dictionary
+            </summary>
+            <param name="source"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.ValueStringExtensions.TryGetValue``2(System.Collections.Generic.IReadOnlyDictionary{``0,Cosmos.Text.ValueString},``0,System.IFormatProvider,``1@)">
+            <summary>
+            Try get value from dictionary
+            </summary>
+            <param name="source"></param>
+            <param name="key"></param>
+            <param name="provider"></param>
+            <param name="value"></param>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Text.ValueStringExtensions.Add``2(System.Collections.Generic.IDictionary{``0,Cosmos.Text.ValueString},``0,``1)">
+            <summary>
+            Add
+            </summary>
+            <param name="target"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:Cosmos.Text.ValueStringExtensions.Set``2(System.Collections.Generic.IDictionary{``0,Cosmos.Text.ValueString},``0,``1)">
+            <summary>
+            Set
+            </summary>
+            <param name="target"></param>
+            <param name="key"></param>
+            <param name="value"></param>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
     </members>
 </doc>
