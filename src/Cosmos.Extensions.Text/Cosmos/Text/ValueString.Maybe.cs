@@ -3,7 +3,7 @@ using Cosmos.Optionals;
 
 namespace Cosmos.Text
 {
-    public partial struct ValueString
+    public partial struct ValueString: IMaybeable
     {
         /// <summary>
         /// Maybe
