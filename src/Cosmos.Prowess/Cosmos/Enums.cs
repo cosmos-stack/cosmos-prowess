@@ -21,7 +21,7 @@ namespace Cosmos
         /// <returns></returns>
         public static TEnum Of<TEnum>(string member, bool ignoreCase = false, TEnum defaultVal = default) where TEnum : struct, Enum
         {
-            return EnumConverter.ToEnum(member, ignoreCase, defaultVal);
+            return EnumConv.ToEnum(member, ignoreCase, defaultVal);
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Cosmos
         /// <returns></returns>
         public static TEnum Of<TEnum>(object member, TEnum defaultVal = default) where TEnum : struct, Enum
         {
-            return EnumConverter.ToEnum<TEnum>(member, defaultVal);
+            return EnumConv.ToEnum(member, defaultVal);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Cosmos
         /// <returns></returns>
         public static object Of(string member, Type enumType, bool ignoreCase = false, object defaultVal = default)
         {
-            return EnumConverter.ToEnum(member, enumType, ignoreCase, defaultVal);
+            return EnumConv.ToEnum(member, enumType, ignoreCase, defaultVal);
         }
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace Cosmos
         /// <returns></returns>
         public static object Of(object member, Type enumType, object defaultVal = default)
         {
-            return EnumConverter.ToEnum(member, enumType, defaultVal);
+            return EnumConv.ToEnum(member, enumType, defaultVal);
         }
 
         #endregion
@@ -100,7 +100,7 @@ namespace Cosmos
         /// <returns></returns>
         public static string DescriptionOf<TEnum>(TEnum member) where TEnum : struct, Enum
         {
-            return Reflections.GetDescription<TEnum>(NameOf(member));
+            return TypeReflections.GetDescription<TEnum>(NameOf(member));
         }
 
         /// <summary>
@@ -112,7 +112,7 @@ namespace Cosmos
         /// <returns></returns>
         public static string DescriptionOf(Type enumType, object member)
         {
-            return Reflections.GetDescription(enumType, NameOf(enumType, member));
+            return TypeReflections.GetDescription(enumType, NameOf(enumType, member));
         }
 
         #endregion

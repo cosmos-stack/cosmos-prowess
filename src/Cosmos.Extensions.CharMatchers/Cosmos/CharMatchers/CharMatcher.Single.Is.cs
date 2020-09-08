@@ -1,4 +1,5 @@
 using System;
+using Cosmos.Text;
 
 namespace Cosmos.CharMatchers
 {

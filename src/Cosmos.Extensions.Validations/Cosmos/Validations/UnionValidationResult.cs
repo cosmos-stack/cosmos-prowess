@@ -7,21 +7,22 @@ using Cosmos.Validations.Internals;
 using FluentValidation;
 using FluentResult = FluentValidation.FluentValidationResult;
 using SystemResult = System.ComponentModel.DataAnnotations.DataAnnotationValidationResult;
+using SystemFailure = System.ComponentModel.DataAnnotations.DataAnnotationValidationFailure;
 
 namespace Cosmos.Validations
 {
     /// <summary>
-    /// A union validation failure for both <see cref="DataAnnotationValidationResult"/> and <see cref="FluentValidationResult"/>.
+    /// A union validation failure for both <see cref="SystemResult"/> and <see cref="FluentValidationResult"/>.
     /// </summary>
     public class UnionValidationResult :
         IValidationResult<CosmosValidationFailure>,
-        IUnionValidationModel<FluentResult, List<DataAnnotationValidationFailure>>
+        IUnionValidationModel<FluentResult, List<SystemFailure>>
     {
         public UnionValidationTarget Target { get; }
         private readonly FluentResult _result0;
-        private readonly List<DataAnnotationValidationFailure> _result1;
+        private readonly List<SystemFailure> _result1;
         public FluentResult LeftModel => _result0;
-        public List<DataAnnotationValidationFailure> RightModel => _result1;
+        public List<SystemFailure> RightModel => _result1;
 
         internal UnionValidationResult(FluentResult result)
         {

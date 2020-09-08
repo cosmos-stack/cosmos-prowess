@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
+using Cosmos.Reflection;
 
 namespace Cosmos.Text
 {
@@ -18,10 +19,10 @@ namespace Cosmos.Text
 
             static Parser()
             {
-                FormattableParserSig = new[] {TypeClass.StringClass, TypeClass.FormatProviderClass};
+                FormattableParserSig = new[] {TypeClass.StringClazz, TypeClass.FormatProviderClazz};
 
-                var stringParam = Expression.Parameter(TypeClass.StringClass, "s");
-                var providerParam = Expression.Parameter(TypeClass.FormatProviderClass, "provider");
+                var stringParam = Expression.Parameter(TypeClass.StringClazz, "s");
+                var providerParam = Expression.Parameter(TypeClass.FormatProviderClazz, "provider");
                 FormattableParserParams = new[] {stringParam, providerParam};
             }
 
@@ -36,7 +37,7 @@ namespace Cosmos.Text
                     var isValueType = sourceType.IsValueType;
 
                     // is formattable
-                    if (TypeClass.FormattableClass.IsAssignableFrom(sourceType))
+                    if (TypeClass.FormattableClazz.IsAssignableFrom(sourceType))
                     {
                         var instance = Expression.Parameter(sourceType, "this");
                         var method = GetMethod(sourceType, "ToString", FormattableParserSig);

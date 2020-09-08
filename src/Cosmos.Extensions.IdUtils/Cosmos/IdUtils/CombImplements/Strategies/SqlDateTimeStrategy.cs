@@ -37,7 +37,7 @@ namespace Cosmos.IdUtils.CombImplements.Strategies
 
         public DateTime MinDateTimeValue { get; } = new DateTime(1900, 1, 1);
 
-        public DateTime MaxDateTimeValue => MinDateTimeValue.AddDays(NumberConstants.UshortMax);
+        public DateTime MaxDateTimeValue => MinDateTimeValue.AddDays(NumericConstants.UshortMax);
 
         public byte[] DateTimeToBytes(DateTime timestamp)
         {

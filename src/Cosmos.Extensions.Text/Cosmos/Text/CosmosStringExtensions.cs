@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Cosmos.Judgments;
 using Cosmos.Collections;
 
 namespace Cosmos.Text
@@ -14,19 +13,19 @@ namespace Cosmos.Text
     {
         #region Contains
 
-        /// <summary>
-        /// Determine whether the specified text contains Chinese characters.<br />
-        /// 判断指定文本是否包含中文汉字。
-        /// </summary>
-        /// <param name="text"></param>
-        public static bool ContainsChinese(string text) => StringJudgment.ContainsChineseCharacters(text);
+        ///// <summary>
+        ///// Determine whether the specified text contains Chinese characters.<br />
+        ///// 判断指定文本是否包含中文汉字。
+        ///// </summary>
+        ///// <param name="text"></param>
+        //public static bool ContainsChinese(string text) => StringJudgment.ContainsChineseCharacters(text);
 
-        /// <summary>
-        /// Determine whether the specified text contains numbers.<br />
-        /// 判断指定文本是否包含数字。
-        /// </summary>
-        /// <param name="text">文本</param>
-        public static bool ContainsNumber(string text) => StringJudgment.ContainsNumber(text);
+        ///// <summary>
+        ///// Determine whether the specified text contains numbers.<br />
+        ///// 判断指定文本是否包含数字。
+        ///// </summary>
+        ///// <param name="text">文本</param>
+        //public static bool ContainsNumber(string text) => StringJudgment.ContainsNumber(text);
 
         /// <summary>
         /// Determine whether the specified text contains the given word. <br />
