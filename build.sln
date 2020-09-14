@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Extensions.IdUtils._
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cosmos.Extensions.Validations._build", "src\Cosmos.Extensions.Validations\Cosmos.Extensions.Validations._build.csproj", "{FB3045C7-6C68-4990-8F90-DA79B2D227A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Enums._build", "src\Cosmos.Extensions.Enums\Cosmos.Extensions.Enums._build.csproj", "{CC2F7F43-65F1-45E7-B5B4-93B3ADBA57FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{FB3045C7-6C68-4990-8F90-DA79B2D227A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB3045C7-6C68-4990-8F90-DA79B2D227A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB3045C7-6C68-4990-8F90-DA79B2D227A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC2F7F43-65F1-45E7-B5B4-93B3ADBA57FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC2F7F43-65F1-45E7-B5B4-93B3ADBA57FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC2F7F43-65F1-45E7-B5B4-93B3ADBA57FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC2F7F43-65F1-45E7-B5B4-93B3ADBA57FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

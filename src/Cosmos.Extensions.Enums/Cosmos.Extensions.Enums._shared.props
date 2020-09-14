@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Enums</AssemblyName>
+        <PackageId>Cosmos.Extensions.Enums</PackageId>
+        <Description>Enums extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+</Project>

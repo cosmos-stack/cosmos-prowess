@@ -1,0 +1,179 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.Enums</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Dynamic.DynamicEnumNotFoundException">
+            <summary>
+            The exception that is thrown when a dynamic enum item is not found.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor">
+            <summary>
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.Int64)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.Int64,System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:Cosmos.Dynamic.DynamicEnum`1">
+            <summary>
+            Dynamic Enum
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+        </member>
+        <member name="T:Cosmos.Dynamic.DynamicEnum`2">
+            <summary>
+            Dynamic Enum
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <summary>
+            Dynamic Enum
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Cosmos.Dynamic.DynamicEnum`2.GetValueType">
+            <summary>
+            Get value's type.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Enums">
+            <summary>
+            Enum utilities
+            </summary>
+        </member>
+        <member name="M:Cosmos.Enums.Of``1(System.String,System.Boolean,``0)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.Of``1(System.Object,``0)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.Of(System.String,System.Type,System.Boolean,System.Object)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.Of(System.Object,System.Type,System.Object)">
+            <summary>
+            Of
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.NameOf``1(``0)">
+            <summary>
+            Name of
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.NameOf(System.Type,System.Object)">
+            <summary>
+            Name of
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.DescriptionOf``1(``0)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.DescriptionOf(System.Type,System.Object)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.Count``1">
+            <summary>
+            Counts the number of enums values contained in a given enum type.
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.GetValues``1">
+            <summary>
+            Get values
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.GetValues(System.Type)">
+            <summary>
+            Get values
+            </summary>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Enums.RandomValue``1">
+            <summary>
+            Random value
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

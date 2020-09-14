@@ -10,6 +10,7 @@
       <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj" />
       <ProjectReference Include="..\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj" />
       <ProjectReference Include="..\Cosmos.Extensions.Text\Cosmos.Extensions.Text.csproj" />
+      <ProjectReference Include="..\Cosmos.Extensions.Enums\Cosmos.Extensions.Enums.csproj" />
       <ProjectReference Include="..\Cosmos.Extensions.Validations\Cosmos.Extensions.Validations.csproj"/>
     </ItemGroup>
 
