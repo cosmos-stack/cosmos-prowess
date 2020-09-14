@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿#if !NET451 && !NET452
+
+using System.Text;
 
 // ReSharper disable IdentifierTypo
 // ReSharper disable InconsistentNaming
@@ -721,3 +723,5 @@ namespace Cosmos.Text
         public static Encoding X_MAC_UKRAINIAN => Encoding.GetEncoding(10017);
     }
 }
+
+#endif

@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cosmos.Serialization;
+#if NETFRAMEWORK || NETSTANDARD2_0
+#else
 using Cosmos.Text;
+
+#endif
 
 namespace Cosmos.Splitters
 {
@@ -216,7 +220,7 @@ namespace Cosmos.Splitters
 
             public static (string, string) SplitMap(SplitterOptions options, string middleString)
             {
-#if NETSTANDARD2_0
+#if NETFRAMEWORK || NETSTANDARD2_0
                 var t = middleString.Split(new[] {options.MapSeparator}, StringSplitOptions.None);
 #else
                 var t = middleString.Split(options.MapSeparator);

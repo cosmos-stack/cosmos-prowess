@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
 using Cosmos.Exceptions;
+using SystemValidationContext = System.ComponentModel.DataAnnotations.ValidationContext;
 using SystemValidationResult = System.ComponentModel.DataAnnotations.ValidationResult;
 using ValidationFailure = FluentValidation.Results.ValidationFailure;
 using ValidationResult = FluentValidation.Results.ValidationResult;
@@ -21,7 +22,7 @@ namespace FluentValidation
                 throw new ArgumentNullException(nameof(target));
 
             var validationResults = new List<SystemValidationResult>();
-            var context = new ValidationContext(target, null, null);
+            var context = new SystemValidationContext(target, null, null);
 
             var failures = new List<ValidationFailure>();
 
@@ -48,7 +49,7 @@ namespace FluentValidation
                 throw new ArgumentNullException(nameof(target));
 
             var validationResults = new List<SystemValidationResult>();
-            var context = new ValidationContext(target, null, null);
+            var context = new SystemValidationContext(target, null, null);
 
             var failures = new List<ValidationFailure>();
 

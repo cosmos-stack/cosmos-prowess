@@ -5,10 +5,37 @@
         <PackageId>Cosmos.Extensions.Validations</PackageId>
         <Description>Validation extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
     </PropertyGroup>
+    
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+        <PackageReference Include="FluentValidation" Version="8.6.3"/>
+    </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
-        <PackageReference Include="FluentValidation" Version="9.1.3" />
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="FluentValidation" Version="9.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="FluentValidation" Version="9.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="FluentValidation" Version="9.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
+        <PackageReference Include="FluentValidation" Version="9.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.1' ">
+        <PackageReference Include="FluentValidation" Version="9.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.0' ">
+        <PackageReference Include="FluentValidation" Version="9.2.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+        <PackageReference Include="FluentValidation" Version="9.2.0"/>
     </ItemGroup>
 
 </Project>
