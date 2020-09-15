@@ -1,16 +1,16 @@
 ﻿using System;
 
-namespace Cosmos.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     public readonly struct DynamicEnumWhen<TEnum, TValue>
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : IDynamicEnum
         where TValue : IEquatable<TValue>, IComparable<TValue>
     {
         private readonly bool _isMatch;
-        private readonly DynamicEnum<TEnum, TValue> _instance;
+        private readonly IDynamicEnum _instance;
         private readonly bool _stopEval;
 
-        public DynamicEnumWhen(bool isMatch, bool stopEval, DynamicEnum<TEnum, TValue> instance)
+        public DynamicEnumWhen(bool isMatch, bool stopEval, IDynamicEnum instance)
         {
             _isMatch = isMatch;
             _stopEval = stopEval;

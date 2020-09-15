@@ -1,17 +1,17 @@
 ﻿using System;
 
-namespace Cosmos.Dynamic.Registry
+namespace Cosmos.Dynamic.DynamicEnums.Registry
 {
     public static class DynamicEnumRegistry
     {
         public static void Register<TEnum>(DynamicEnumRegisterOptions options = DynamicEnumRegisterOptions.ScanGivenType)
-            where TEnum : DynamicEnum<TEnum, int>
+            where TEnum : DynamicEnum<TEnum, int>, IDynamicEnum
         {
             Register<TEnum, int>(options);
         }
 
         public static void Register<TEnum, TValue>(DynamicEnumRegisterOptions options = DynamicEnumRegisterOptions.ScanGivenType)
-            where TEnum : DynamicEnum<TEnum, TValue>
+            where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
             where TValue : IEquatable<TValue>, IComparable<TValue>
         {
             var members = DynamicEnumManager.GetMembers<TEnum, TValue>();

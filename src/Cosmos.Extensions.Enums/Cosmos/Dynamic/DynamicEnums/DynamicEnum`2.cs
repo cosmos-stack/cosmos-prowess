@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Cosmos.Collections;
 
-namespace Cosmos.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     /// <summary>
     /// Dynamic Enum
@@ -40,9 +41,9 @@ namespace Cosmos.Dynamic
 
         public TValue Value => _value;
 
-        public IEnumerable<string> GetAllKeys() => DynamicEnumManager.GetMembers<TEnum, TValue>().GetAllKeys();
+        public IEnumerable<string> GetAllKeys() => DynamicEnumManager.GetMembers<TEnum, TValue>().GetAllKeys().AsReadOnly();
 
-        public IEnumerable<TEnum> GetAllValues() => DynamicEnumManager.GetMembers<TEnum, TValue>().GetAllValues();
+        public IEnumerable<TEnum> GetAllValues() => DynamicEnumManager.GetMembers<TEnum, TValue>().GetAllValues().AsReadOnly();
 
         public override string ToString() => _name;
 

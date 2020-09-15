@@ -1,18 +1,18 @@
 ﻿using System;
 
-namespace Cosmos.Dynamic.Registry
+namespace Cosmos.Dynamic.DynamicEnums.Registry
 {
     public static class DynamicEnumRegistryExtensions
     {
         public static void Init<TEnum, TValue>(this TEnum instance, DynamicEnumRegisterOptions options = DynamicEnumRegisterOptions.ScanGivenType)
-            where TEnum : DynamicEnum<TEnum, TValue>
+            where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
             where TValue : IEquatable<TValue>, IComparable<TValue>
         {
             DynamicEnumRegistry.Register<TEnum, TValue>(options);
         }
 
         public static void RegisterSelf<TEnum, TValue>(this TEnum instance)
-            where TEnum : DynamicEnum<TEnum, TValue>
+            where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
             where TValue : IEquatable<TValue>, IComparable<TValue>
         {
             var members = DynamicEnumManager.GetMembers<TEnum, TValue>();
@@ -27,8 +27,8 @@ namespace Cosmos.Dynamic.Registry
         }
 
         public static void RegisterClazz<TEnum, TSubEnum, TValue>(this TSubEnum instance)
-            where TEnum : DynamicEnum<TEnum, TValue>
-            where TSubEnum : TEnum
+            where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
+            where TSubEnum : TEnum, IDynamicEnum
             where TValue : IEquatable<TValue>, IComparable<TValue>
         {
             var members = DynamicEnumManager.GetMembers<TEnum, TValue>();

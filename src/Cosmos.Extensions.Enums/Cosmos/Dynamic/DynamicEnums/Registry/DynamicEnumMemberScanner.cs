@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Cosmos.Dynamic.Registry
+namespace Cosmos.Dynamic.DynamicEnums.Registry
 {
     internal static class DynamicEnumMemberScanner
     {
@@ -15,7 +15,7 @@ namespace Cosmos.Dynamic.Registry
         }
 
         public static IEnumerable<TEnum> GetBuildInValuesFromAssembly<TEnum, TValue>()
-            where TEnum : DynamicEnum<TEnum, TValue>
+            where TEnum : IDynamicEnum
             where TValue : IEquatable<TValue>, IComparable<TValue>
         {
             var baseType = typeof(TEnum);

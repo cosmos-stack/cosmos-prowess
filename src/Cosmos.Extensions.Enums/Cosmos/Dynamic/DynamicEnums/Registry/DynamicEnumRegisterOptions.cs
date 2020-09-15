@@ -1,4 +1,4 @@
-﻿namespace Cosmos.Dynamic.Registry
+﻿namespace Cosmos.Dynamic.DynamicEnums.Registry
 {
     public enum DynamicEnumRegisterOptions
     {

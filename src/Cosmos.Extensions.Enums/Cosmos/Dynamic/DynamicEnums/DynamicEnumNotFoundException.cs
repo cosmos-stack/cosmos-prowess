@@ -1,10 +1,11 @@
 ﻿using System;
 
-namespace Cosmos.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     /// <summary>
     /// The exception that is thrown when a dynamic enum item is not found.
     /// </summary>
+    [Serializable]
     public class DynamicEnumNotFoundException : CosmosException
     {
         // ReSharper disable once InconsistentNaming
@@ -52,5 +53,13 @@ namespace Cosmos.Dynamic
         /// <param name="message"></param>
         /// <param name="innerException"></param>
         public DynamicEnumNotFoundException(string message, Exception innerException) : base(DEFAULT_CODE, message, FLAG, innerException) { }
+
+        /// <summary>
+        /// Create a new <see cref="DynamicEnumNotFoundException"/> instance.
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="context"></param>
+        protected DynamicEnumNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+            : base(info, context) { }
     }
 }

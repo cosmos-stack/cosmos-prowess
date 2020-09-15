@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Cosmos.Collections;
 
-namespace Cosmos.Dynamic
+namespace Cosmos.Dynamic.DynamicEnums
 {
     internal sealed class DynamicEnumMembers<TEnum, TValue> : IDynamicEnumMembers
-        where TEnum : DynamicEnum<TEnum, TValue>
+        where TEnum : DynamicEnum<TEnum, TValue>, IDynamicEnum
         where TValue : IEquatable<TValue>, IComparable<TValue>
     {
         private readonly Dictionary<string, TEnum> _enumKeyMembers;
@@ -68,6 +68,8 @@ namespace Cosmos.Dynamic
         {
             return TryGetValuedEnumMember(value, out members);
         }
+
+        #region Private Impl
 
         private void UpdateEnumMember(string name, TValue value, TEnum member)
         {
@@ -139,8 +141,14 @@ namespace Cosmos.Dynamic
             }
         }
 
+        #endregion
+
+        #region Keys and Values
+
         public IEnumerable<string> GetAllKeys() => _enumKeyMembers.Keys;
 
         public IEnumerable<TEnum> GetAllValues() => _enumKeyMembers.Values;
+
+        #endregion
     }
 }
