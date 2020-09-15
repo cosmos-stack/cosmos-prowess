@@ -8,4 +8,8 @@
         <PackageReference Include="Cosmos.Standard" Version="$(TargetPkgVersion)" />
     </ItemGroup>
 
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj" />
+    </ItemGroup>
+
 </Project>

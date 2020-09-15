@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Cosmos.Collections;
 using Cosmos.Conversions;
-using Cosmos.Dynamic;
+using Cosmos.Dynamic.DynamicEnums;
 using Cosmos.Reflection;
 
 namespace Cosmos
@@ -228,21 +228,23 @@ namespace Cosmos
 
         public static bool IsEnum(object obj)
         {
-            if (obj is null)
-                return false;
-
-            if (obj is TypeInfo type0)
-                return type0.IsEnum;
-
-            if (obj is Type type1)
-                return IsEnum(type1);
-
-            return IsEnum(obj.GetType());
+            return obj switch
+            {
+                null => false,
+                TypeInfo type0 => type0.IsEnum,
+                Type type1 => IsEnum(type1),
+                _ => IsEnum(obj.GetType())
+            };
         }
 
         #endregion
 
         #region IsDynamicEnum
+
+        public static bool IsDynamicEnum(object obj)
+        {
+            return obj is IDynamicEnum;
+        }
 
         public static bool IsDynamicEnum<T>()
         {
@@ -267,7 +269,8 @@ namespace Cosmos
                 return false;
             }
 
-            return Types.IsGenericImplementation(type, typeof(DynamicEnum<,>), out genericArguments);
+            return Types.IsGenericImplementation(type, typeof(DynamicEnum<,>), out genericArguments) ||
+                   Types.IsGenericImplementation(type, typeof(DynamicFlagEnum<,>), out genericArguments);
         }
 
         #endregion
