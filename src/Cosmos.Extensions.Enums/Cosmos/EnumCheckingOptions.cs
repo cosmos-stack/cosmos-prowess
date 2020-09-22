@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Cosmos
+﻿namespace Cosmos
 {
     public enum EnumCheckingOptions
     {

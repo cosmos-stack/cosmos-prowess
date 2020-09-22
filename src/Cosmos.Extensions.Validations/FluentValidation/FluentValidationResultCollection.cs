@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Cosmos;
 using Cosmos.Collections;
 using Cosmos.Validations.Internals;
 using FluentValidation.Results;
+
+// ReSharper disable PossibleMultipleEnumeration
 
 namespace FluentValidation
 {

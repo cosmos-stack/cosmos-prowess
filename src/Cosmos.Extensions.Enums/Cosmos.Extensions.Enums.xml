@@ -4,62 +4,62 @@
         <name>Cosmos.Extensions.Enums</name>
     </assembly>
     <members>
-        <member name="T:Cosmos.Dynamic.DynamicEnumNotFoundException">
+        <member name="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException">
             <summary>
             The exception that is thrown when a dynamic enum item is not found.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException.#ctor">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException"/> instance.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException.#ctor(System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException"/> instance.
             </summary>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.Int64)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException.#ctor(System.Int64)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException"/> instance.
             </summary>
             <param name="code"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.Int64,System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException.#ctor(System.Int64,System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException"/> instance.
             </summary>
             <param name="code"></param>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException.#ctor(System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException"/> instance.
             </summary>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.String,System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException.#ctor(System.String,System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException"/> instance.
             </summary>
             <param name="message"></param>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnumNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnumNotFoundException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicEnumNotFoundException"/> instance.
             </summary>
             <param name="info"></param>
             <param name="context"></param>
         </member>
-        <member name="T:Cosmos.Dynamic.DynamicEnum`1">
+        <member name="T:Cosmos.Dynamic.DynamicEnums.DynamicEnum`1">
             <summary>
             Dynamic Enum
             </summary>
             <typeparam name="TEnum"></typeparam>
         </member>
-        <member name="T:Cosmos.Dynamic.DynamicEnum`2">
+        <member name="T:Cosmos.Dynamic.DynamicEnums.DynamicEnum`2">
             <summary>
             Dynamic Enum
             </summary>
@@ -68,224 +68,222 @@
             <summary>
             Dynamic Enum
             </summary>
-            <typeparam name="TEnum"></typeparam>
-            <typeparam name="TValue"></typeparam>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicEnum`2.GetValueType">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicEnum`2.GetValueType">
             <summary>
             Get value's type.
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException">
+        <member name="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException">
             <summary>
             The exception that is thrown when a flag dynamic enum item is negative.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException.#ctor">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException.#ctor">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException"/> instance.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException.#ctor(System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException.#ctor(System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException"/> instance.
             </summary>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Int64)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Int64)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException"/> instance.
             </summary>
             <param name="code"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Int64,System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Int64,System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException"/> instance.
             </summary>
             <param name="code"></param>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException"/> instance.
             </summary>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException.#ctor(System.String,System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException.#ctor(System.String,System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException"/> instance.
             </summary>
             <param name="message"></param>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumContainsNegativeValueException"/> instance.
             </summary>
             <param name="info"></param>
             <param name="context"></param>
         </member>
-        <member name="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException">
+        <member name="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException">
             <summary>
-            The exception that is thrown when a <see cref="T:Cosmos.Dynamic.DynamicFlagEnum`1"/> does not contain consecutive power of two values.
+            The exception that is thrown when a <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnum`1"/> does not contain consecutive power of two values.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
             </summary>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Int64)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Int64)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
             </summary>
             <param name="code"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Int64,System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Int64,System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
             </summary>
             <param name="code"></param>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
             </summary>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.String,System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.String,System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
             </summary>
             <param name="message"></param>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
             </summary>
             <param name="info"></param>
             <param name="context"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.DynamicFlagEnum`2.GetValueType">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.DynamicFlagEnum`2.GetValueType">
             <summary>
             Get value's type.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.Dynamic.IDynamicEnum.GetValueType">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.IDynamicEnum.GetValueType">
             <summary>
             Get value's type.
             </summary>
             <returns></returns>
         </member>
-        <member name="P:Cosmos.Dynamic.IDynamicEnum.Name">
+        <member name="P:Cosmos.Dynamic.DynamicEnums.IDynamicEnum.Name">
             <summary>
             Name
             </summary>
         </member>
-        <member name="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException">
+        <member name="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException">
             <summary>
             The exception that is thrown when a flag dynamic enum item is invalid.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.InvalidFlagEnumValueParseException.#ctor">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException.#ctor">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException"/> instance.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.InvalidFlagEnumValueParseException.#ctor(System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException.#ctor(System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException"/> instance.
             </summary>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.InvalidFlagEnumValueParseException.#ctor(System.Int64)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException.#ctor(System.Int64)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException"/> instance.
             </summary>
             <param name="code"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.InvalidFlagEnumValueParseException.#ctor(System.Int64,System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException.#ctor(System.Int64,System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException"/> instance.
             </summary>
             <param name="code"></param>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.InvalidFlagEnumValueParseException.#ctor(System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException.#ctor(System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException"/> instance.
             </summary>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.InvalidFlagEnumValueParseException.#ctor(System.String,System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException.#ctor(System.String,System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException"/> instance.
             </summary>
             <param name="message"></param>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.InvalidFlagEnumValueParseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.InvalidFlagEnumValueParseException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.InvalidFlagEnumValueParseException"/> instance.
             </summary>
             <param name="info"></param>
             <param name="context"></param>
         </member>
-        <member name="T:Cosmos.Dynamic.NegativeValueArgumentException">
+        <member name="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException">
             <summary>
             The exception that is thrown when a negative value is provided as an argument value.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.NegativeValueArgumentException.#ctor">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException.#ctor">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.NegativeValueArgumentException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException"/> instance.
             </summary>
         </member>
-        <member name="M:Cosmos.Dynamic.NegativeValueArgumentException.#ctor(System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException.#ctor(System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.NegativeValueArgumentException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException"/> instance.
             </summary>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.NegativeValueArgumentException.#ctor(System.Int64)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException.#ctor(System.Int64)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.NegativeValueArgumentException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException"/> instance.
             </summary>
             <param name="code"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.NegativeValueArgumentException.#ctor(System.Int64,System.String)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException.#ctor(System.Int64,System.String)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.NegativeValueArgumentException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException"/> instance.
             </summary>
             <param name="code"></param>
             <param name="message"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.NegativeValueArgumentException.#ctor(System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException.#ctor(System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.NegativeValueArgumentException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException"/> instance.
             </summary>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.NegativeValueArgumentException.#ctor(System.String,System.Exception)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException.#ctor(System.String,System.Exception)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.NegativeValueArgumentException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException"/> instance.
             </summary>
             <param name="message"></param>
             <param name="innerException"></param>
         </member>
-        <member name="M:Cosmos.Dynamic.NegativeValueArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+        <member name="M:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
             <summary>
-            Create a new <see cref="T:Cosmos.Dynamic.NegativeValueArgumentException"/> instance.
+            Create a new <see cref="T:Cosmos.Dynamic.DynamicEnums.NegativeValueArgumentException"/> instance.
             </summary>
             <param name="info"></param>
             <param name="context"></param>

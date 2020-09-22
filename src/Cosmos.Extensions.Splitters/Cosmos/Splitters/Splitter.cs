@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Cosmos.Collections;
 using Cosmos.Serialization;
 
 // ReSharper disable InconsistentNaming

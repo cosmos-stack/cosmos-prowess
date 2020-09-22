@@ -2,6 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 using Cosmos.Reflection;
+// ReSharper disable CoVariantArrayConversion
 
 namespace Cosmos.Text
 {

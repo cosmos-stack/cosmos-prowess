@@ -6,8 +6,6 @@ namespace Cosmos.Dynamic.DynamicEnums
     /// <summary>
     /// Dynamic Enum
     /// </summary>
-    /// <typeparam name="TEnum"></typeparam>
-    /// <typeparam name="TValue"></typeparam>
     public abstract partial class DynamicEnum<TEnum, TValue>
     {
         public static TEnum FromName(string name)

@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Cosmos.Serialization;
-#if NETFRAMEWORK || NETSTANDARD2_0
-#else
-using Cosmos.Text;
-
-#endif
 
 namespace Cosmos.Splitters
 {

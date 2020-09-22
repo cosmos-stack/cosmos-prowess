@@ -9,6 +9,7 @@ namespace Cosmos.Validations.Internals
     public abstract class AbstractResultCollection<TResult, TFailure> : IValidationResultCollection<TResult>
         where TResult : class, IValidationResult<TFailure>
     {
+        // ReSharper disable once InconsistentNaming
         protected List<TResult> _results { get; set; } = new List<TResult>();
 
         /// <inheritdoc />
