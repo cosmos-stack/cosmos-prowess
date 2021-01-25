@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Cosmos.Reflection;
 
 namespace System.ComponentModel.DataAnnotations
 {
@@ -12,13 +13,13 @@ namespace System.ComponentModel.DataAnnotations
         public static bool HasDataAnnotationAttribute(this TypeInfo type)
         {
             var attributes = type.GetCustomAttributes();
-            return attributes.Any(a => a.TypeInfo().IsDeriveClassFrom<ValidationAttribute>());
+            return attributes.Any(a => a.GetType().IsDerivedFrom<ValidationAttribute>());
         }
 
         public static IEnumerable<Attribute> GetDataAnnotationAttributes(this TypeInfo type)
         {
             var attributes = type.GetCustomAttributes();
-            return attributes.Where(a => a.TypeInfo().IsDeriveClassFrom<ValidationAttribute>());
+            return attributes.Where(a => a.GetType().IsDerivedFrom<ValidationAttribute>());
         }
 
         public static DataAnnotationValidationResult ValidateDataAnnotation(this object target)

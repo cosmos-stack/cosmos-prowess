@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using Cosmos;
 using Cosmos.Joiners;
 using Shouldly;
 using Xunit;
 
-namespace Cosmos.Test.Guava.GuavaJoiner {
+namespace CosmosStandardUT.ProwessJoiner {
     public class MapJoinerTests {
         public class Int32ToStringConverter : ITypeConverter<int, string> {
             public string To(int @from) {

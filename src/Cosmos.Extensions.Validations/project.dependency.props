@@ -1,0 +1,31 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+    </ItemGroup>
+    
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net452' ">
+        <PackageReference Include="FluentValidation" Version="8.6.3"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="FluentValidation" Version="9.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="FluentValidation" Version="9.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="FluentValidation" Version="9.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+        <PackageReference Include="FluentValidation" Version="9.4.0"/>
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
+        <PackageReference Include="FluentValidation" Version="9.4.0"/>
+    </ItemGroup>
+
+</Project>

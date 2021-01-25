@@ -78,7 +78,7 @@ namespace Cosmos.Text
             var startIndex = 0;
             while (startIndex <= text.Length)
             {
-                var index = text.IndexOfIgnoreCase(startIndex, toCheck);
+                var index = text.IndexOfIgnoreCase(toCheck,startIndex);
                 if (index < 0)
                     return false;
 
@@ -213,7 +213,7 @@ namespace Cosmos.Text
             foreach (var oldValue in oldValues)
             {
                 if (text.ContainsIgnoreCase(oldValue))
-                    return text.ReplaceIgnoringCase(oldValue, newValue);
+                    return text.ReplaceIgnoreCase(oldValue, newValue);
             }
 
             return text;
@@ -233,7 +233,7 @@ namespace Cosmos.Text
             foreach (var oldValue in oldValues)
             {
                 if (text.ContainsIgnoreCase(oldValue))
-                    return text.ReplaceIgnoringCase(oldValue, textInsert + oldValue);
+                    return text.ReplaceIgnoreCase(oldValue, textInsert + oldValue);
             }
 
             return text;

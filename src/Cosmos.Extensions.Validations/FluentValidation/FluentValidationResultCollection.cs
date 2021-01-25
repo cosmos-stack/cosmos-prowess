@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Cosmos.Collections;
+using Cosmos.Text;
 using Cosmos.Validations.Internals;
 using FluentValidation.Results;
 
@@ -14,7 +15,7 @@ namespace FluentValidation
     {
         private readonly IDictionary<string, List<FluentValidationResult>> _resultsFlaggedByStrategy;
 
-        internal IReadOnlyDictionary<string, List<FluentValidationResult>> InternalStrategy => _resultsFlaggedByStrategy.ToReadOnlyDictionary();
+        internal IReadOnlyDictionary<string, List<FluentValidationResult>> InternalStrategy => _resultsFlaggedByStrategy.AsReadOnlyDictionary();
 
         /// <summary>
         /// Create a new instance of <see cref="FluentValidationResultCollection"/>.

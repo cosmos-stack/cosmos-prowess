@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Cosmos.Collections;
 using Cosmos.Serialization;
 
 // ReSharper disable InconsistentNaming
@@ -266,6 +267,16 @@ namespace Cosmos.Splitters
         #endregion
 
         #region On
+
+        public static ISplitter On(char on, params char[] on2)
+        {
+            var o = new string[(on2?.Length ?? 0) + 1];
+            o[0] = $"{on}";
+            if (o.Length > 1 && on2 != null && on2.Length > 0)
+                for (var i = 0; i < on2.Length; i++)
+                    o[i + 1] = $"{on2[i]}";
+            return new Splitter(o);
+        }
 
         /// <summary>
         /// On, to create a new Splitter instance.<br />

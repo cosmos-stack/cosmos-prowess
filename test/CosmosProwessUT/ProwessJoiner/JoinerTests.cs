@@ -3,7 +3,7 @@ using Cosmos.Joiners;
 using Shouldly;
 using Xunit;
 
-namespace Cosmos.Test.Guava.GuavaJoiner {
+namespace CosmosStandardUT.ProwessJoiner {
     public class JoinerTests {
         private static class OriginalMaterials {
             public static List<string> NormalList { get; } = new List<string> {"a", "b", "c", "d", "e"};

@@ -1,6 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Prowess._shared.props" />
+    <PropertyGroup>
+      <Configurations>Debug;Release;Gen-Xml</Configurations>
+      <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <Import Project="project.props" />
 
     <Import Project="..\..\common.props" />
 

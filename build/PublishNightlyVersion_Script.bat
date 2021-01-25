@@ -21,14 +21,18 @@ echo Cleaned up all nuget packages.
 echo.
 
 ::start to package all projects
-dotnet pack src/Cosmos.Extensions.CharMatchers/Cosmos.Extensions.CharMatchers._build.csproj -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.IdUtils/Cosmos.Extensions.IdUtils._build.csproj           -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Joiners/Cosmos.Extensions.Joiners._build.csproj           -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Splitters/Cosmos.Extensions.Splitters._build.csproj       -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Text/Cosmos.Extensions.Text._build.csproj                 -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Enums/Cosmos.Extensions.Enums._build.csproj               -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Validations/Cosmos.Extensions.Validations._build.csproj   -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Prowess/Cosmos.Prowess._build.csproj                                 -c Release -o nuget_packages --no-restore
+
+::cosmos-extensions
+dotnet pack src/Cosmos.Extensions.CharMatchers/Cosmos.Extensions.CharMatchers.csproj -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.IdUtils/Cosmos.Extensions.IdUtils.csproj           -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Joiners/Cosmos.Extensions.Joiners.csproj           -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Splitters/Cosmos.Extensions.Splitters.csproj       -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Text/Cosmos.Extensions.Text.csproj                 -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Enums/Cosmos.Extensions.Enums.csproj               -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Validations/Cosmos.Extensions.Validations.csproj   -c Release -o nuget_packages --no-restore
+
+::cosmos-prowess
+dotnet pack src/Cosmos.Prowess/Cosmos.Prowess.csproj                                 -c Release -o nuget_packages --no-restore
 
 for /R "nuget_packages" %%s in (*symbols.nupkg) do (
     del "%%s"

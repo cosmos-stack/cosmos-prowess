@@ -1,6 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Extensions.Text._shared.props" />
+    <PropertyGroup>
+      <Configurations>Debug;Release;Gen-Xml</Configurations>
+      <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <Import Project="project.props" />
+
+    <Import Project="project.dependency.props" />
 
     <Import Project="..\..\common.props" />
 

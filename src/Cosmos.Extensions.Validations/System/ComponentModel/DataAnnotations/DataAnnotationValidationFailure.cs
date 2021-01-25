@@ -58,6 +58,11 @@ namespace System.ComponentModel.DataAnnotations
         public static DataAnnotationValidationFailure Create(ValidationResult result, object target)
         {
             var propertyName = result.MemberNames.First();
+                    
+            //TODO 此处，我们将使用 Cosmos.Extensions.ObjectVisitor 来达成目的
+            // 注意，Cosmos.Extensions.ObjectVisitor 将与 LeoVisitor 共用一套代码
+            // 注意，我们将在 Cosmos.Extensions.ObjectVisitor 中使用 Cosmos.Validation（而不是 LeoVisitor 中的验证器）
+            // 注意，此处的代码不可用，我们目前使用的是 Fake 版本的 TryGetPropertyValue 扩展方法
 
             var failure = target.TryGetPropertyValue(propertyName, out var val)
                 ? new DataAnnotationValidationFailure(propertyName, result.ErrorMessage, val)
@@ -71,6 +76,11 @@ namespace System.ComponentModel.DataAnnotations
         public static DataAnnotationValidationFailure Create<T>(ValidationResult result, T target)
         {
             var propertyName = result.MemberNames.First();
+                    
+            //TODO 此处，我们将使用 Cosmos.Extensions.ObjectVisitor 来达成目的
+            // 注意，Cosmos.Extensions.ObjectVisitor 将与 LeoVisitor 共用一套代码
+            // 注意，我们将在 Cosmos.Extensions.ObjectVisitor 中使用 Cosmos.Validation（而不是 LeoVisitor 中的验证器）
+            // 注意，此处的代码不可用，我们目前使用的是 Fake 版本的 GetPropertyValueQuickly 扩展方法
 
             var @try = Try.Create(() => target.GetPropertyValueQuickly<T>(propertyName, true));
 

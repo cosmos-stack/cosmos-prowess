@@ -83,13 +83,14 @@ namespace Cosmos.Dynamic.DynamicEnums
 
                 _enumKeyMembers.Add(name, member);
 
-                _enumValueMembers.AddOrUpdate(
+                _enumValueMembers.AddValueOrUpdate(
                     value,
                     k => new List<TEnum> {member},
                     (k, v) =>
                     {
                         if (!v.Contains(member))
                             v.Add(member);
+                        return v;
                     });
             }
         }

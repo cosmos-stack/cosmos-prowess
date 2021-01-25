@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Validations</AssemblyName>
+        <PackageId>Cosmos.Extensions.Validations</PackageId>
+        <Description>Validation extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+</Project>

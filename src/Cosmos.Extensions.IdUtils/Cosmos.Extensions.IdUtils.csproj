@@ -1,11 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-    <Import Project="Cosmos.Extensions.IdUtils._shared.props" />
-    
-    <Import Project="..\..\common.props" />
+    <PropertyGroup>
+      <Configurations>Debug;Release;Gen-Xml</Configurations>
+      <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="$(TargetPkgVersion)" />
-    </ItemGroup>
+    <Import Project="project.props" />
+
+    <Import Project="project.dependency.props" />
+
+    <Import Project="..\..\common.props" />
 
 </Project>

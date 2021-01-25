@@ -50,24 +50,43 @@ namespace Cosmos.Text
 
         public T As<T>(IFormatProvider formatProvider) where T : struct
         {
-            return _value.CastTo<T>(IgnoreCase.FALSE, formatProvider: formatProvider);
+            return _value.CastTo<T>(ctx =>
+            {
+                ctx.IgnoreCase = IgnoreCase.FALSE;
+                ctx.FormatProvider = formatProvider;
+            });
         }
 
         public T As<T>(NumberStyles numberStyles, T defaultVal = default) where T : struct
         {
-            return _value.CastTo(IgnoreCase.FALSE, numberStyles: numberStyles, defaultVal: defaultVal);
+            return _value.CastTo<T>(ctx =>
+            {
+                ctx.IgnoreCase = IgnoreCase.FALSE;
+                ctx.NumberStyles = numberStyles;
+            }, defaultVal);
         }
 
         public T As<T>(DateTimeStyles dateTimeStyles, T defaultVal = default) where T : struct
         {
-            return _value.CastTo(IgnoreCase.FALSE, dateTimeStyles: dateTimeStyles, defaultVal: defaultVal);
+            return _value.CastTo<T>(ctx =>
+            {
+                ctx.IgnoreCase = IgnoreCase.FALSE;
+                ctx.DateTimeStyles = dateTimeStyles;
+            }, defaultVal);
         }
 
         public T As<T>(IgnoreCase ignoreCase, T defaultVal = default, string format = null,
             NumberStyles? numberStyles = null, DateTimeStyles? dateTimeStyles = null, IFormatProvider formatProvider = null)
             where T : struct
         {
-            return _value.CastTo(ignoreCase, defaultVal, format, numberStyles, dateTimeStyles, formatProvider);
+            return _value.CastTo<T>(ctx =>
+            {
+                ctx.IgnoreCase = ignoreCase;
+                ctx.Format = format;
+                ctx.NumberStyles = numberStyles;
+                ctx.DateTimeStyles = dateTimeStyles;
+                ctx.FormatProvider = formatProvider;
+            }, defaultVal);
         }
 
         #endregion
@@ -76,23 +95,33 @@ namespace Cosmos.Text
 
         public bool Is<T>() where T : struct => _value.Is<T>();
 
-        public bool Is<T>(IFormatProvider provider) where T : struct => _value.Is<T>(formatProvider: provider);
+        public bool Is<T>(IFormatProvider provider) where T : struct
+        {
+            return _value.Is<T>(ctx => { ctx.FormatProvider = provider; });
+        }
 
         public bool Is<T>(NumberStyles numberStyles) where T : struct
         {
-            return _value.Is<T>(numberStyle: numberStyles);
+            return _value.Is<T>(ctx => { ctx.NumberStyles = numberStyles; });
         }
 
         public bool Is<T>(DateTimeStyles dateTimeStyles) where T : struct
         {
-            return _value.Is<T>(dateTimeStyle: dateTimeStyles);
+            return _value.Is<T>(ctx => { ctx.DateTimeStyles = dateTimeStyles; });
         }
 
         public bool Is<T>(IgnoreCase ignoreCase, Action<T> action = null, string format = null,
             NumberStyles? numberStyle = null, DateTimeStyles? dateTimeStyle = null, IFormatProvider formatProvider = null)
             where T : struct
         {
-            return _value.Is(ignoreCase, action, format, numberStyle, dateTimeStyle, formatProvider);
+            return _value.Is<T>(ctx =>
+            {
+                ctx.IgnoreCase = ignoreCase;
+                ctx.Format = format;
+                ctx.NumberStyles = numberStyle;
+                ctx.DateTimeStyles = dateTimeStyle;
+                ctx.FormatProvider = formatProvider;
+            }, action);
         }
 
         public bool Is<T>(out T result) where T : struct

@@ -229,8 +229,8 @@ namespace Cosmos.CharMatchers
                 }
 
                 return antiNot
-                    ? options.Not.Ifttt(() => sb.ToString(), () => Strings.Repeat(@char, counter))
-                    : options.Not.Ifttt(() => Strings.Repeat(@char, counter), () => sb.ToString());
+                    ? options.Not.Ifttt(() => sb.ToString(), () => Chars.Repeat(@char, counter))
+                    : options.Not.Ifttt(() => Chars.Repeat(@char, counter), () => sb.ToString());
             }
 
             public static string ReplaceFrom(string sequence, string replacement, MatchingPredicateOptions options)
@@ -339,7 +339,7 @@ namespace Cosmos.CharMatchers
             public static bool MatchesAnyOf(string sequence, MatchingPredicateOptions options)
             {
                 var @string = options.GetSequenceChars();
-                return sequence.IndexWholePhrase(@string) >= 0;
+                return sequence.IndexOfWholePhrase(@string) >= 0;
             }
 
             public static bool MatchesAllOf(string sequence, MatchingPredicateOptions options)
@@ -357,12 +357,12 @@ namespace Cosmos.CharMatchers
 
             public static int IndexIn(string sequence, string @string)
             {
-                return sequence.IndexWholePhrase(@string);
+                return sequence.IndexOfWholePhrase(@string);
             }
 
             public static int IndexIn(string sequence, string @string, int startIndex)
             {
-                return sequence.IndexWholePhrase(@string, startIndex);
+                return sequence.IndexOfWholePhrase(@string, startIndex);
             }
 
             public static int LastIndexIn(string sequence, string @string)
@@ -520,7 +520,7 @@ namespace Cosmos.CharMatchers
         {
             public static (int FirstLength, int LastLength) GetHeadAndTailLength(string originalSequence, string result)
             {
-                var index = originalSequence.IndexWholePhrase(result);
+                var index = originalSequence.IndexOfWholePhrase(result);
                 var firstLength = index;
                 var lastLength = originalSequence.Length - firstLength - result.Length;
                 return (firstLength, lastLength);

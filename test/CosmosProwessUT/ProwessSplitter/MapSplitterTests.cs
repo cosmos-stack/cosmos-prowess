@@ -1,9 +1,10 @@
 ﻿using System.Linq;
+using Cosmos;
 using Shouldly;
 using Xunit;
 using Splitter = Cosmos.Splitters.Splitter;
 
-namespace Cosmos.Test.Guava.GuavaSplitter {
+namespace CosmosStandardUT.ProwessSplitter {
     public class MapSplitterTests {
         public class StringToIntConverter : ITypeConverter<string, int> {
             public int To(string @from) {

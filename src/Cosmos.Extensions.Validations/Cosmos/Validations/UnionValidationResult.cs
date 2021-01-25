@@ -69,7 +69,7 @@ namespace Cosmos.Validations
                     UnionValidationTarget.FluentValidation => _result0.MemberNames,
                     UnionValidationTarget.SystemDataAnnotations => _result1.Select(failure => failure.PropertyName),
                     UnionValidationTarget.Mixed => _result0.MemberNames.Merge(_result1.Select(failure => failure.PropertyName)).Distinct(),
-                    _ => Enumerables.EmptyList<string>()
+                    _ => Colls.Empty<string>()
                 };
             }
         }
@@ -84,7 +84,7 @@ namespace Cosmos.Validations
                     UnionValidationTarget.FluentValidation => _result0.Errors.Select(failure => new CosmosValidationFailure(failure)).ToList(),
                     UnionValidationTarget.SystemDataAnnotations => _result1.Select(failure => new CosmosValidationFailure(failure)).ToList(),
                     UnionValidationTarget.Mixed => _result0.Errors.Select(failure => new CosmosValidationFailure(failure)).Merge(_result1.Select(failure => new CosmosValidationFailure(failure))).ToList(),
-                    _ => Enumerables.EmptyList<CosmosValidationFailure>()
+                    _ => Colls.Empty<CosmosValidationFailure>()
                 };
             }
         }

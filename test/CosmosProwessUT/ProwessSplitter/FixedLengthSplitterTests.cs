@@ -1,9 +1,9 @@
 ﻿using System.Linq;
+using Cosmos.Splitters;
 using Shouldly;
 using Xunit;
-using Cosmos.Splitters;
 
-namespace Cosmos.Test.Guava.GuavaSplitter {
+namespace CosmosStandardUT.ProwessSplitter {
     public class FixedLengthSplitterTests {
         private static class OriginalStrings {
             public static string NormalString { get; } = "abcdefghijklmnopqrstuvwxyz";

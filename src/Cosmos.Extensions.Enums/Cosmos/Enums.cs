@@ -268,9 +268,9 @@ namespace Cosmos
                 genericArguments = null;
                 return false;
             }
-
-            return Types.IsGenericImplementation(type, typeof(DynamicEnum<,>), out genericArguments) ||
-                   Types.IsGenericImplementation(type, typeof(DynamicFlagEnum<,>), out genericArguments);
+            
+            return TypeReflections.IsImplementationOfGenericType(type, typeof(DynamicEnum<,>), out genericArguments) ||
+                   TypeReflections.IsImplementationOfGenericType(type, typeof(DynamicFlagEnum<,>), out genericArguments);
         }
 
         #endregion

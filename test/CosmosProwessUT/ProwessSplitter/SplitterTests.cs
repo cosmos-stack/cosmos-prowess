@@ -4,7 +4,7 @@ using Shouldly;
 using Xunit;
 using Splitter = Cosmos.Splitters.Splitter;
 
-namespace Cosmos.Test.Guava.GuavaSplitter {
+namespace CosmosStandardUT.ProwessSplitter {
     public class SplitterTests {
         private static class OriginalStrings {
             public static string NormalString { get; } = "a,b,c,d,e";

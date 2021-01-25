@@ -3,7 +3,7 @@ using Cosmos.Joiners;
 using Shouldly;
 using Xunit;
 
-namespace Cosmos.Test.Guava.GuavaJoiner {
+namespace CosmosStandardUT.ProwessJoiner {
     public class TupleJoinerTests {
         private static class OriginalMaterials {
             public static List<(string, string)> NormalTupleList { get; } = new List<(string, string)> {("a", "1"), ("b", "2"), ("c", "3"), ("d", "4"), ("e", "5")};

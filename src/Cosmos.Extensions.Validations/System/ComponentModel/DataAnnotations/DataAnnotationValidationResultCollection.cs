@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using Cosmos.Collections;
+using Cosmos.Text;
 using Cosmos.Validations.Internals;
 
 // ReSharper disable PossibleMultipleEnumeration
@@ -12,7 +13,7 @@ namespace System.ComponentModel.DataAnnotations
     {
         private readonly IDictionary<string, List<DataAnnotationValidationResult>> _resultsFlaggedByStrategy;
 
-        internal IReadOnlyDictionary<string, List<DataAnnotationValidationResult>> InternalStrategy => _resultsFlaggedByStrategy.ToReadOnlyDictionary();
+        internal IReadOnlyDictionary<string, List<DataAnnotationValidationResult>> InternalStrategy => _resultsFlaggedByStrategy.AsReadOnlyDictionary();
 
         /// <summary>
         /// Create a new instance of <see cref="DataAnnotationValidationResultCollection"/>.
