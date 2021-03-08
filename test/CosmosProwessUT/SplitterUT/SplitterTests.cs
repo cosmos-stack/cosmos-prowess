@@ -4,16 +4,20 @@ using Shouldly;
 using Xunit;
 using Splitter = Cosmos.Splitters.Splitter;
 
-namespace CosmosStandardUT.ProwessSplitter {
-    public class SplitterTests {
-        private static class OriginalStrings {
+namespace CosmosProwessUT.SplitterUT
+{
+    public class SplitterTests
+    {
+        private static class OriginalStrings
+        {
             public static string NormalString { get; } = "a,b,c,d,e";
             public static string IncludeNullString { get; } = "a,,b,,,c,d,e";
             public static string IncludeWhiteSpaceString { get; } = "a, b ,c,d,e";
         }
 
         [Fact]
-        public void StringToEnumerableTest() {
+        public void StringToEnumerableTest()
+        {
             var enumerable = Splitter.On(",").Split(OriginalStrings.NormalString);
             // ReSharper disable once PossibleMultipleEnumeration
             enumerable.Count().ShouldBe(5);
@@ -31,7 +35,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToEnumerableIncludeNullTest() {
+        public void StringToEnumerableIncludeNullTest()
+        {
             var @base = Splitter.On(",").Split(OriginalStrings.IncludeNullString);
             // ReSharper disable once PossibleMultipleEnumeration
             @base.Count().ShouldBe(8);
@@ -63,7 +68,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToEnumerableFromStringPatternTest() {
+        public void StringToEnumerableFromStringPatternTest()
+        {
             var pattern = ",";
 
             var enumerable = Splitter.OnPattern(pattern).Split(OriginalStrings.NormalString);
@@ -81,7 +87,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToEnumerableFromRegexPatternTest() {
+        public void StringToEnumerableFromRegexPatternTest()
+        {
             var pattern = new Regex(",");
 
             var enumerable = Splitter.On(pattern).Split(OriginalStrings.NormalString);
@@ -99,7 +106,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToEnumerableWithLimitTest() {
+        public void StringToEnumerableWithLimitTest()
+        {
             var enumerable = Splitter.On(",").Limit(3).Split(OriginalStrings.NormalString);
             // ReSharper disable once PossibleMultipleEnumeration
             enumerable.Count().ShouldBe(3);
@@ -115,7 +123,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToEnumerableWithTrimTest() {
+        public void StringToEnumerableWithTrimTest()
+        {
             var @base = Splitter.On(",").Split(OriginalStrings.IncludeWhiteSpaceString);
             // ReSharper disable once PossibleMultipleEnumeration
             @base.Count().ShouldBe(5);
@@ -145,7 +154,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToEnumerableWithCustomTrimTest() {
+        public void StringToEnumerableWithCustomTrimTest()
+        {
             var @base = Splitter.On(",").Split(OriginalStrings.IncludeWhiteSpaceString);
             // ReSharper disable once PossibleMultipleEnumeration
             @base.Count().ShouldBe(5);
@@ -175,7 +185,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToListTest() {
+        public void StringToListTest()
+        {
             var list = Splitter.On(",").SplitToList(OriginalStrings.NormalString);
 
             list.Count().ShouldBe(5);
@@ -188,7 +199,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToListIncludeNullTest() {
+        public void StringToListIncludeNullTest()
+        {
             var @base = Splitter.On(",").SplitToList(OriginalStrings.IncludeNullString);
             @base.Count().ShouldBe(8);
 
@@ -212,7 +224,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToListFromStringPatternTest() {
+        public void StringToListFromStringPatternTest()
+        {
             var pattern = ",";
 
             var list = Splitter.OnPattern(pattern).SplitToList(OriginalStrings.NormalString);
@@ -226,7 +239,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToListFromRegexPatternTest() {
+        public void StringToListFromRegexPatternTest()
+        {
             var pattern = new Regex(",");
 
             var list = Splitter.On(pattern).SplitToList(OriginalStrings.NormalString);
@@ -240,7 +254,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToListWithLimitTest() {
+        public void StringToListWithLimitTest()
+        {
             var list = Splitter.On(",").Limit(3).SplitToList(OriginalStrings.NormalString);
 
             list.Count().ShouldBe(3);
@@ -251,7 +266,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToListWithTrimTest() {
+        public void StringToListWithTrimTest()
+        {
             var @base = Splitter.On(",").SplitToList(OriginalStrings.IncludeWhiteSpaceString);
             @base.Count().ShouldBe(5);
 
@@ -273,7 +289,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToListWithCustomTrimTest() {
+        public void StringToListWithCustomTrimTest()
+        {
             var @base = Splitter.On(",").SplitToList(OriginalStrings.IncludeWhiteSpaceString);
             @base.Count().ShouldBe(5);
 
@@ -294,5 +311,4 @@ namespace CosmosStandardUT.ProwessSplitter {
             list[4].ShouldBe("e");
         }
     }
-
 }

@@ -3,15 +3,19 @@ using Cosmos.Splitters;
 using Shouldly;
 using Xunit;
 
-namespace CosmosStandardUT.ProwessSplitter {
-    public class FixedLengthSplitterTests {
-        private static class OriginalStrings {
+namespace CosmosProwessUT.SplitterUT
+{
+    public class FixedLengthSplitterTests
+    {
+        private static class OriginalStrings
+        {
             public static string NormalString { get; } = "abcdefghijklmnopqrstuvwxyz";
             public static string IncludeWhiteSpaceString { get; } = "abcdefghijklmnopqrstuvwx yz";
         }
 
         [Fact]
-        public void StringToFixedLengthEnumerableTest() {
+        public void StringToFixedLengthEnumerableTest()
+        {
             var enumerable = Splitter.FixedLength(3).Split(OriginalStrings.NormalString);
             // ReSharper disable once PossibleMultipleEnumeration
             enumerable.Count().ShouldBe(9);
@@ -33,7 +37,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToFixedLengthEnumerableWithLimitTest() {
+        public void StringToFixedLengthEnumerableWithLimitTest()
+        {
             var enumerable = Splitter.FixedLength(3).Limit(3).Split(OriginalStrings.NormalString);
             // ReSharper disable once PossibleMultipleEnumeration
             enumerable.Count().ShouldBe(3);
@@ -49,7 +54,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToFixedLengthEnumerableWithTrimTest() {
+        public void StringToFixedLengthEnumerableWithTrimTest()
+        {
             var @base = Splitter.FixedLength(3).Split(OriginalStrings.IncludeWhiteSpaceString);
             // ReSharper disable once PossibleMultipleEnumeration
             @base.Count().ShouldBe(9);
@@ -87,7 +93,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToFixedLengthEnumerableWithCustomTrimTest() {
+        public void StringToFixedLengthEnumerableWithCustomTrimTest()
+        {
             var @base = Splitter.FixedLength(3).Split(OriginalStrings.IncludeWhiteSpaceString);
             // ReSharper disable once PossibleMultipleEnumeration
             @base.Count().ShouldBe(9);
@@ -125,7 +132,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToFixedLengthListTest() {
+        public void StringToFixedLengthListTest()
+        {
             var list = Splitter.FixedLength(3).SplitToList(OriginalStrings.NormalString);
 
             list.Count().ShouldBe(9);
@@ -143,7 +151,8 @@ namespace CosmosStandardUT.ProwessSplitter {
 
 
         [Fact]
-        public void StringToFixedLengthListWithLimitTest() {
+        public void StringToFixedLengthListWithLimitTest()
+        {
             var list = Splitter.FixedLength(3).Limit(3).SplitToList(OriginalStrings.NormalString);
 
             list.Count().ShouldBe(3);
@@ -154,7 +163,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToFixedLengthListWithTrimTest() {
+        public void StringToFixedLengthListWithTrimTest()
+        {
             var @base = Splitter.FixedLength(3).SplitToList(OriginalStrings.IncludeWhiteSpaceString);
             @base.Count().ShouldBe(9);
 
@@ -184,7 +194,8 @@ namespace CosmosStandardUT.ProwessSplitter {
         }
 
         [Fact]
-        public void StringToFixedLengthListWithCustomTrimTest() {
+        public void StringToFixedLengthListWithCustomTrimTest()
+        {
             var @base = Splitter.FixedLength(3).SplitToList(OriginalStrings.IncludeWhiteSpaceString);
             @base.Count().ShouldBe(9);
 
