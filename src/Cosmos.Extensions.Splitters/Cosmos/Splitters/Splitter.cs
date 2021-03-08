@@ -254,7 +254,8 @@ namespace Cosmos.Splitters
 
             if (_doesUseInLimitedMode())
             {
-                result.AddRange(SplitterUtils.OptionalRange(Options, middle), Options.LimitLength);
+                var counter = 0;                
+                result.AddRange(SplitterUtils.OptionalRange(Options,middle).TakeWhile(_ => counter++ < Options.LimitLength));
             }
             else
             {
@@ -324,7 +325,7 @@ namespace Cosmos.Splitters
         /// Fixed length<br />
         /// 固定长度
         /// </summary>
-        /// <param name="length"></param>
+        /// <param name="length">长度</param>
         /// <returns></returns>
         public static IFixedLengthSplitter FixedLength(int length)
         {

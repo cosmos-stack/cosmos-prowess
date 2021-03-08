@@ -182,7 +182,8 @@ namespace Cosmos.Splitters
 
             if (Options.LimitLength >= 0)
             {
-                result.AddRange(SplitterUtils.OptionalRange(Options, middle), Options.LimitLength);
+                var counter = 0;
+                result.AddRange(SplitterUtils.OptionalRange(Options, middle).TakeWhile(_ => counter++ < Options.LimitLength));
             }
             else
             {
