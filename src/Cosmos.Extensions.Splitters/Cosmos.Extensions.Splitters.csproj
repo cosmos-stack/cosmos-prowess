@@ -7,8 +7,8 @@
 
     <Import Project="project.props" />
 
-    <Import Project="project.dependency.props" />
-
     <Import Project="..\..\common.props" />
+
+    <Import Project="project.dependency.props" />
 
 </Project>
