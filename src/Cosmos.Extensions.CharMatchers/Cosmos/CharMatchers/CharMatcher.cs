@@ -229,8 +229,8 @@ namespace Cosmos.CharMatchers
                 }
 
                 return antiNot
-                    ? options.Not.Ifttt(() => sb.ToString(), () => Chars.Repeat(@char, counter))
-                    : options.Not.Ifttt(() => Chars.Repeat(@char, counter), () => sb.ToString());
+                    ? options.Not.Ifttt(() => Chars.Repeat(@char, counter), () => sb.ToString())
+                    : options.Not.Ifttt(() => sb.ToString(), () => Chars.Repeat(@char, counter));
             }
 
             public static string ReplaceFrom(string sequence, string replacement, MatchingPredicateOptions options)
@@ -255,7 +255,7 @@ namespace Cosmos.CharMatchers
                     }
                 }
 
-                return options.Not.Ifttt(sb2.ToString, sb1.ToString);
+                return options.Not.Ifttt(sb1.ToString, sb2.ToString);
             }
 
             #endregion
@@ -266,7 +266,7 @@ namespace Cosmos.CharMatchers
             {
                 var @char = options.GetSingleChar();
                 var result = sequence.Trim(@char);
-                if (options.Not)
+                if (!options.Not)
                 {
                     var (f, l) = CharMatcherUtils.GetHeadAndTailLength(sequence, result);
                     return $"{@char.Repeat(f)}{@char.Repeat(l)}";
@@ -281,7 +281,7 @@ namespace Cosmos.CharMatchers
             {
                 var @char = options.GetSingleChar();
                 var result = sequence.TrimStart(@char);
-                if (options.Not)
+                if (!options.Not)
                 {
                     var times = sequence.Length - result.Length;
                     return @char.Repeat(times);
@@ -296,7 +296,7 @@ namespace Cosmos.CharMatchers
             {
                 var @char = options.GetSingleChar();
                 var result = sequence.TrimEnd(@char);
-                if (options.Not)
+                if (!options.Not)
                 {
                     var times = sequence.Length - result.Length;
                     return @char.Repeat(times);
@@ -322,8 +322,8 @@ namespace Cosmos.CharMatchers
                     var index = i;
                     var checker = sequence[i] == @char;
                     options.Not.Ifttt(
-                        () => checker.Ifttt(() => UpdateAct(sb, sequence[index]), () => UpdateAct(sb, replacement)),
-                        () => checker.Ifttt(() => UpdateAct(sb, replacement), () => UpdateAct(sb, sequence[index])));
+                        () => checker.Ifttt(() => UpdateAct(sb, replacement), () => UpdateAct(sb, sequence[index])),
+                        () => checker.Ifttt(() => UpdateAct(sb, sequence[index]), () => UpdateAct(sb, replacement)));
                 }
 
                 return sb.ToString();
@@ -411,7 +411,7 @@ namespace Cosmos.CharMatchers
                         else
                         {
                             i = i + @string.Length - 1; //fix position
-                            ++counter;                  //update counter
+                            ++counter; //update counter
                         }
                     }
                 }
