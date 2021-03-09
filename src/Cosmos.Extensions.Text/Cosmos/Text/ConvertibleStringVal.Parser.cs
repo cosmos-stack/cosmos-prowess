@@ -6,7 +6,7 @@ using Cosmos.Reflection;
 
 namespace Cosmos.Text
 {
-    public partial struct ValueString
+    public readonly partial struct ConvertibleStringVal
     {
         private static MethodInfo GetMethod(Type type, string methodName, Type[] parameters) => type.GetMethod(methodName, parameters);
 
@@ -50,14 +50,12 @@ namespace Cosmos.Text
 
                         if (isValueType)
                             return (f, provider) => compiled(f, null, provider);
-                        else
-                            return (f, provider) => f != null ? compiled(f, null, provider) : null;
+                        return (f, provider) => f != null ? compiled(f, null, provider) : null;
                     }
 
                     if (isValueType)
                         return (o, provider) => o.ToString();
-                    else
-                        return (o, provider) => o?.ToString();
+                    return (o, provider) => o?.ToString();
                 }
             }
         }

@@ -5,9 +5,9 @@ using System.Globalization;
 namespace Cosmos.Text
 {
     /// <summary>
-    /// Cosmos ValueString extensions
+    /// Cosmos ConvertibleStringVal extensions
     /// </summary>
-    public static class ValueStringExtensions
+    public static class ConvertibleStringValExtensions
     {
         /// <summary>
         /// Try get value from dictionary
@@ -19,7 +19,7 @@ namespace Cosmos.Text
         /// <typeparam name="TValue"></typeparam>
         /// <returns></returns>
         public static bool TryGetValue<TKey, TValue>(
-            this IReadOnlyDictionary<TKey, ValueString> source, TKey key, out TValue value)
+            this IReadOnlyDictionary<TKey, ConvertibleStringVal> source, TKey key, out TValue value)
             where TValue : struct
         {
             return TryGetValue(source, key, CultureInfo.InvariantCulture, out value);
@@ -37,7 +37,7 @@ namespace Cosmos.Text
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static bool TryGetValue<TKey, TValue>(
-            this IReadOnlyDictionary<TKey, ValueString> source, TKey key, IFormatProvider provider, out TValue value)
+            this IReadOnlyDictionary<TKey, ConvertibleStringVal> source, TKey key, IFormatProvider provider, out TValue value)
             where TValue : struct
         {
             try
@@ -64,11 +64,11 @@ namespace Cosmos.Text
         /// <typeparam name="TValue"></typeparam>
         /// <exception cref="ArgumentNullException"></exception>
         public static void Add<TKey, TValue>(
-            this IDictionary<TKey, ValueString> target, TKey key, TValue value)
+            this IDictionary<TKey, ConvertibleStringVal> target, TKey key, TValue value)
         {
             try
             {
-                target.Add(key, ValueString.Of(value));
+                target.Add(key, ConvertibleStringVal.Of(value));
             }
             catch (NullReferenceException)
             {
@@ -86,11 +86,11 @@ namespace Cosmos.Text
         /// <typeparam name="TValue"></typeparam>
         /// <exception cref="ArgumentNullException"></exception>
         public static void Set<TKey, TValue>(
-            this IDictionary<TKey, ValueString> target, TKey key, TValue value)
+            this IDictionary<TKey, ConvertibleStringVal> target, TKey key, TValue value)
         {
             try
             {
-                target[key] = ValueString.Of(value);
+                target[key] = ConvertibleStringVal.Of(value);
             }
             catch (NullReferenceException)
             {

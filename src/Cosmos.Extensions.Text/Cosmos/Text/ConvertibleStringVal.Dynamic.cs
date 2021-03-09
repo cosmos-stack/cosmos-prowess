@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace Cosmos.Text
 {
-    public partial struct ValueString : IDynamicMetaObjectProvider
+    public readonly partial struct ConvertibleStringVal : IDynamicMetaObjectProvider
     {
         /// <inheritdoc />
         DynamicMetaObject IDynamicMetaObjectProvider.GetMetaObject(Expression parameter)
@@ -13,12 +13,10 @@ namespace Cosmos.Text
         private sealed class ValueStringMetaObject : DynamicMetaObject
         {
             // ReSharper disable once MemberHidesStaticFromOuterClass
-            private static readonly CacheMan<MethodInfo> CachedMethods = new CacheMan<MethodInfo>();
+            private static readonly CacheMan<MethodInfo> CachedMethods = new();
 
-            public ValueStringMetaObject(Expression expression, ValueString value)
-                : base(expression, BindingRestrictions.Empty, value)
-            {
-            }
+            public ValueStringMetaObject(Expression expression, ConvertibleStringVal value)
+                : base(expression, BindingRestrictions.Empty, value) { }
 
             /// <inheritdoc />
             public override DynamicMetaObject BindConvert(ConvertBinder binder)

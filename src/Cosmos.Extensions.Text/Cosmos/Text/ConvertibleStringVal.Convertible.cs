@@ -4,14 +4,14 @@ using System.Reflection;
 
 namespace Cosmos.Text
 {
-    public partial struct ValueString : IConvertible
+    public readonly partial struct ConvertibleStringVal : IConvertible
     {
         private static readonly CacheMan<MethodInfo> CachedMethods = new CacheMan<MethodInfo>();
 
         private static MethodInfo GetAsMethod(Type type, bool withFormatProvider)
         {
             var parameters = withFormatProvider ? new[] {typeof(IFormatProvider)} : new Type[0];
-            return GetMethod(typeof(ValueString), "As", parameters).MakeGenericMethod(type);
+            return GetMethod(typeof(ConvertibleStringVal), "As", parameters).MakeGenericMethod(type);
         }
 
         /// <inheritdoc />

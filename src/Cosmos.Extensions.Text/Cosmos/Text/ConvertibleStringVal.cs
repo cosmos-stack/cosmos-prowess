@@ -9,31 +9,28 @@ namespace Cosmos.Text
     /// The structure used for string parsing can more easily convert the string
     /// to the type specified by the user through the Cosmos.Conversions and XConv toolset.
     /// </summary>
-    public partial struct ValueString : IEquatable<ValueString>, IEquatable<string>
+    public readonly partial struct ConvertibleStringVal : IEquatable<ConvertibleStringVal>, IEquatable<string>
     {
         private readonly string _value;
 
-        public ValueString(string value) => _value = value;
+        public ConvertibleStringVal(string value) => _value = value;
 
         #region Of
 
         /// <summary>
-        /// Create a new <see cref="ValueString"/> with a specified object.
+        /// Create a new <see cref="ConvertibleStringVal"/> with a specified object.
         /// </summary>
         /// <param name="value"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public static ValueString Of<T>(T value) => Of(Parser.Formatter<T>.Format(value, CultureInfo.InvariantCulture));
+        public static ConvertibleStringVal Of<T>(T value) => Of(Parser.Formatter<T>.Format(value, CultureInfo.InvariantCulture));
 
         /// <summary>
-        /// Create a new <see cref="ValueString"/> with a specified string.
+        /// Create a new <see cref="ConvertibleStringVal"/> with a specified string.
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        public static ValueString Of(string value)
-        {
-            return new ValueString(value);
-        }
+        public static ConvertibleStringVal Of(string value) => new(value);
 
         #endregion
 
@@ -146,15 +143,15 @@ namespace Cosmos.Text
 
         #region Equals, operators and other overrided methods.
 
-        public static implicit operator ValueString(string value) => Of(value);
+        public static implicit operator ConvertibleStringVal(string value) => Of(value);
 
-        public static bool operator ==(ValueString left, ValueString right) => left.Equals(right);
+        public static bool operator ==(ConvertibleStringVal left, ConvertibleStringVal right) => left.Equals(right);
 
-        public static bool operator !=(ValueString left, ValueString right) => !(left == right);
+        public static bool operator !=(ConvertibleStringVal left, ConvertibleStringVal right) => !(left == right);
 
-        public bool Equals(ValueString other, StringComparison comparison) => Equals(other._value, comparison);
+        public bool Equals(ConvertibleStringVal other, StringComparison comparison) => Equals(other._value, comparison);
 
-        public bool Equals(ValueString other) => Equals(other._value);
+        public bool Equals(ConvertibleStringVal other) => Equals(other._value);
 
         public bool Equals(string other, StringComparison comparison) => ReferenceEquals(_value, other) || (_value?.Equals(other, comparison) ?? false);
 
@@ -166,7 +163,7 @@ namespace Cosmos.Text
             {
                 case null:
                     return _value == null;
-                case ValueString v:
+                case ConvertibleStringVal v:
                     return Equals(v);
                 case string s:
                     return Equals(s);
@@ -185,7 +182,7 @@ namespace Cosmos.Text
 
         private class CacheMan<T>
         {
-            private readonly ConcurrentDictionary<Type, T> _dictionary = new ConcurrentDictionary<Type, T>();
+            private readonly ConcurrentDictionary<Type, T> _dictionary = new();
 
             public T GetOrAdd(Type key, Func<Type, T> valueFactory)
             {
