@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Cosmos.Joiners;
 using Cosmos.Splitters;
 using Humanizer;
@@ -49,6 +50,15 @@ namespace Cosmos.Text
                     joiner = Joiner.On("");
                     break;
                 }
+                
+                case Style.LOWER_CAMEL_WITH_WHITESPACE:
+                {
+                    CaseFormatUtils.LowerCase(list);
+                    CaseFormatUtils.UpperCaseEachFirstChar(list);
+                    CaseFormatUtils.LowerCaseFirstItemFirstChar(list);
+                    joiner = Joiner.On(" ");
+                    break;
+                }
 
                 case Style.LOWER_HYPHEN:
                 {
@@ -69,6 +79,14 @@ namespace Cosmos.Text
                     CaseFormatUtils.LowerCase(list);
                     CaseFormatUtils.UpperCaseEachFirstChar(list);
                     joiner = Joiner.On("");
+                    break;
+                }
+
+                case Style.UPPER_CAMEL_WITH_WHITESPACE:
+                {
+                    CaseFormatUtils.LowerCase(list);
+                    CaseFormatUtils.UpperCaseEachFirstChar(list);
+                    joiner = Joiner.On(" ");
                     break;
                 }
 
@@ -109,27 +127,27 @@ namespace Cosmos.Text
         /// <summary>
         /// Create a <see cref="CaseFormat"/> instance with a hyphen splitter.
         /// </summary>
-        public static CaseFormat LowerHyphen => new CaseFormat(Splitter.On("-"));
+        public static CaseFormat LowerHyphen => new(Splitter.On("-"));
 
         /// <summary>
         /// Create a <see cref="CaseFormat"/> instance with a lower underscore splitter.
         /// </summary>
-        public static CaseFormat LowerUnderscore => new CaseFormat(Splitter.On("_"));
+        public static CaseFormat LowerUnderscore => new(Splitter.On("_"));
 
         /// <summary>
         /// Create a <see cref="CaseFormat"/> instance with a upper underscore splitter.
         /// </summary>
-        public static CaseFormat UpperUnderscore => new CaseFormat(Splitter.On("_"));
+        public static CaseFormat UpperUnderscore => new(Splitter.On("_"));
 
         /// <summary>
         /// Create a <see cref="CaseFormat"/> instance with a normal splitter.
         /// </summary>
-        public static CaseFormat Instance => new CaseFormat(Splitter.OnPattern("-_ "));
+        public static CaseFormat Instance => new(Splitter.On(new Regex("[-_ ]+"))); //new(Splitter.OnPattern("-_ "));
 
         /// <summary>
         /// Create a <see cref="CaseFormat"/> instance in humanizer mode.
         /// </summary>
-        public static CaseFormat Humanizer => new CaseFormat();
+        public static CaseFormat Humanizer => new();
 
         private static class CaseFormatUtils
         {
@@ -217,6 +235,13 @@ namespace Cosmos.Text
             LOWER_CAMEL,
 
             /// <summary>
+            /// Lower camel with whitespace<br />
+            /// 小写与驼峰，并使用空格分隔
+            /// </summary>
+            // ReSharper disable once InconsistentNaming
+            LOWER_CAMEL_WITH_WHITESPACE,
+
+            /// <summary>
             /// Lower hyphen<br />
             /// 小写与横线
             /// </summary>
@@ -236,6 +261,13 @@ namespace Cosmos.Text
             /// </summary>
             // ReSharper disable once InconsistentNaming
             UPPER_CAMEL,
+
+            /// <summary>
+            /// Upper camel with whitespace<br />
+            /// 大写与驼峰，并保留空格分隔
+            /// </summary>
+            // ReSharper disable once InconsistentNaming
+            UPPER_CAMEL_WITH_WHITESPACE,
 
             /// <summary>
             /// Upper underscore<br />
