@@ -5,7 +5,9 @@ using System.Reflection;
 using Cosmos.Collections;
 using Cosmos.Conversions;
 using Cosmos.Dynamic.DynamicEnums;
+using Cosmos.Exceptions;
 using Cosmos.Reflection;
+using EnumsNET;
 
 namespace Cosmos
 {
@@ -195,46 +197,27 @@ namespace Cosmos
         {
             return TypeReflections.IsEnum(info);
         }
-
-        public static bool IsEnum<T>(T @enum, EnumCheckingOptions options = EnumCheckingOptions.Type)
+        
+        public static bool IsEnum(object value, Type type, EnumCheckingOptions options = EnumCheckingOptions.Type)
         {
-            var type = typeof(T);
-
             if (options == EnumCheckingOptions.Type)
                 return IsEnum(type);
 
-            if (options == EnumCheckingOptions.TypeAndValue || options == EnumCheckingOptions.TypeAndValueAndDynamic)
-                if (IsEnum(type))
-                    return true;
+            if (options == EnumCheckingOptions.Value)
+                return Try.Create(() => EnumsNET.Enums.IsValid(type, value)).IsSuccess;
 
-            if (@enum is TypeInfo type0)
-                return type0.IsEnum;
-
-            if (@enum is Type type1)
-                return type1.IsEnum;
-
-            if (@enum is PropertyInfo info1)
-                return IsEnum(info1);
-
-            if (@enum is MemberInfo info0)
-                return IsEnum(info0);
+            if (options == EnumCheckingOptions.TypeAndValue)
+                return IsEnum(type) || Try.Create(() => EnumsNET.Enums.IsValid(type, value)).IsSuccess;
 
             if (options == EnumCheckingOptions.TypeAndValueAndDynamic)
-                if (IsDynamicEnum<T>())
-                    return true;
+                return IsEnum(type) || Try.Create(() => EnumsNET.Enums.IsValid(type, value)).IsSuccess || IsDynamicEnum(type);
 
             return false;
         }
 
-        public static bool IsEnum(object obj)
+        public static bool IsEnum<T>(T value, EnumCheckingOptions options  = EnumCheckingOptions.Type)
         {
-            return obj switch
-            {
-                null => false,
-                TypeInfo type0 => type0.IsEnum,
-                Type type1 => IsEnum(type1),
-                _ => IsEnum(obj.GetType())
-            };
+            return IsEnum(value, typeof(T), options);
         }
 
         #endregion
@@ -268,7 +251,7 @@ namespace Cosmos
                 genericArguments = null;
                 return false;
             }
-            
+
             return TypeReflections.IsImplementationOfGenericType(type, typeof(DynamicEnum<,>), out genericArguments) ||
                    TypeReflections.IsImplementationOfGenericType(type, typeof(DynamicFlagEnum<,>), out genericArguments);
         }
