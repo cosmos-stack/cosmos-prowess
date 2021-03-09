@@ -15,7 +15,7 @@ namespace Cosmos.IdUtils.GuidImplements
 
     internal static class SequentialStylesProvider
     {
-        private static readonly RNGCryptoServiceProvider RandomGenerator = new RNGCryptoServiceProvider();
+        private static readonly RNGCryptoServiceProvider RandomGenerator = new();
 
         public static Guid Create(SequentialGuidTypes type)
             => Create(DateTime.UtcNow, type);

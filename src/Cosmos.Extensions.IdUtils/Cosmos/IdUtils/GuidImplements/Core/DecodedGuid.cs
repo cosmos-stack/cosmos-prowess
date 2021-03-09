@@ -16,7 +16,7 @@ namespace Cosmos.IdUtils.GuidImplements.Core
     /// </summary>
     public sealed class DecodedGuid
     {
-        private static readonly DateTime Epoch = new DateTime(1582, 10, 15, 0, 0, 0, DateTimeKind.Utc);
+        private static readonly DateTime Epoch = new(1582, 10, 15, 0, 0, 0, DateTimeKind.Utc);
 
         private readonly byte[] _littleEndianGuidBytes;
 
@@ -35,7 +35,7 @@ namespace Cosmos.IdUtils.GuidImplements.Core
         /// <summary>
         /// Converts the decoded GUID back to a <see cref="Guid"/>.
         /// </summary>
-        public Guid ToGuid() => new Guid(_littleEndianGuidBytes);
+        public Guid ToGuid() => new(_littleEndianGuidBytes);
 
         /// <summary>
         /// Converts the decoded GUID to a binary little-endian representation.
@@ -182,7 +182,7 @@ namespace Cosmos.IdUtils.GuidImplements.Core
         /// <summary>
         /// Gets the 6-byte (48-bit) Node field of the GUID. This is only valid if <see cref="Version"/> returns <see cref="GuidVersion.TimeBased"/> or <see cref="GuidVersion.DceSecurity"/>.
         /// </summary>
-        public ArraySegment<byte> Node => new ArraySegment<byte>(_littleEndianGuidBytes, 10, 6); // big-endian octets 10-16
+        public ArraySegment<byte> Node => new(_littleEndianGuidBytes, 10, 6); // big-endian octets 10-16
 
         /// <summary>
         /// Returns <c>true</c> if the Node field is a MAC address; returns <c>false</c> if the Node field is a random value. This is only valid if <see cref="Version"/> returns <see cref="GuidVersion.TimeBased"/> or <see cref="GuidVersion.DceSecurity"/>.

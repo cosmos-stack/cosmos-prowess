@@ -32,13 +32,13 @@ namespace Cosmos.IdUtils.CombImplements.Strategies
         private const long TICKS_PER_MILLISECOND = 10_000;
         public int NumDateBytes { get; } = 6;
 
-        public DateTime MinDateTimeValue { get; } = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+        public DateTime MinDateTimeValue { get; } = new(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 
         public DateTime MaxDateTimeValue => MinDateTimeValue.AddMilliseconds(2 ^ (8 * NumDateBytes));
 
         public byte[] DateTimeToBytes(DateTime timestamp)
         {
-            var ms = ToUnixTmeMillseconds(timestamp);
+            var ms = ToUnixTmeMilliseconds(timestamp);
             var msBytes = BitConverter.GetBytes(ms);
 
             BitConverter.IsLittleEndian.IfTrue(msBytes.Reverse);
@@ -62,11 +62,11 @@ namespace Cosmos.IdUtils.CombImplements.Strategies
 
             var ms = BitConverter.ToInt64(msBytes, 0);
 
-            return FromUnixTimeMillseconds(ms);
+            return FromUnixTimeMilliseconds(ms);
         }
 
-        private long ToUnixTmeMillseconds(DateTime timestamp) => (timestamp.Ticks - MinDateTimeValue.Ticks) / TICKS_PER_MILLISECOND;
+        private long ToUnixTmeMilliseconds(DateTime timestamp) => (timestamp.Ticks - MinDateTimeValue.Ticks) / TICKS_PER_MILLISECOND;
 
-        private DateTime FromUnixTimeMillseconds(long ms) => MinDateTimeValue.AddTicks(ms * TICKS_PER_MILLISECOND);
+        private DateTime FromUnixTimeMilliseconds(long ms) => MinDateTimeValue.AddTicks(ms * TICKS_PER_MILLISECOND);
     }
 }

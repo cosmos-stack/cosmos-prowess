@@ -28,6 +28,6 @@ namespace Cosmos.IdUtils.GuidImplements.Internals
         /// Decodes a GUID into its fields.
         /// </summary>
         /// <param name="guid">The GUID to decode.</param>
-        public static DecodedGuid Decode(this in Guid guid) => new DecodedGuid(guid);
+        public static DecodedGuid Decode(this in Guid guid) => new(guid);
     }
 }

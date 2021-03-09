@@ -5,6 +5,6 @@ namespace Cosmos.IdUtils.GuidImplements
 {
     internal static class BigEndianByteArrayProvider
     {
-        public static Guid Create(byte[] bytes) => new Guid(GuidUtility.CopyWithEndianSwap(bytes));
+        public static Guid Create(byte[] bytes) => new(GuidUtility.CopyWithEndianSwap(bytes));
     }
 }

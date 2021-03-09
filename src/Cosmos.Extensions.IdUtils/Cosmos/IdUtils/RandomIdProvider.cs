@@ -84,7 +84,7 @@ namespace Cosmos.IdUtils
 
         #region IFormattable 成员
 
-        private static readonly Random Rand = new Random();
+        private static readonly Random Rand = new();
 
         string IFormattable.ToString(string format, IFormatProvider formatProvider)
         {

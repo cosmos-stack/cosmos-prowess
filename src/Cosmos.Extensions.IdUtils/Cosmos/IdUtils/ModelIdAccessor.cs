@@ -8,11 +8,11 @@ namespace Cosmos.IdUtils
     /// </summary>
     public sealed class ModelIdAccessor
     {
-        private NoRepeatTimeStampFactory _factory = new NoRepeatTimeStampFactory();
+        private NoRepeatTimeStampFactory _factory = new();
         private int Index { get; set; }
         private DateTime Now { get; set; }
 
-        private readonly object _lockObj = new object();
+        private readonly object _lockObj = new();
 
         /// <summary>
         /// Create a new <see cref="ModelIdAccessor"/> instance.
@@ -33,7 +33,7 @@ namespace Cosmos.IdUtils
             lock (_lockObj)
             {
                 ix = Index;
-                Index = Index + 1;
+                Index += 1;
             }
 
             return ix;

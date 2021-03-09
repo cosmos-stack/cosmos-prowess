@@ -14,7 +14,7 @@
         /// <returns></returns>
         public static SnowflakeIdWorker Create(long workerId, long dataCenterId, long sequence = 0L)
         {
-            return new SnowflakeIdWorker(workerId, dataCenterId, sequence);
+            return new(workerId, dataCenterId, sequence);
         }
 
         /// <summary>

@@ -139,7 +139,7 @@ namespace Cosmos.IdUtils
             _sequence = sequence;
         }
 
-        readonly object _lock = new object();
+        readonly object _lock = new();
 
         /// <summary>
         /// Next Id
