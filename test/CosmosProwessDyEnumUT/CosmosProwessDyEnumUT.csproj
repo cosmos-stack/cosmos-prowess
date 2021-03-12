@@ -6,6 +6,7 @@
         <RootNamespace>CosmosProwessUT</RootNamespace>
         <Configurations>Debug;Release;Gen-Xml</Configurations>
         <Platforms>AnyCPU</Platforms>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
@@ -33,7 +34,11 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Cosmos.Prowess\Cosmos.Prowess.csproj" />
+      <ProjectReference Include="..\..\src\Cosmos.Prowess\Cosmos.Prowess.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="DyEnumUT" />
     </ItemGroup>
 
 </Project>

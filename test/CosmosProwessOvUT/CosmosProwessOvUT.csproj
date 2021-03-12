@@ -6,6 +6,7 @@
         <RootNamespace>CosmosProwessUT</RootNamespace>
         <Configurations>Debug;Release;Gen-Xml</Configurations>
         <Platforms>AnyCPU</Platforms>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
