@@ -23,13 +23,13 @@ echo.
 ::start to package all projects
 
 ::cosmos-extensions
-dotnet pack src/Cosmos.Extensions.CharMatchers/Cosmos.Extensions.CharMatchers.csproj -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.IdUtils/Cosmos.Extensions.IdUtils.csproj           -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Joiners/Cosmos.Extensions.Joiners.csproj           -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Splitters/Cosmos.Extensions.Splitters.csproj       -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Text/Cosmos.Extensions.Text.csproj                 -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Enums/Cosmos.Extensions.Enums.csproj               -c Release -o nuget_packages --no-restore
-dotnet pack src/Cosmos.Extensions.Validations/Cosmos.Extensions.Validations.csproj   -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.CharMatchers/Cosmos.Extensions.CharMatchers.csproj       -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Enums/Cosmos.Extensions.Enums.csproj                     -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.IdUtils/Cosmos.Extensions.IdUtils.csproj                 -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Joiners/Cosmos.Extensions.Joiners.csproj                 -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.ObjectVisitors/Cosmos.Extensions.ObjectVisitors.csproj   -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Splitters/Cosmos.Extensions.Splitters.csproj             -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Text/Cosmos.Extensions.Text.csproj                       -c Release -o nuget_packages --no-restore
 
 ::cosmos-prowess
 dotnet pack src/Cosmos.Prowess/Cosmos.Prowess.csproj                                 -c Release -o nuget_packages --no-restore
