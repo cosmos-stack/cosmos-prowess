@@ -22,6 +22,8 @@ namespace Cosmos.Dynamic.DynamicEnums
 
         public Type EnumType { get; }
 
+        #region Add EnumMember
+
         public void AddMember(TEnum member)
         {
             if (member is null)
@@ -38,6 +40,10 @@ namespace Cosmos.Dynamic.DynamicEnums
             foreach (var member in members)
                 AddMember(member);
         }
+
+        #endregion
+
+        #region Get EnumMember
 
         public TEnum GetMember(string name)
         {
@@ -68,6 +74,16 @@ namespace Cosmos.Dynamic.DynamicEnums
         {
             return TryGetValuedEnumMember(value, out members);
         }
+
+        #endregion
+
+        #region Index
+
+        public TEnum this[string name] => GetMember(name);
+
+        public TEnum this[string name, bool ignoreCase] => GetMember(name, ignoreCase);
+
+        #endregion
 
         #region Private Impl
 
