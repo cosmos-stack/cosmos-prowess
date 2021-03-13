@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using Cosmos.Collections;
 using Cosmos.Conversions;
-using Cosmos.Dynamic.DynamicEnums;
-using Cosmos.Exceptions;
 using Cosmos.Reflection;
-using EnumsNET;
 
 namespace Cosmos
 {
@@ -172,88 +168,6 @@ namespace Cosmos
         public static TEnum RandomValue<TEnum>() where TEnum : struct, Enum
         {
             return EnumsNET.Enums.GetValues<TEnum>().OrderByRandom().FirstOrDefault();
-        }
-
-        #endregion
-
-        #region IsEnum
-
-        public static bool IsEnum<T>()
-        {
-            return Types.IsEnumType<T>();
-        }
-
-        public static bool IsEnum(Type type)
-        {
-            return Types.IsEnumType(type);
-        }
-
-        public static bool IsEnum(MemberInfo info)
-        {
-            return TypeReflections.IsEnum(info);
-        }
-
-        public static bool IsEnum(PropertyInfo info)
-        {
-            return TypeReflections.IsEnum(info);
-        }
-        
-        public static bool IsEnum(object value, Type type, EnumCheckingOptions options = EnumCheckingOptions.Type)
-        {
-            if (options == EnumCheckingOptions.Type)
-                return IsEnum(type);
-
-            if (options == EnumCheckingOptions.Value)
-                return Try.Create(() => EnumsNET.Enums.IsValid(type, value)).IsSuccess;
-
-            if (options == EnumCheckingOptions.TypeAndValue)
-                return IsEnum(type) || Try.Create(() => EnumsNET.Enums.IsValid(type, value)).IsSuccess;
-
-            if (options == EnumCheckingOptions.TypeAndValueAndDynamic)
-                return IsEnum(type) || Try.Create(() => EnumsNET.Enums.IsValid(type, value)).IsSuccess || IsDynamicEnum(type);
-
-            return false;
-        }
-
-        public static bool IsEnum<T>(T value, EnumCheckingOptions options  = EnumCheckingOptions.Type)
-        {
-            return IsEnum(value, typeof(T), options);
-        }
-
-        #endregion
-
-        #region IsDynamicEnum
-
-        public static bool IsDynamicEnum(object obj)
-        {
-            return obj is IDynamicEnum;
-        }
-
-        public static bool IsDynamicEnum<T>()
-        {
-            return IsDynamicEnum(typeof(T), out _);
-        }
-
-        public static bool IsDynamicEnum<T>(out Type[] genericArguments)
-        {
-            return IsDynamicEnum(typeof(T), out genericArguments);
-        }
-
-        public static bool IsDynamicEnum(Type type)
-        {
-            return IsDynamicEnum(type, out _);
-        }
-
-        public static bool IsDynamicEnum(Type type, out Type[] genericArguments)
-        {
-            if (type is null || type.IsAbstract || type.IsGenericTypeDefinition)
-            {
-                genericArguments = null;
-                return false;
-            }
-
-            return TypeReflections.IsImplementationOfGenericType(type, typeof(DynamicEnum<,>), out genericArguments) ||
-                   TypeReflections.IsImplementationOfGenericType(type, typeof(DynamicFlagEnum<,>), out genericArguments);
         }
 
         #endregion
