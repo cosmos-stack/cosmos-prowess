@@ -559,17 +559,18 @@
             Random NonceStr Provider
             </summary>
         </member>
-        <member name="M:Cosmos.IdUtils.RandomNonceStrProvider.Create">
+        <member name="M:Cosmos.IdUtils.RandomNonceStrProvider.Create(System.Boolean)">
             <summary>
             Create random noncestr
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.IdUtils.RandomNonceStrProvider.Create(System.Int32)">
+        <member name="M:Cosmos.IdUtils.RandomNonceStrProvider.Create(System.Int32,System.Boolean)">
             <summary>
             Create random noncestr
             </summary>
             <param name="length"></param>
+            <param name="forceToAvoidRepetition"></param>
             <returns></returns>
         </member>
         <member name="T:Cosmos.IdUtils.SnowflakeIdWorker">

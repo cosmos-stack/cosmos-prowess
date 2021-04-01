@@ -1,7 +1,7 @@
 <Project>
 
     <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+        <PackageReference Include="Cosmos.Extensions.Conversions" Version="$(Standard-PkgVersion)" />
     </ItemGroup>
 
     <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">

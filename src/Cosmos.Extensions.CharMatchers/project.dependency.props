@@ -1,7 +1,7 @@
 <Project>
 
     <ItemGroup>
-        <PackageReference Include="Cosmos.Standard" Version="$(Standard-PkgVersion)" />
+        <PackageReference Include="Cosmos.Core" Version="$(Standard-PkgVersion)" />
     </ItemGroup>
 
 </Project>
