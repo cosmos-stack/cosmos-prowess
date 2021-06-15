@@ -21,7 +21,7 @@ namespace Cosmos.Reflection.Core
 
         private DefaultPropertyValueGetter() : base(DefaultFunc) { }
 
-        public static IPropertyValueGetter Instance { get; } = new DefaultPropertyValueGetter();
+        public new static IPropertyValueGetter Instance { get; } = new DefaultPropertyValueGetter();
     }
 
     internal class NestPropertyValueGetter : PropertyValueGetter
