@@ -16,9 +16,12 @@ EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{034E0D6E-05B3-4228-99E6-B278E81AFC6B}"
 ProjectSection(SolutionItems) = preProject
-	build\PublishBetaVersion_Script.bat = build\PublishBetaVersion_Script.bat
-	build\PublishNightlyVersion_Script.bat = build\PublishNightlyVersion_Script.bat
-	build\PublishReleaseVersion_Script.bat = build\PublishReleaseVersion_Script.bat
+	build\Beta.bat = build\Beta.bat
+	build\Beta_WithoutBuild.bat = build\Beta_WithoutBuild.bat
+	build\Nightly.bat = build\Nightly.bat
+	build\Nightly_WithoutBuild.bat = build\Nightly_WithoutBuild.bat
+	build\Release.bat = build\Release.bat
+	build\Release_WithoutBuild.bat = build\Release_WithoutBuild.bat
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2D5B1D61-417B-4251-A9FC-C38470CD6B2E}"
@@ -59,6 +62,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Enums", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosProwessUT", "test\CosmosProwessUT\CosmosProwessUT.csproj", "{AE7927F2-91A9-4A6A-AA5C-3E1FE725B617}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Reflection.Enhanced", "src\Cosmos.Extensions.Reflection.Enhanced\Cosmos.Extensions.Reflection.Enhanced.csproj", "{7FA047A7-02C4-4490-9BEC-316DCC8E6668}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +81,7 @@ Global
 		{97648E0D-66C8-4DDB-9912-253A13D8F48C} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 		{2D3949CB-4831-49B7-8EC4-6A3A1B04173B} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 		{AE7927F2-91A9-4A6A-AA5C-3E1FE725B617} = {088246B9-1B92-479C-8279-AF2F04EFA365}
+		{7FA047A7-02C4-4490-9BEC-316DCC8E6668} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -110,5 +116,9 @@ Global
 		{AE7927F2-91A9-4A6A-AA5C-3E1FE725B617}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE7927F2-91A9-4A6A-AA5C-3E1FE725B617}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE7927F2-91A9-4A6A-AA5C-3E1FE725B617}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FA047A7-02C4-4490-9BEC-316DCC8E6668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FA047A7-02C4-4490-9BEC-316DCC8E6668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FA047A7-02C4-4490-9BEC-316DCC8E6668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FA047A7-02C4-4490-9BEC-316DCC8E6668}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
