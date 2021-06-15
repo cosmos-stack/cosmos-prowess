@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 using System.Reflection;
 using Cosmos.Exceptions;
 using Cosmos.Optionals;
@@ -592,5 +593,8 @@ namespace Cosmos.Reflection
 
         public static IPropertyPathValueAccessor GetValueAccessor<T, TVal>(this T that, Func<PropertyPath<T>, PropertyPath<TVal>> pathFunc)
             => A.GetValueAccessor(that, pathFunc);
+        
+        public static IPropertyPathValueAccessor GetValueAccessor<T, TProperty>(this object that, Expression<Func<T, TProperty>> expression)
+            => A.GetValueAccessor(that, PropertyPath.Of<T>().Then(expression));
     }
 }
