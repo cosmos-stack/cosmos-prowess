@@ -13,7 +13,7 @@ namespace Cosmos.Joiners
     {
         private readonly string _on;
 
-        private JoinerOptions Options { get; set; } = new JoinerOptions();
+        private JoinerOptions Options { get; set; } = new();
 
         private Joiner(string on)
         {
@@ -45,7 +45,7 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         IJoiner IJoiner.UseForNull(string value)
         {
-            Options.SetReplacer<string>(s => value);
+            Options.SetReplacer<string>(_ => value);
             return this;
         }
 
@@ -58,6 +58,18 @@ namespace Cosmos.Joiners
         IJoiner IJoiner.UseForNull(Func<string, string> valueFunc)
         {
             Options.SetReplacer(valueFunc);
+            return this;
+        }
+
+        /// <summary>
+        /// If null, then use the special value.<br />
+        /// 如果为 null，则使用指定的值来替代
+        /// </summary>
+        /// <param name="valueFunc"></param>
+        /// <returns></returns>
+        IJoiner IJoiner.UseForNull(Func<string, int, string> valueFunc)
+        {
+            Options.SetIndexedReplacer(valueFunc);
             return this;
         }
 
@@ -121,6 +133,19 @@ namespace Cosmos.Joiners
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        string IJoiner.Join<T>(IEnumerable<T> list, IIndexedTypeConverter<T, string> converter)
+        {
+            return list.JoinToString(_on, JoinerUtils.GetIndexedObjectPredicate<T>(Options), converter, replaceFunc: Options.GetIndexedReplacer<T>());
+        }
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
         /// <param name="to"></param>
         /// <returns></returns>
         string IJoiner.Join<T>(IEnumerable<T> list, Func<T, string> to)
@@ -137,9 +162,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         string IJoiner.Join(string str1, params string[] restStrings)
         {
-            var list = new List<string>() {str1};
+            var list = new List<string>() { str1 };
             list.AddRange(restStrings);
-            return ((IJoiner) this).Join(list);
+            return ((IJoiner)this).Join(list);
         }
 
         /// <summary>
@@ -153,9 +178,25 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         string IJoiner.Join<T>(ITypeConverter<T, string> converter, T item1, params T[] restItems)
         {
-            var list = new List<T> {item1};
+            var list = new List<T> { item1 };
             list.AddRange(restItems);
-            return ((IJoiner) this).Join(list, converter);
+            return ((IJoiner)this).Join(list, converter);
+        }
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="converter"></param>
+        /// <param name="item1"></param>
+        /// <param name="restItems"></param>
+        /// <returns></returns>
+        string IJoiner.Join<T>(IIndexedTypeConverter<T, string> converter, T item1, params T[] restItems)
+        {
+            var list = new List<T> { item1 };
+            list.AddRange(restItems);
+            return ((IJoiner)this).Join(list, converter);
         }
 
         /// <summary>
@@ -169,9 +210,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         string IJoiner.Join<T>(Func<T, string> to, T item1, params T[] restItems)
         {
-            var list = new List<T> {item1};
+            var list = new List<T> { item1 };
             list.AddRange(restItems);
-            return ((IJoiner) this).Join(list, to);
+            return ((IJoiner)this).Join(list, to);
         }
 
         #endregion
@@ -201,9 +242,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         StringBuilder IJoiner.AppendTo(StringBuilder builder, string str1, params string[] restStrings)
         {
-            var list = new List<string>() {str1};
+            var list = new List<string>() { str1 };
             list.AddRange(restStrings);
-            return ((IJoiner) this).AppendTo(builder, list);
+            return ((IJoiner)this).AppendTo(builder, list);
         }
 
         /// <summary>
@@ -219,6 +260,22 @@ namespace Cosmos.Joiners
         {
             CommonJoinUtils.JoinToString(builder, (c, s) => c.Append(s), list, _on, JoinerUtils.GetObjectPredicate<T>(Options), converter.To,
                 replaceFunc: Options.GetReplacer<T>());
+            return builder;
+        }
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        StringBuilder IJoiner.AppendTo<T>(StringBuilder builder, IEnumerable<T> list, IIndexedTypeConverter<T, string> converter)
+        {
+            CommonJoinUtils.JoinToString(builder, (c, s) => c.Append(s), list, _on,
+                JoinerUtils.GetIndexedObjectPredicate<T>(Options), converter.To, replaceFunc: Options.GetIndexedReplacer<T>());
             return builder;
         }
 
@@ -249,9 +306,26 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         StringBuilder IJoiner.AppendTo<T>(StringBuilder builder, ITypeConverter<T, string> converter, T item1, params T[] restItems)
         {
-            var list = new List<T> {item1};
+            var list = new List<T> { item1 };
             list.AddRange(restItems);
-            return ((IJoiner) this).AppendTo(builder, list, converter);
+            return ((IJoiner)this).AppendTo(builder, list, converter);
+        }
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="converter"></param>
+        /// <param name="item1"></param>
+        /// <param name="restItems"></param>
+        /// <returns></returns>
+        StringBuilder IJoiner.AppendTo<T>(StringBuilder builder, IIndexedTypeConverter<T, string> converter, T item1, params T[] restItems)
+        {
+            var list = new List<T> { item1 };
+            list.AddRange(restItems);
+            return ((IJoiner)this).AppendTo(builder, list, converter);
         }
 
         /// <summary>
@@ -266,9 +340,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         StringBuilder IJoiner.AppendTo<T>(StringBuilder builder, Func<T, string> to, T item1, params T[] restItems)
         {
-            var list = new List<T> {item1};
+            var list = new List<T> { item1 };
             list.AddRange(restItems);
-            return ((IJoiner) this).AppendTo(builder, list, to);
+            return ((IJoiner)this).AppendTo(builder, list, to);
         }
 
         #endregion
@@ -319,15 +393,29 @@ namespace Cosmos.Joiners
             private JoinerObjectReplacer ObjectReplacer { get; set; }
 
             private bool ObjectReplacerFlag { get; set; }
+            private bool ObjectReplacerIndexedFlag { get; set; }
 
             public Func<T, T> GetReplacer<T>()
             {
                 return ObjectReplacerFlag ? ObjectReplacer?.GetValue<T>() : null;
             }
 
+            public Func<T, int, T> GetIndexedReplacer<T>()
+            {
+                return ObjectReplacerFlag && ObjectReplacerIndexedFlag ? ObjectReplacer?.GetIndexedValue<T>() : null;
+            }
+
             public void SetReplacer<T>(Func<T, T> valueFunc)
             {
                 ObjectReplacerFlag = true;
+                ObjectReplacer = JoinerObjectReplacer.Create(valueFunc);
+                SetSkipNulls();
+            }
+
+            public void SetIndexedReplacer<T>(Func<T, int, T> valueFunc)
+            {
+                ObjectReplacerFlag = true;
+                ObjectReplacerIndexedFlag = true;
                 ObjectReplacer = JoinerObjectReplacer.Create(valueFunc);
                 SetSkipNulls();
             }
@@ -355,12 +443,21 @@ namespace Cosmos.Joiners
 
                 public Func<T1, T2, T2> GetTupleValue<T1, T2>() => ValueFunc as Func<T1, T2, T2>;
 
-                public static JoinerObjectReplacer Create<T>(Func<T, T> valueFunc) => new JoinerObjectReplacer(null, valueFunc);
+                public Func<T, int, T> GetIndexedValue<T>() => ValueFunc as Func<T, int, T>;
 
-                public static JoinerObjectReplacer CreateForMap<T1, T2, T3, T4>(Func<T1, T2> keyFunc, Func<T3, T4> valueFunc) => new JoinerObjectReplacer(keyFunc, valueFunc);
+                public Func<T1, int, T2> GetIndexedMapKey<T1, T2>() => KeyFunc as Func<T1, int, T2>;
 
-                public static JoinerObjectReplacer CreateForTuple<T1, T2, T3, T4>(Func<T1, T2, T1> keyFunc, Func<T3, T4, T4> valueFunc) =>
-                    new JoinerObjectReplacer(keyFunc, valueFunc);
+                public Func<T1, int, T2> GetIndexedMapValue<T1, T2>() => ValueFunc as Func<T1, int, T2>;
+
+                public static JoinerObjectReplacer Create<T>(Func<T, T> valueFunc) => new(null, valueFunc);
+
+                public static JoinerObjectReplacer Create<T>(Func<T, int, T> valueFunc) => new(null, valueFunc);
+
+                public static JoinerObjectReplacer CreateForMap<T1, T2, T3, T4>(Func<T1, T2> keyFunc, Func<T3, T4> valueFunc) => new(keyFunc, valueFunc);
+
+                public static JoinerObjectReplacer CreateForMap<T1, T2, T3, T4>(Func<T1, int, T2> keyFunc, Func<T3, int, T4> valueFunc) => new(keyFunc, valueFunc);
+
+                public static JoinerObjectReplacer CreateForTuple<T1, T2, T3, T4>(Func<T1, T2, T1> keyFunc, Func<T3, T4, T4> valueFunc) => new(keyFunc, valueFunc);
             }
         }
 
@@ -376,7 +473,14 @@ namespace Cosmos.Joiners
             public static Func<T, bool> GetObjectPredicate<T>(JoinerOptions options)
             {
                 if (options.SkipNullsFlag)
-                    return t => t != null;
+                    return t => t is not null;
+                return null;
+            }
+
+            public static Func<T, int, bool> GetIndexedObjectPredicate<T>(JoinerOptions options)
+            {
+                if (options.SkipNullsFlag)
+                    return (t, _) => t is not null;
                 return null;
             }
         }

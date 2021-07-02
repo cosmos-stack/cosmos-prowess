@@ -69,7 +69,7 @@ namespace Cosmos.Joiners
             var defaultValue = replacer.ValueFunc?.Invoke(string.Empty, string.Empty) ?? string.Empty;
             var middle = new List<string>();
             JoinToTupleString(
-                middle, (c, k, v, i) => c.Add($"{k}{Options.MapSeparator}{v}"),
+                middle, (c, k, v, _) => c.Add($"{k}{Options.MapSeparator}{v}"),
                 list, defaultKey, defaultValue, k => k, v => v, replacer);
             return middle.JoinToString(_on, JoinerUtils.GetTuplePredicate(Options));
         }
@@ -87,7 +87,7 @@ namespace Cosmos.Joiners
             var replacer = Options.GetTupleReplace<string, string, string, string>();
             var middle = new List<string>();
             JoinToTupleString(
-                middle, (c, k, v, i) => c.Add($"{k}{Options.MapSeparator}{v}"),
+                middle, (c, k, v, _) => c.Add($"{k}{Options.MapSeparator}{v}"),
                 list, defaultKey, defaultValue, k => k, v => v, replacer);
             return middle.JoinToString(_on, JoinerUtils.GetTuplePredicate(Options));
         }
@@ -106,7 +106,7 @@ namespace Cosmos.Joiners
         {
             var middle = new List<string>();
             JoinToTupleString(
-                middle, (c, k, v, i) => c.Add($"{k}{Options.MapSeparator}{v}"),
+                middle, (c, k, v, _) => c.Add($"{k}{Options.MapSeparator}{v}"),
                 list, default, default, keyFunc, valueFunc, Options.GetTupleReplace<T1, T2>());
             return middle.JoinToString(_on, JoinerUtils.GetTuplePredicate(Options));
         }
@@ -127,7 +127,7 @@ namespace Cosmos.Joiners
         {
             var middle = new List<string>();
             JoinToTupleString(
-                middle, (c, k, v, i) => c.Add($"{k}{Options.MapSeparator}{v}"),
+                middle, (c, k, v, _) => c.Add($"{k}{Options.MapSeparator}{v}"),
                 list, defaultKey, defaultValue, keyFunc, valueFunc, Options.GetTupleReplace<T1, T2>());
             return middle.JoinToString(_on, JoinerUtils.GetTuplePredicate(Options));
         }
@@ -141,9 +141,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         string ITupleJoiner.Join((string, string) tuple1, params (string, string)[] restTuples)
         {
-            var list = new List<(string, string)> {tuple1};
+            var list = new List<(string, string)> { tuple1 };
             list.AddRange(restTuples);
-            return ((ITupleJoiner) this).Join(list);
+            return ((ITupleJoiner)this).Join(list);
         }
 
         /// <summary>
@@ -159,9 +159,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         string ITupleJoiner.Join<T1, T2>(Func<T1, string> keyFunc, Func<T2, string> valueFunc, (T1, T2) tuple1, params (T1, T2)[] restTuples)
         {
-            var list = new List<(T1, T2)> {tuple1};
+            var list = new List<(T1, T2)> { tuple1 };
             list.AddRange(restTuples);
-            return ((ITupleJoiner) this).Join(list, keyFunc, valueFunc);
+            return ((ITupleJoiner)this).Join(list, keyFunc, valueFunc);
         }
 
         private void JoinToTupleString<T1, T2, TContainer>(
@@ -246,9 +246,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         StringBuilder ITupleJoiner.AppendTo(StringBuilder builder, (string, string) tuple1, params (string, string)[] restTuples)
         {
-            var list = new List<(string, string)> {tuple1};
+            var list = new List<(string, string)> { tuple1 };
             list.AddRange(restTuples);
-            return ((ITupleJoiner) this).AppendTo(builder, list);
+            return ((ITupleJoiner)this).AppendTo(builder, list);
         }
 
         /// <summary>
@@ -306,9 +306,9 @@ namespace Cosmos.Joiners
         /// <returns></returns>
         StringBuilder ITupleJoiner.AppendTo<T1, T2>(StringBuilder builder, Func<T1, string> keyFunc, Func<T2, string> valueFunc, (T1, T2) tuple1, params (T1, T2)[] restTuples)
         {
-            var list = new List<(T1, T2)> {tuple1};
+            var list = new List<(T1, T2)> { tuple1 };
             list.AddRange(restTuples);
-            return ((ITupleJoiner) this).AppendTo(builder, list, keyFunc, valueFunc);
+            return ((ITupleJoiner)this).AppendTo(builder, list, keyFunc, valueFunc);
         }
 
         #endregion

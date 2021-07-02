@@ -52,5 +52,41 @@ namespace Cosmos.Joiners
                 containerUpdateFunc.Invoke(container, to(checker));
             }
         }
+
+        public static void JoinToString<T, TContainer>(
+            TContainer container, Action<TContainer, string> containerUpdateFunc,
+            IEnumerable<T> list, string delimiter,
+            Func<T, int, bool> predicate, Func<T, int, string> to, Func<T, int, T> replaceFunc = null)
+        {
+            if (list is null)
+                return;
+
+            var head = true;
+            var index = -1;
+
+            foreach (var item in list)
+            {
+                var checker = item;
+                index++;
+                
+                if (!(predicate?.Invoke(checker, index) ?? true))
+                {
+                    if (replaceFunc == null)
+                        continue;
+                    checker = replaceFunc(item, index);
+                }
+
+                if (head)
+                {
+                    head = false;
+                }
+                else
+                {
+                    containerUpdateFunc.Invoke(container, delimiter);
+                }
+
+                containerUpdateFunc.Invoke(container, to(checker, index));
+            }
+        }
     }
 }

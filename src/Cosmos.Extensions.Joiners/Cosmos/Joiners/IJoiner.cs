@@ -34,6 +34,14 @@ namespace Cosmos.Joiners
         IJoiner UseForNull(Func<string, string> valueFunc);
 
         /// <summary>
+        /// If null, then use the special value.<br />
+        /// 如果为 null，则使用指定的值来替代
+        /// </summary>
+        /// <param name="valueFunc"></param>
+        /// <returns></returns>
+        IJoiner UseForNull(Func<string, int, string> valueFunc);
+
+        /// <summary>
         /// With KeyValue Separator
         /// </summary>
         /// <param name="separator"></param>
@@ -80,6 +88,16 @@ namespace Cosmos.Joiners
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        string Join<T>(IEnumerable<T> list, IIndexedTypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
         /// <param name="to"></param>
         /// <returns></returns>
         string Join<T>(IEnumerable<T> list, Func<T, string> to);
@@ -94,6 +112,17 @@ namespace Cosmos.Joiners
         /// <param name="restItems"></param>
         /// <returns></returns>
         string Join<T>(ITypeConverter<T, string> converter, T item1, params T[] restItems);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="converter"></param>
+        /// <param name="item1"></param>
+        /// <param name="restItems"></param>
+        /// <returns></returns>
+        string Join<T>(IIndexedTypeConverter<T, string> converter, T item1, params T[] restItems);
 
         /// <summary>
         /// Join<br />
@@ -143,6 +172,17 @@ namespace Cosmos.Joiners
         /// <typeparam name="T"></typeparam>
         /// <param name="builder"></param>
         /// <param name="list"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, IIndexedTypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
         /// <param name="to"></param>
         /// <returns></returns>
         StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, Func<T, string> to);
@@ -158,6 +198,18 @@ namespace Cosmos.Joiners
         /// <param name="restItems"></param>
         /// <returns></returns>
         StringBuilder AppendTo<T>(StringBuilder builder, ITypeConverter<T, string> converter, T item1, params T[] restItems);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="converter"></param>
+        /// <param name="item1"></param>
+        /// <param name="restItems"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IIndexedTypeConverter<T, string> converter, T item1, params T[] restItems);
 
         /// <summary>
         /// Append to...<br />

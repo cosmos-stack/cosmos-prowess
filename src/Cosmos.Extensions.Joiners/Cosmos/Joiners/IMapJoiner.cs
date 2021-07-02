@@ -66,6 +66,26 @@ namespace Cosmos.Joiners
         IMapJoiner UseForNull<T1, T2>(Func<T1, T1> keyFunc, Func<T2, T2> valueFunc);
 
         /// <summary>
+        /// If null, then use the special value.<br />
+        /// 如果为 null，则使用指定的值来替代
+        /// </summary>
+        /// <param name="keyFunc"></param>
+        /// <param name="valueFunc"></param>
+        /// <returns></returns>
+        IMapJoiner UseForNull(Func<string, int, string> keyFunc, Func<string, int, string> valueFunc);
+
+        /// <summary>
+        /// If null, then use the special value.<br />
+        /// 如果为 null，则使用指定的值来替代
+        /// </summary>
+        /// <typeparam name="T1"></typeparam>
+        /// <typeparam name="T2"></typeparam>
+        /// <param name="keyFunc"></param>
+        /// <param name="valueFunc"></param>
+        /// <returns></returns>
+        IMapJoiner UseForNull<T1, T2>(Func<T1, int, T1> keyFunc, Func<T2, int, T2> valueFunc);
+
+        /// <summary>
         /// Switch to tuple mode<br />
         /// 切换为 Tuple 模式
         /// </summary>
@@ -116,11 +136,81 @@ namespace Cosmos.Joiners
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        string Join<T>(IEnumerable<T> list, IIndexedTypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <returns></returns>
+        string Join<T>(IEnumerable<T> list, ITypeConverter<T, string> keyConverter, ITypeConverter<T, string> valueConverter);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <returns></returns>
+        string Join<T>(IEnumerable<T> list, IIndexedTypeConverter<T, string> keyConverter, IIndexedTypeConverter<T, string> valueConverter);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
         /// <param name="defaultKey"></param>
         /// <param name="defaultValue"></param>
         /// <param name="converter"></param>
         /// <returns></returns>
         string Join<T>(IEnumerable<T> list, T defaultKey, T defaultValue, ITypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="defaultKey"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        string Join<T>(IEnumerable<T> list, T defaultKey, T defaultValue, IIndexedTypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <param name="defaultKey"></param>
+        /// <returns></returns>
+        string Join<T>(IEnumerable<T> list, T defaultKey, T defaultValue, ITypeConverter<T, string> keyConverter, ITypeConverter<T, string> valueConverter);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <param name="defaultKey"></param>
+        /// <returns></returns>
+        string Join<T>(IEnumerable<T> list, T defaultKey, T defaultValue, IIndexedTypeConverter<T, string> keyConverter, IIndexedTypeConverter<T, string> valueConverter);
 
         /// <summary>
         /// Join<br />
@@ -133,6 +223,18 @@ namespace Cosmos.Joiners
         /// <param name="restTs"></param>
         /// <returns></returns>
         string Join<T>(ITypeConverter<T, string> converter, T t1, T t2, params T[] restTs);
+
+        /// <summary>
+        /// Join<br />
+        /// 连接
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="converter"></param>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="restTs"></param>
+        /// <returns></returns>
+        string Join<T>(IIndexedTypeConverter<T, string> converter, T t1, T t2, params T[] restTs);
 
         /// <summary>
         /// Append to...<br />
@@ -183,11 +285,87 @@ namespace Cosmos.Joiners
         /// <typeparam name="T"></typeparam>
         /// <param name="builder"></param>
         /// <param name="list"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, IIndexedTypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, ITypeConverter<T, string> keyConverter, ITypeConverter<T, string> valueConverter);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, IIndexedTypeConverter<T, string> keyConverter, IIndexedTypeConverter<T, string> valueConverter);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
         /// <param name="defaultKey"></param>
         /// <param name="defaultValue"></param>
         /// <param name="converter"></param>
         /// <returns></returns>
         StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, T defaultKey, T defaultValue, ITypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
+        /// <param name="defaultKey"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, T defaultKey, T defaultValue, IIndexedTypeConverter<T, string> converter);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
+        /// <param name="defaultKey"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, T defaultKey, T defaultValue, ITypeConverter<T, string> keyConverter, ITypeConverter<T, string> valueConverter);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="list"></param>
+        /// <param name="defaultKey"></param>
+        /// <param name="defaultValue"></param>
+        /// <param name="keyConverter"></param>
+        /// <param name="valueConverter"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IEnumerable<T> list, T defaultKey, T defaultValue, IIndexedTypeConverter<T, string> keyConverter, IIndexedTypeConverter<T, string> valueConverter);
 
         /// <summary>
         /// Append to...<br />
@@ -201,5 +379,18 @@ namespace Cosmos.Joiners
         /// <param name="restTs"></param>
         /// <returns></returns>
         StringBuilder AppendTo<T>(StringBuilder builder, ITypeConverter<T, string> converter, T t1, T t2, params T[] restTs);
+
+        /// <summary>
+        /// Append to...<br />
+        /// 附加到...
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="builder"></param>
+        /// <param name="converter"></param>
+        /// <param name="t1"></param>
+        /// <param name="t2"></param>
+        /// <param name="restTs"></param>
+        /// <returns></returns>
+        StringBuilder AppendTo<T>(StringBuilder builder, IIndexedTypeConverter<T, string> converter, T t1, T t2, params T[] restTs);
     }
 }

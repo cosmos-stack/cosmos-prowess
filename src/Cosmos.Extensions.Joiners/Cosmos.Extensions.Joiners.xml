@@ -35,7 +35,26 @@
             <param name="replaceFunc"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Collections.CosmosStringCollectionExtensions.JoinToString(System.Collections.Generic.IEnumerable{System.String},System.Func{System.String,System.Int32,System.Boolean},System.Func{System.String,System.Int32,System.String})">
+            <summary>
+            Join to string
+            </summary>
+            <param name="list"></param>
+            <param name="predicate"></param>
+            <param name="replaceFunc"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Collections.CosmosStringCollectionExtensions.JoinToString(System.Collections.Generic.IEnumerable{System.String},System.String,System.Func{System.String,System.Boolean},System.Func{System.String,System.String})">
+            <summary>
+            Join to string
+            </summary>
+            <param name="list"></param>
+            <param name="delimiter"></param>
+            <param name="predicate"></param>
+            <param name="replaceFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Collections.CosmosStringCollectionExtensions.JoinToString(System.Collections.Generic.IEnumerable{System.String},System.String,System.Func{System.String,System.Int32,System.Boolean},System.Func{System.String,System.Int32,System.String})">
             <summary>
             Join to string
             </summary>
@@ -74,6 +93,17 @@
             <returns></returns>
         </member>
         <member name="M:Cosmos.Collections.CosmosStringCollectionExtensions.JoinToString``1(System.Collections.Generic.IEnumerable{``0},System.String,Cosmos.ITypeConverter{``0,System.String},System.Func{``0,``0})">
+            <summary>
+            Join to string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="delimiter"></param>
+            <param name="converter"></param>
+            <param name="replaceFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Collections.CosmosStringCollectionExtensions.JoinToString``1(System.Collections.Generic.IEnumerable{``0},System.String,Cosmos.IIndexedTypeConverter{``0,System.String},System.Func{``0,System.Int32,``0})">
             <summary>
             Join to string
             </summary>
@@ -154,6 +184,18 @@
             <param name="replaceFunc"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Collections.CosmosStringCollectionExtensions.JoinToString``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Func{``0,System.Int32,System.Boolean},System.Func{``0,System.Int32,System.String},System.Func{``0,System.Int32,``0})">
+            <summary>
+            Join to string
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="delimiter"></param>
+            <param name="predicate"></param>
+            <param name="to"></param>
+            <param name="replaceFunc"></param>
+            <returns></returns>
+        </member>
         <member name="T:Cosmos.Joiners.CommonJoinUtils">
             <summary>
             Common join utils
@@ -202,6 +244,14 @@
             <param name="valueFunc"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IJoiner.UseForNull(System.Func{System.String,System.Int32,System.String})">
+            <summary>
+            If null, then use the special value.<br />
+            如果为 null，则使用指定的值来替代
+            </summary>
+            <param name="valueFunc"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IJoiner.WithKeyValueSeparator(System.String)">
             <summary>
             With KeyValue Separator
@@ -243,6 +293,16 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
             <summary>
             Join<br />
@@ -254,6 +314,17 @@
             <returns></returns>
         </member>
         <member name="M:Cosmos.Joiners.IJoiner.Join``1(Cosmos.ITypeConverter{``0,System.String},``0,``0[])">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="converter"></param>
+            <param name="item1"></param>
+            <param name="restItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IJoiner.Join``1(Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0[])">
             <summary>
             Join<br />
             连接
@@ -305,6 +376,17 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
             <summary>
             Append to...<br />
@@ -317,6 +399,18 @@
             <returns></returns>
         </member>
         <member name="M:Cosmos.Joiners.IJoiner.AppendTo``1(System.Text.StringBuilder,Cosmos.ITypeConverter{``0,System.String},``0,``0[])">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="converter"></param>
+            <param name="item1"></param>
+            <param name="restItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IJoiner.AppendTo``1(System.Text.StringBuilder,Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0[])">
             <summary>
             Append to...<br />
             附加到...
@@ -401,6 +495,26 @@
             <param name="valueFunc"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.UseForNull(System.Func{System.String,System.Int32,System.String},System.Func{System.String,System.Int32,System.String})">
+            <summary>
+            If null, then use the special value.<br />
+            如果为 null，则使用指定的值来替代
+            </summary>
+            <param name="keyFunc"></param>
+            <param name="valueFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.UseForNull``2(System.Func{``0,System.Int32,``0},System.Func{``1,System.Int32,``1})">
+            <summary>
+            If null, then use the special value.<br />
+            如果为 null，则使用指定的值来替代
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <param name="keyFunc"></param>
+            <param name="valueFunc"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IMapJoiner.FromTuple">
             <summary>
             Switch to tuple mode<br />
@@ -446,6 +560,38 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String})">
             <summary>
             Join<br />
@@ -458,7 +604,57 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <param name="defaultKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <param name="defaultKey"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(Cosmos.ITypeConverter{``0,System.String},``0,``0,``0[])">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="converter"></param>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <param name="restTs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.Join``1(Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0,``0[])">
             <summary>
             Join<br />
             连接
@@ -512,6 +708,41 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String})">
             <summary>
             Append to...<br />
@@ -525,7 +756,61 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,Cosmos.ITypeConverter{``0,System.String},``0,``0,``0[])">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="converter"></param>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <param name="restTs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.IMapJoiner.AppendTo``1(System.Text.StringBuilder,Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0,``0[])">
             <summary>
             Append to...<br />
             附加到...
@@ -737,6 +1022,14 @@
             <param name="valueFunc"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#UseForNull(System.Func{System.String,System.Int32,System.String})">
+            <summary>
+            If null, then use the special value.<br />
+            如果为 null，则使用指定的值来替代
+            </summary>
+            <param name="valueFunc"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.Joiner.WithKeyValueSeparator(System.String)">
             <summary>
             With KeyValue Separator
@@ -769,6 +1062,16 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
             <summary>
             Join<br />
@@ -789,6 +1092,17 @@
             <returns></returns>
         </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#Join``1(Cosmos.ITypeConverter{``0,System.String},``0,``0[])">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="converter"></param>
+            <param name="item1"></param>
+            <param name="restItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#Join``1(Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0[])">
             <summary>
             Join<br />
             连接
@@ -840,6 +1154,17 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.String})">
             <summary>
             Append to...<br />
@@ -852,6 +1177,18 @@
             <returns></returns>
         </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#AppendTo``1(System.Text.StringBuilder,Cosmos.ITypeConverter{``0,System.String},``0,``0[])">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="converter"></param>
+            <param name="item1"></param>
+            <param name="restItems"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IJoiner#AppendTo``1(System.Text.StringBuilder,Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0[])">
             <summary>
             Append to...<br />
             附加到...
@@ -924,6 +1261,15 @@
             <param name="valueFunc"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#UseForNull(System.Func{System.String,System.Int32,System.String},System.Func{System.String,System.Int32,System.String})">
+            <summary>
+            If null, then use the special value.<br />
+            如果为 null，则使用指定的值来替代
+            </summary>
+            <param name="keyFunc"></param>
+            <param name="valueFunc"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#UseForNull``2(``0,``1)">
             <summary>
             If null, then use the special value.<br />
@@ -933,6 +1279,17 @@
             <typeparam name="T2"></typeparam>
             <param name="key"></param>
             <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#UseForNull``2(System.Func{``0,System.Int32,``0},System.Func{``1,System.Int32,``1})">
+            <summary>
+            If null, then use the special value.<br />
+            如果为 null，则使用指定的值来替代
+            </summary>
+            <typeparam name="T1"></typeparam>
+            <typeparam name="T2"></typeparam>
+            <param name="keyFunc"></param>
+            <param name="valueFunc"></param>
             <returns></returns>
         </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#UseForNull``2(System.Func{``0,``0},System.Func{``1,``1})">
@@ -981,7 +1338,77 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <param name="defaultKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <param name="defaultKey"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String})">
             <summary>
             Join<br />
             连接
@@ -1004,6 +1431,18 @@
             <returns></returns>
         </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(Cosmos.ITypeConverter{``0,System.String},``0,``0,``0[])">
+            <summary>
+            Join<br />
+            连接
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="converter"></param>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <param name="restTs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#Join``1(Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0,``0[])">
             <summary>
             Join<br />
             连接
@@ -1057,6 +1496,41 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String})">
             <summary>
             Append to...<br />
@@ -1070,7 +1544,61 @@
             <param name="converter"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.ITypeConverter{``0,System.String},Cosmos.ITypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,System.Collections.Generic.IEnumerable{``0},``0,``0,Cosmos.IIndexedTypeConverter{``0,System.String},Cosmos.IIndexedTypeConverter{``0,System.String})">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="list"></param>
+            <param name="defaultKey"></param>
+            <param name="defaultValue"></param>
+            <param name="keyConverter"></param>
+            <param name="valueConverter"></param>
+            <returns></returns>
+        </member>
         <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,Cosmos.ITypeConverter{``0,System.String},``0,``0,``0[])">
+            <summary>
+            Append to...<br />
+            附加到...
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="builder"></param>
+            <param name="converter"></param>
+            <param name="t1"></param>
+            <param name="t2"></param>
+            <param name="restTs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Joiners.Joiner.Cosmos#Joiners#IMapJoiner#AppendTo``1(System.Text.StringBuilder,Cosmos.IIndexedTypeConverter{``0,System.String},``0,``0,``0[])">
             <summary>
             Append to...<br />
             附加到...
