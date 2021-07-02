@@ -5,6 +5,10 @@
         <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
     <Import Project="project.props"/>
 
     <Import Project="..\..\common.props"/>

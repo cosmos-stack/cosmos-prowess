@@ -18,6 +18,8 @@ using Cosmos.IdUtils.CombImplements.Strategies;
 	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+// ReSharper disable InconsistentNaming
+
 namespace Cosmos.IdUtils.CombImplements.Providers
 {
     /*

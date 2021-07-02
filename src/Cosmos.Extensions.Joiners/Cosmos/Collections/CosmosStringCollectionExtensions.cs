@@ -17,7 +17,7 @@ namespace Cosmos.Collections
         /// <param name="list"></param>
         /// <returns></returns>
         public static string JoinToString(this IEnumerable<string> list) =>
-            JoinToString<string>(list, ",", t => true, s => s);
+            JoinToString<string>(list, ",", _ => true, s => s);
 
         /// <summary>
         /// Combine the collection into a string and split it with the specified separator. <br />
@@ -27,7 +27,7 @@ namespace Cosmos.Collections
         /// <param name="delimiter"></param>
         /// <returns></returns>
         public static string JoinToString(this IEnumerable<string> list, string delimiter) =>
-            JoinToString<string>(list, delimiter, t => true, s => s);
+            JoinToString<string>(list, delimiter, _ => true, s => s);
 
         /// <summary>
         /// Join to string
@@ -43,6 +43,16 @@ namespace Cosmos.Collections
         /// Join to string
         /// </summary>
         /// <param name="list"></param>
+        /// <param name="predicate"></param>
+        /// <param name="replaceFunc"></param>
+        /// <returns></returns>
+        public static string JoinToString(this IEnumerable<string> list, Func<string, int, bool> predicate, Func<string, int, string> replaceFunc = null) =>
+            JoinToString(list, ",", predicate, (s, _) => s, replaceFunc);
+
+        /// <summary>
+        /// Join to string
+        /// </summary>
+        /// <param name="list"></param>
         /// <param name="delimiter"></param>
         /// <param name="predicate"></param>
         /// <param name="replaceFunc"></param>
@@ -53,11 +63,22 @@ namespace Cosmos.Collections
         /// <summary>
         /// Join to string
         /// </summary>
+        /// <param name="list"></param>
+        /// <param name="delimiter"></param>
+        /// <param name="predicate"></param>
+        /// <param name="replaceFunc"></param>
+        /// <returns></returns>
+        public static string JoinToString(this IEnumerable<string> list, string delimiter, Func<string, int, bool> predicate, Func<string, int, string> replaceFunc = null) =>
+            JoinToString(list, delimiter, predicate, (s, _) => s, replaceFunc);
+
+        /// <summary>
+        /// Join to string
+        /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="list"></param>
         /// <returns></returns>
         public static string JoinToString<T>(this IEnumerable<T> list) =>
-            JoinToString(list, ",", t => true, t => $"{t}");
+            JoinToString(list, ",", _ => true, t => $"{t}");
 
         /// <summary>
         /// Join to string
@@ -67,7 +88,7 @@ namespace Cosmos.Collections
         /// <param name="delimiter"></param>
         /// <returns></returns>
         public static string JoinToString<T>(this IEnumerable<T> list, string delimiter) =>
-            JoinToString(list, delimiter, t => true, t => $"{t}");
+            JoinToString(list, delimiter, _ => true, t => $"{t}");
 
         /// <summary>
         /// Join to string
@@ -91,7 +112,19 @@ namespace Cosmos.Collections
         /// <param name="replaceFunc"></param>
         /// <returns></returns>
         public static string JoinToString<T>(this IEnumerable<T> list, string delimiter, ITypeConverter<T, string> converter, Func<T, T> replaceFunc = null) =>
-            JoinToString(list, delimiter, t => true, converter.To, replaceFunc);
+            JoinToString(list, delimiter, _ => true, converter.To, replaceFunc);
+
+        /// <summary>
+        /// Join to string
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="delimiter"></param>
+        /// <param name="converter"></param>
+        /// <param name="replaceFunc"></param>
+        /// <returns></returns>
+        public static string JoinToString<T>(this IEnumerable<T> list, string delimiter, IIndexedTypeConverter<T, string> converter, Func<T, int, T> replaceFunc = null) =>
+            JoinToString(list, delimiter, (_, _) => true, converter.To, replaceFunc);
 
         /// <summary>
         /// Join to string
@@ -103,7 +136,7 @@ namespace Cosmos.Collections
         /// <param name="replaceFunc"></param>
         /// <returns></returns>
         public static string JoinToString<T>(this IEnumerable<T> list, string delimiter, Func<T, string> to, Func<T, T> replaceFunc = null) =>
-            JoinToString(list, delimiter, t => true, to, replaceFunc);
+            JoinToString(list, delimiter, _ => true, to, replaceFunc);
 
         /// <summary>
         /// Join to string
@@ -119,6 +152,10 @@ namespace Cosmos.Collections
             Func<T, T> replaceFunc = null) =>
             JoinToString(list, delimiter, predicate, converter.To, replaceFunc);
 
+        public static string JoinToString<T>(this IEnumerable<T> list, string delimiter, Func<T, int, bool> predicate, IIndexedTypeConverter<T, string> converter,
+            Func<T, int, T> replaceFunc = null) =>
+            JoinToString(list, delimiter, predicate, converter.To, replaceFunc);
+
         /// <summary>
         /// Join to string
         /// </summary>
@@ -126,7 +163,7 @@ namespace Cosmos.Collections
         /// <param name="list"></param>
         /// <returns></returns>
         public static string JoinOnePerLine<T>(this IEnumerable<T> list) =>
-            JoinToString(list, Environment.NewLine, t => true, t => $"{t}") + Environment.NewLine;
+            JoinToString(list, Environment.NewLine, _ => true, t => $"{t}") + Environment.NewLine;
 
         /// <summary>
         /// Join to string
@@ -156,7 +193,7 @@ namespace Cosmos.Collections
         /// <param name="info"></param>
         /// <returns></returns>
         public static string JoinToStringFormat<T>(this IEnumerable<T> list, string delimiter, IFormatProvider info) where T : IFormattable =>
-            JoinToString(list, delimiter, t => true, t => t.ToString(null, info));
+            JoinToString(list, delimiter, _ => true, t => t.ToString(null, info));
 
         /// <summary>
         /// Join to string
@@ -169,6 +206,28 @@ namespace Cosmos.Collections
         /// <param name="replaceFunc"></param>
         /// <returns></returns>
         public static string JoinToString<T>(this IEnumerable<T> list, string delimiter, Func<T, bool> predicate, Func<T, string> to, Func<T, T> replaceFunc = null)
+        {
+            if (list is null)
+                return string.Empty;
+
+            var sb = new StringBuilder();
+
+            CommonJoinUtils.JoinToString(sb, (c, s) => c.Append(s), list, delimiter, predicate, to, replaceFunc);
+
+            return sb.ToString();
+        }
+
+        /// <summary>
+        /// Join to string
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="list"></param>
+        /// <param name="delimiter"></param>
+        /// <param name="predicate"></param>
+        /// <param name="to"></param>
+        /// <param name="replaceFunc"></param>
+        /// <returns></returns>
+        public static string JoinToString<T>(this IEnumerable<T> list, string delimiter, Func<T, int, bool> predicate, Func<T, int, string> to, Func<T, int, T> replaceFunc = null)
         {
             if (list is null)
                 return string.Empty;

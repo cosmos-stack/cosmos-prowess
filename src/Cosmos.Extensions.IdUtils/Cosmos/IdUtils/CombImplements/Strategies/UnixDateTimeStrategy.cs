@@ -17,6 +17,8 @@ using Cosmos.Collections;
 	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+// ReSharper disable InconsistentNaming
+
 namespace Cosmos.IdUtils.CombImplements.Strategies
 {
     /*
@@ -30,7 +32,7 @@ namespace Cosmos.IdUtils.CombImplements.Strategies
     internal class UnixDateTimeStrategy : IDateStrategy
     {
         private const long TICKS_PER_MILLISECOND = 10_000;
-        public int NumDateBytes { get; } = 6;
+        public int NumDateBytes => 6;
 
         public DateTime MinDateTimeValue { get; } = new(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
 

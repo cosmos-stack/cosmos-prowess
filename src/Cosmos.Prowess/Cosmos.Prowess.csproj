@@ -5,17 +5,18 @@
         <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
-    <Import Project="project.props"/>
+    <Import Project="project.props" />
 
-    <Import Project="..\..\common.props"/>
+    <Import Project="..\..\common.props" />
 
     <ItemGroup>
-        <ProjectReference Include="..\Cosmos.Extensions.CharMatchers\Cosmos.Extensions.CharMatchers.csproj"/>
-        <ProjectReference Include="..\Cosmos.Extensions.Enums\Cosmos.Extensions.Enums.csproj"/>
-        <ProjectReference Include="..\Cosmos.Extensions.IdUtils\Cosmos.Extensions.IdUtils.csproj"/>
-        <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj"/>
-        <ProjectReference Include="..\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj"/>
-        <ProjectReference Include="..\Cosmos.Extensions.Text\Cosmos.Extensions.Text.csproj"/>
+        <ProjectReference Include="..\Cosmos.Extensions.CharMatchers\Cosmos.Extensions.CharMatchers.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Enums\Cosmos.Extensions.Enums.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.IdUtils\Cosmos.Extensions.IdUtils.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Reflection.Enhanced\Cosmos.Extensions.Reflection.Enhanced.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Text\Cosmos.Extensions.Text.csproj" />
     </ItemGroup>
 
 </Project>

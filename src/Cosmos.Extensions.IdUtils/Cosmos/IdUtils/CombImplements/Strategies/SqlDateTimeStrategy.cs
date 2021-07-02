@@ -18,6 +18,8 @@ using Cosmos.Numeric;
 	CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
+// ReSharper disable InconsistentNaming
+
 namespace Cosmos.IdUtils.CombImplements.Strategies
 {
     /*
@@ -33,16 +35,16 @@ namespace Cosmos.IdUtils.CombImplements.Strategies
         private const double TICKS_PER_DAY = 86_400d * 300d;
         private const double TICKS_PER_MILLISECOND = 3d / 10d;
 
-        public int NumDateBytes { get; } = 6;
+        public int NumDateBytes => 6;
 
-        public DateTime MinDateTimeValue { get; } = new DateTime(1900, 1, 1);
+        public DateTime MinDateTimeValue { get; } = new(1900, 1, 1);
 
         public DateTime MaxDateTimeValue => MinDateTimeValue.AddDays(NumericConstants.USHORT_MAX);
 
         public byte[] DateTimeToBytes(DateTime timestamp)
         {
-            var ticks = (int) (timestamp.TimeOfDay.TotalMilliseconds * TICKS_PER_MILLISECOND);
-            var days = (ushort) (timestamp - MinDateTimeValue).TotalDays;
+            var ticks = (int)(timestamp.TimeOfDay.TotalMilliseconds * TICKS_PER_MILLISECOND);
+            var days = (ushort)(timestamp - MinDateTimeValue).TotalDays;
             var tickBytes = BitConverter.GetBytes(ticks);
             var dayBytes = BitConverter.GetBytes(days);
 
@@ -85,7 +87,7 @@ namespace Cosmos.IdUtils.CombImplements.Strategies
             }
 
             // ReSharper disable once RedundantCast
-            return MinDateTimeValue.AddDays(days).AddMilliseconds((double) ticks / TICKS_PER_MILLISECOND);
+            return MinDateTimeValue.AddDays(days).AddMilliseconds((double)ticks / TICKS_PER_MILLISECOND);
         }
     }
 }
