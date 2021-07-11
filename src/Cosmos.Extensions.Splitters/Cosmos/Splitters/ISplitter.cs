@@ -120,5 +120,41 @@ namespace Cosmos.Splitters
         /// <param name="mapper"></param>
         /// <returns></returns>
         List<T> SplitToList<TMiddle, T>(string originalString, IObjectSerializer serializer, IGenericObjectMapper mapper);
+        
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <param name="originalString"></param>
+        /// <returns></returns>
+        string[] SplitToArray(string originalString);
+
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="originalString"></param>
+        /// <param name="serializer"></param>
+        /// <returns></returns>
+        T[] SplitToArray<T>(string originalString, IObjectSerializer serializer);
+
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="originalString"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        T[] SplitToArray<T>(string originalString, ITypeConverter<string, T> converter);
+
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <typeparam name="TMiddle"></typeparam>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="originalString"></param>
+        /// <param name="serializer"></param>
+        /// <param name="mapper"></param>
+        /// <returns></returns>
+        T[] SplitToArray<TMiddle, T>(string originalString, IObjectSerializer serializer, IGenericObjectMapper mapper);
     }
 }

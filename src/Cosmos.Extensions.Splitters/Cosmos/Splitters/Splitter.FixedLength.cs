@@ -193,6 +193,50 @@ namespace Cosmos.Splitters
         }
 
         #endregion
+        
+        #region Split - Array - FixedLength
+
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <param name="originalString"></param>
+        /// <returns></returns>
+        string[] IFixedLengthSplitter.SplitToArray(string originalString)
+            => ((ISplitter) this).Split(originalString).ToArray();
+
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="originalString"></param>
+        /// <param name="serializer"></param>
+        /// <returns></returns>
+        T[] IFixedLengthSplitter.SplitToArray<T>(string originalString, IObjectSerializer serializer)
+            => ((ISplitter) this).Split<T>(originalString, serializer).ToArray();
+
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="originalString"></param>
+        /// <param name="converter"></param>
+        /// <returns></returns>
+        T[] IFixedLengthSplitter.SplitToArray<T>(string originalString, ITypeConverter<string, T> converter)
+            => ((ISplitter) this).Split(originalString, converter).ToArray();
+
+        /// <summary>
+        /// Split to array
+        /// </summary>
+        /// <typeparam name="TMiddle"></typeparam>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="originalString"></param>
+        /// <param name="serializer"></param>
+        /// <param name="mapper"></param>
+        /// <returns></returns>
+        T[] IFixedLengthSplitter.SplitToArray<TMiddle, T>(string originalString, IObjectSerializer serializer, IGenericObjectMapper mapper)
+            => ((ISplitter) this).Split<TMiddle, T>(originalString, serializer, mapper).ToArray();
+        
+        #endregion
 
         #region Private class
 
