@@ -14,7 +14,7 @@ namespace Cosmos.IdUtils
         public string CreateId()
         {
             var now = DateTime.Now;
-            return $"{now:yyyyMMddHHmmddffff}{RandomIdProvider.Create(7)}{now.Ticks}";
+            return $"{now:yyyyMMddHHmmddffff}{RandomIdGenerator.Create(7)}{now.Ticks}";
         }
     }
 }

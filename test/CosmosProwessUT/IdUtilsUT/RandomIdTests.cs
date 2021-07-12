@@ -10,8 +10,8 @@ namespace CosmosProwessUT.IdUtilsUT
         [Fact]
         public void RandomIdTest()
         {
-            var id1 = RandomIdProvider.Create(16);
-            var id2 = RandomIdProvider.Create(16);
+            var id1 = RandomIdGenerator.Create(16);
+            var id2 = RandomIdGenerator.Create(16);
 
             id1.ShouldNotBeNullOrEmpty();
             id2.ShouldNotBeNullOrEmpty();
@@ -25,10 +25,10 @@ namespace CosmosProwessUT.IdUtilsUT
         [Fact]
         public void RandomNonceStrTest()
         {
-            var nonceStr1 = RandomNonceStrProvider.Create();
-            var nonceStr2 = RandomNonceStrProvider.Create();
-            var nonceStr3 = RandomNonceStrProvider.Create(true);
-            var nonceStr4 = RandomNonceStrProvider.Create(true);
+            var nonceStr1 = RandomNonceStrGenerator.Create();
+            var nonceStr2 = RandomNonceStrGenerator.Create();
+            var nonceStr3 = RandomNonceStrGenerator.Create(true);
+            var nonceStr4 = RandomNonceStrGenerator.Create(true);
 
             nonceStr1.ShouldNotBeNullOrEmpty();
             nonceStr2.ShouldNotBeNullOrEmpty();
@@ -51,10 +51,10 @@ namespace CosmosProwessUT.IdUtilsUT
         [Fact]
         public void RandomNonceStrWithLengthTest()
         {
-            var nonceStr1 = RandomNonceStrProvider.Create(16);
-            var nonceStr2 = RandomNonceStrProvider.Create(16);
-            var nonceStr3 = RandomNonceStrProvider.Create(true);
-            var nonceStr4 = RandomNonceStrProvider.Create(true);
+            var nonceStr1 = RandomNonceStrGenerator.Create(16);
+            var nonceStr2 = RandomNonceStrGenerator.Create(16);
+            var nonceStr3 = RandomNonceStrGenerator.Create(true);
+            var nonceStr4 = RandomNonceStrGenerator.Create(true);
 
             nonceStr1.ShouldNotBeNullOrEmpty();
             nonceStr2.ShouldNotBeNullOrEmpty();

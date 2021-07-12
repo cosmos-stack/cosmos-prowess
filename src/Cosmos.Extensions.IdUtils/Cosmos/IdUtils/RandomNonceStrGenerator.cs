@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using Cosmos.Date;
 using Cosmos.Text;
 
 namespace Cosmos.IdUtils
@@ -8,7 +7,7 @@ namespace Cosmos.IdUtils
     /// <summary>
     /// Random NonceStr Provider
     /// </summary>
-    public static class RandomNonceStrProvider
+    public static class RandomNonceStrGenerator
     {
         // ReSharper disable once InconsistentNaming
         private const string NONCESTR = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -43,7 +42,7 @@ namespace Cosmos.IdUtils
             {
                 lock (_lock)
                 {
-                    rd = new Random(RandomIdProvider.Create(8, RandomIdProvider.ALLNUMBERS).CastToInt());
+                    rd = new Random(RandomIdGenerator.Create(8, RandomIdGenerator.ALLNUMBERS).CastToInt());
                 }
             }
             else

@@ -6,7 +6,7 @@ namespace Cosmos.IdUtils
     /// <summary>
     /// Random Id Provider
     /// </summary>
-    public static class RandomIdProvider
+    public static class RandomIdGenerator
     {
         /// <summary>
         /// All numbers from 0 to 9
@@ -25,6 +25,11 @@ namespace Cosmos.IdUtils
         /// </summary>
         // ReSharper disable once InconsistentNaming
         public const string SIMPLEWORDS = "2345678wertyuipasdfghjkzxcvbnm2345678WERTYUPASDFGHJKLZXCVBNM";
+
+        /// <summary>
+        /// NanoId's default alphabet
+        /// </summary>
+        public const string NANOWORDS =  "_-0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         /// <summary> 
         /// Create Random Id
@@ -62,13 +67,13 @@ namespace Cosmos.IdUtils
         /// </summary>
         /// <param name="length">生成Id长度</param>
         /// <param name="dict">随机字符字典,默认字典为0-9a-zA-Z</param>
-        public RandomId(int length, string dict = RandomIdProvider.ALLWORDS) : this(ToFormat(length), dict) { }
+        public RandomId(int length, string dict = RandomIdGenerator.ALLWORDS) : this(ToFormat(length), dict) { }
 
         /// <summary> 构造函数
         /// </summary>
         /// <param name="format">生成Id格式</param>
         /// <param name="dict">随机字符字典,默认字典为0-9a-zA-Z</param>
-        public RandomId(string format, string dict = RandomIdProvider.ALLWORDS)
+        public RandomId(string format, string dict = RandomIdGenerator.ALLWORDS)
         {
             _dict = dict;
             _format = format;
