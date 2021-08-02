@@ -487,6 +487,43 @@
             Refresh time spot
             </summary>
         </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.Generate(System.String,System.Int32)">
+            <summary>
+            Generate NanoId
+            </summary>
+            <param name="alphabet"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.GenerateAsync(System.String,System.Int32)">
+            <summary>
+            Generate NanoId
+            </summary>
+            <param name="alphabet"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.Generate(System.Random,System.String,System.Int32)">
+            <summary>
+            Generate NanoId
+            </summary>
+            <param name="random"></param>
+            <param name="alphabet"></param>
+            <param name="size"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.Clz32(System.Int32)">
+            <summary>
+            Counts leading zeros of <paramref name="x"/>.
+            </summary>
+            <param name="x">Input number.</param>
+            <returns>Number of leading zeros.</returns>
+            <remarks>
+            Courtesy of spender/Sunsetquest see https://stackoverflow.com/a/10439333/623392.
+            </remarks>
+        </member>
         <member name="T:Cosmos.IdUtils.NoRepeatMode">
             <summary>
             No repeat mode
@@ -504,34 +541,39 @@
             开
             </summary>
         </member>
-        <member name="T:Cosmos.IdUtils.RandomIdProvider">
+        <member name="T:Cosmos.IdUtils.RandomIdGenerator">
             <summary>
             Random Id Provider
             </summary>
         </member>
-        <member name="F:Cosmos.IdUtils.RandomIdProvider.ALLNUMBERS">
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.ALLNUMBERS">
             <summary>
             All numbers from 0 to 9
             </summary>
         </member>
-        <member name="F:Cosmos.IdUtils.RandomIdProvider.ALLWORDS">
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.ALLWORDS">
             <summary> 
             1234567890qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM
             </summary>
         </member>
-        <member name="F:Cosmos.IdUtils.RandomIdProvider.SIMPLEWORDS">
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.SIMPLEWORDS">
             <summary> 
             2345678wertyuiopasdfghjkzxcvbnm23456780QWERTYUPASDFGHJKLZXCVBNM
             </summary>
         </member>
-        <member name="M:Cosmos.IdUtils.RandomIdProvider.Create(System.Int32,System.String)">
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.NANOWORDS">
+            <summary>
+            NanoId's default alphabet
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomIdGenerator.Create(System.Int32,System.String)">
             <summary> 
             Create Random Id
             </summary>
             <param name="length">Length of random id you want to create</param>
             <param name="dict">Random Charter Dictionary, 0-9a-zA-Z as default.</param>
         </member>
-        <member name="M:Cosmos.IdUtils.RandomIdProvider.Create(System.String,System.String)">
+        <member name="M:Cosmos.IdUtils.RandomIdGenerator.Create(System.String,System.String)">
             <summary> 
             Create Random Id
             </summary>
@@ -554,18 +596,18 @@
             <summary> 生成Id
             </summary>
         </member>
-        <member name="T:Cosmos.IdUtils.RandomNonceStrProvider">
+        <member name="T:Cosmos.IdUtils.RandomNonceStrGenerator">
             <summary>
             Random NonceStr Provider
             </summary>
         </member>
-        <member name="M:Cosmos.IdUtils.RandomNonceStrProvider.Create(System.Boolean)">
+        <member name="M:Cosmos.IdUtils.RandomNonceStrGenerator.Create(System.Boolean)">
             <summary>
             Create random noncestr
             </summary>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.IdUtils.RandomNonceStrProvider.Create(System.Int32,System.Boolean)">
+        <member name="M:Cosmos.IdUtils.RandomNonceStrGenerator.Create(System.Int32,System.Boolean)">
             <summary>
             Create random noncestr
             </summary>

@@ -115,6 +115,42 @@
             <param name="mapper"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Splitters.IFixedLengthSplitter.SplitToArray(System.String)">
+            <summary>
+            Split to array
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.IFixedLengthSplitter.SplitToArray``1(System.String,Cosmos.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.IFixedLengthSplitter.SplitToArray``1(System.String,Cosmos.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.IFixedLengthSplitter.SplitToArray``2(System.String,Cosmos.Serialization.IObjectSerializer,Cosmos.IGenericObjectMapper)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
         <member name="T:Cosmos.Splitters.IMapSplitter">
             <summary>
             MapSplitter interface
@@ -330,6 +366,42 @@
             <param name="mapper"></param>
             <returns></returns>
         </member>
+        <member name="M:Cosmos.Splitters.ISplitter.SplitToArray(System.String)">
+            <summary>
+            Split to array
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.ISplitter.SplitToArray``1(System.String,Cosmos.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.ISplitter.SplitToArray``1(System.String,Cosmos.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.ISplitter.SplitToArray``2(System.String,Cosmos.Serialization.IObjectSerializer,Cosmos.IGenericObjectMapper)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
         <member name="T:Cosmos.Splitters.Splitter">
             <summary>
             Splitter<br />
@@ -462,6 +534,42 @@
             <summary>
             Split to list<br />
             分割为列表
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#ISplitter#SplitToArray(System.String)">
+            <summary>
+            Split to array
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#ISplitter#SplitToArray``1(System.String,Cosmos.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#ISplitter#SplitToArray``1(System.String,Cosmos.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#ISplitter#SplitToArray``2(System.String,Cosmos.Serialization.IObjectSerializer,Cosmos.IGenericObjectMapper)">
+            <summary>
+            Split to array
             </summary>
             <typeparam name="TMiddle"></typeparam>
             <typeparam name="T"></typeparam>
@@ -614,6 +722,42 @@
             <summary>
             Split to list<br />
             分割为列表
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#IFixedLengthSplitter#SplitToArray(System.String)">
+            <summary>
+            Split to array
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#IFixedLengthSplitter#SplitToArray``1(System.String,Cosmos.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#IFixedLengthSplitter#SplitToArray``1(System.String,Cosmos.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Splitters.Splitter.Cosmos#Splitters#IFixedLengthSplitter#SplitToArray``2(System.String,Cosmos.Serialization.IObjectSerializer,Cosmos.IGenericObjectMapper)">
+            <summary>
+            Split to array
             </summary>
             <typeparam name="TMiddle"></typeparam>
             <typeparam name="T"></typeparam>

@@ -6,7 +6,7 @@
     <members>
         <member name="T:Cosmos.Enums">
             <summary>
-            Enum utilities
+            Enum Utilities
             </summary>
         </member>
         <member name="M:Cosmos.Enums.Of``1(System.String,System.Boolean,``0)">
