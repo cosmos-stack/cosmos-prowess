@@ -75,10 +75,10 @@ namespace CosmosProwessUT.IdUtilsUT
         }
 
         [Fact]
-        public void SnowflakeProviderTest()
+        public void SnowflakeGeneratorTest()
         {
-            var worker1 = SnowflakeProvider.Create(1, 2, 17);
-            var worker2 = SnowflakeProvider.Create(2, 2, 17);
+            var worker1 = SnowflakeGenerator.Create(1, 2, 17);
+            var worker2 = SnowflakeGenerator.Create(2, 2, 17);
 
             var id11 = worker1.NextId();
             var id12 = worker1.NextId();

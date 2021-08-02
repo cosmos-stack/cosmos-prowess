@@ -1,9 +1,9 @@
 ﻿namespace Cosmos.IdUtils
 {
     /// <summary>
-    /// Snowflake Provider
+    /// Snowflake Generator
     /// </summary>
-    public static class SnowflakeProvider
+    public static class SnowflakeGenerator
     {
         /// <summary>
         /// Create
