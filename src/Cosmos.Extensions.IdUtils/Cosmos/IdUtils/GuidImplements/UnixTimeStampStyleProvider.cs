@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Cosmos.Collections;
 using Cosmos.Date;
 
@@ -16,6 +17,7 @@ namespace Cosmos.IdUtils.GuidImplements
         /// Create
         /// </summary>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create()
             => Create(NoRepeatMode.Off);
 
@@ -24,6 +26,7 @@ namespace Cosmos.IdUtils.GuidImplements
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(Guid value)
             => Create(value, NoRepeatMode.Off);
 
@@ -32,6 +35,7 @@ namespace Cosmos.IdUtils.GuidImplements
         /// </summary>
         /// <param name="mode"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(NoRepeatMode mode)
             => Create(Guid.NewGuid(), mode);
 
@@ -41,6 +45,7 @@ namespace Cosmos.IdUtils.GuidImplements
         /// <param name="value"></param>
         /// <param name="mode"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(Guid value, NoRepeatMode mode)
             => Create(value, mode == NoRepeatMode.On ? GetNoRepeatUnixUtcNow() : GetUnixUtcNow());
 
@@ -49,6 +54,7 @@ namespace Cosmos.IdUtils.GuidImplements
         /// </summary>
         /// <param name="secureTimestamp"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(DateTime secureTimestamp)
             => Create(Guid.NewGuid(), secureTimestamp);
 

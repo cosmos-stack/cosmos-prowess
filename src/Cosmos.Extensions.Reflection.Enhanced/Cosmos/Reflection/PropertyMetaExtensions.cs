@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Cosmos.Reflection
 {
@@ -12,6 +13,7 @@ namespace Cosmos.Reflection
         /// <param name="propertyName"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static FieldInfo GetField<T>(this T t, string propertyName)
         {
             return TypeReflections.TypeCacheManager.GetTypeFields(typeof(T)).FirstOrDefault(_ => _.Name == propertyName);
@@ -25,6 +27,7 @@ namespace Cosmos.Reflection
         /// <param name="bindingAttr"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static FieldInfo GetField<T>(this T t, string propertyName, BindingFlags bindingAttr)
         {
             return typeof(T).GetField(propertyName, bindingAttr);
@@ -35,6 +38,7 @@ namespace Cosmos.Reflection
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static FieldInfo[] GetFields(this object obj)
         {
             ObjectGuard.NotNull(obj, nameof(obj));
@@ -47,6 +51,7 @@ namespace Cosmos.Reflection
         /// <param name="obj"></param>
         /// <param name="bindingAttr"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static FieldInfo[] GetFields(this object obj, BindingFlags bindingAttr)
         {
             ObjectGuard.NotNull(obj, nameof(obj));
@@ -60,6 +65,7 @@ namespace Cosmos.Reflection
         /// <param name="methodName"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static MethodInfo GetMethod<T>(this T t, string methodName)
         {
             return TypeReflections.TypeCacheManager.TypeMethodCache.GetOrAdd(typeof(T), t => t.GetMethods()).First(_ => _.Name == methodName);
@@ -73,6 +79,7 @@ namespace Cosmos.Reflection
         /// <param name="bindingAttr"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static MethodInfo GetMethod<T>(this T t, string methodName, BindingFlags bindingAttr)
         {
             return typeof(T).GetMethod(methodName, bindingAttr);
@@ -83,6 +90,7 @@ namespace Cosmos.Reflection
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static MethodInfo[] GetMethods<T>(this T t)
         {
             return TypeReflections.TypeCacheManager.TypeMethodCache.GetOrAdd(typeof(T), _ => _.GetMethods());
@@ -94,6 +102,7 @@ namespace Cosmos.Reflection
         /// <param name="t"></param>
         /// <param name="bindingAttr"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static MethodInfo[] GetMethods<T>(this T t, BindingFlags bindingAttr)
         {
             return typeof(T).GetMethods(bindingAttr);
@@ -106,6 +115,7 @@ namespace Cosmos.Reflection
         /// <param name="propertyName"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static PropertyInfo GetProperty<T>(this T t, string propertyName)
         {
             return TypeReflections.TypeCacheManager.GetTypeProperties(typeof(T)).FirstOrDefault(_ => _.Name == propertyName);
@@ -119,6 +129,7 @@ namespace Cosmos.Reflection
         /// <param name="bindingAttr"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static PropertyInfo GetProperty<T>(this T t, string propertyName, BindingFlags bindingAttr)
         {
             return typeof(T).GetProperty(propertyName, bindingAttr);
@@ -129,6 +140,7 @@ namespace Cosmos.Reflection
         /// </summary>
         /// <param name="t"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static PropertyInfo[] GetProperties<T>(this T t)
         {
             return TypeReflections.TypeCacheManager.GetTypeProperties(typeof(T));
@@ -140,6 +152,7 @@ namespace Cosmos.Reflection
         /// <param name="t"></param>
         /// <param name="bindingAttr"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static PropertyInfo[] GetProperties<T>(this T t, BindingFlags bindingAttr)
         {
             return typeof(T).GetProperties(bindingAttr);

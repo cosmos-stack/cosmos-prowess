@@ -1,22 +1,28 @@
 using System;
+using System.Runtime.CompilerServices;
 using Cosmos.Collections;
 
 namespace Cosmos.IdUtils.GuidImplements
 {
     internal static class TimeStampStyleProvider
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create()
             => Create(NoRepeatMode.Off);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(Guid value)
             => Create(value, NoRepeatMode.Off);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(NoRepeatMode mode)
             => Create(Guid.NewGuid(), mode);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(Guid value, NoRepeatMode mode)
             => Create(value, mode == NoRepeatMode.On ? NoRepeatTimeStampManager.GetFactory().GetUtcTimeStamp() : DateTime.UtcNow);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(DateTime secureTimestamp)
             => Create(Guid.NewGuid(), secureTimestamp);
 

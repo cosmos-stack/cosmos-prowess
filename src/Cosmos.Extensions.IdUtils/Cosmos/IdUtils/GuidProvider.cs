@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using Cosmos.IdUtils.GuidImplements;
 
 namespace Cosmos.IdUtils
@@ -13,6 +14,7 @@ namespace Cosmos.IdUtils
         /// </summary>
         /// <returns></returns>
         // ReSharper disable once RedundantArgumentDefaultValue
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid CreateRandom() => Create(GuidStyle.BasicStyle);
 
         /// <summary>
@@ -164,6 +166,7 @@ namespace Cosmos.IdUtils
                 case GuidVersion.NameBasedSha1:
                     return NamedGuidProvider.Create(@namespace, name, GuidVersion.NameBasedSha1);
 
+                //Creates a time based GUID
                 case GuidVersion.TimeBased:
                     return Create(CombStyle.NormalStyle);
 

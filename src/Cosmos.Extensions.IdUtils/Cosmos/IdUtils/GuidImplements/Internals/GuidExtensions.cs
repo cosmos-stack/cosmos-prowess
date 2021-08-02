@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Cosmos.IdUtils.GuidImplements.Core;
 
 /*
@@ -28,6 +29,7 @@ namespace Cosmos.IdUtils.GuidImplements.Internals
         /// Decodes a GUID into its fields.
         /// </summary>
         /// <param name="guid">The GUID to decode.</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static DecodedGuid Decode(this in Guid guid) => new(guid);
     }
 }

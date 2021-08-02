@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Cosmos.Exceptions;
 using Cosmos.Reflection;
 
@@ -9,26 +10,31 @@ namespace Cosmos
     {
         #region IsEnum
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEnum<T>()
         {
             return Types.IsEnumType<T>();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEnum(Type type)
         {
             return Types.IsEnumType(type);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEnum(MemberInfo info)
         {
             return TypeReflections.IsEnum(info);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEnum(PropertyInfo info)
         {
             return TypeReflections.IsEnum(info);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEnum(object value, Type type)
         {
             return IsEnum(value, type, EnumVisitOptions.For.Default());
@@ -47,11 +53,13 @@ namespace Cosmos
             };
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEnum<T>(T value)
         {
             return IsEnum(value, typeof(T));
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsEnum<T>(T value, IEnumVisitOptions options)
         {
             return IsEnum(value, typeof(T), options);

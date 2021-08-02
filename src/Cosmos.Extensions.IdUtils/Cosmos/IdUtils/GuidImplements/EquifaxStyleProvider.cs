@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 namespace Cosmos.IdUtils.GuidImplements
 {
@@ -12,9 +13,11 @@ namespace Cosmos.IdUtils.GuidImplements
 
     internal static class EquifaxStyleProvider
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create()
             => Create(DateTime.UtcNow);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(NoRepeatMode mode)
             => Create(mode == NoRepeatMode.On ? NoRepeatTimeStampManager.GetFactory().GetUtcTimeStamp() : DateTime.UtcNow);
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace Cosmos.Reflection
 {
@@ -57,6 +58,7 @@ namespace Cosmos.Reflection
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static PropertyPath<T> Of<T>() => new();
     }
 }

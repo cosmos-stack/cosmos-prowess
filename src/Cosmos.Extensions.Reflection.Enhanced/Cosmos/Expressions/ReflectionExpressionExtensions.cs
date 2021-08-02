@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Cosmos.Reflection;
 
 namespace Cosmos.Expressions
@@ -58,6 +59,7 @@ namespace Cosmos.Expressions
         /// <typeparam name="TMember">TMember</typeparam>
         /// <param name="memberExpression">get member expression</param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string GetMemberName<TEntity, TMember>(this Expression<Func<TEntity, TMember>> memberExpression)
         {
             return GetMemberInfo(memberExpression).Name;

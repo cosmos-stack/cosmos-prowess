@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using Cosmos.Collections;
 
@@ -17,9 +18,11 @@ namespace Cosmos.IdUtils.GuidImplements
     {
         private static readonly RNGCryptoServiceProvider RandomGenerator = new();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(SequentialGuidTypes type)
             => Create(DateTime.UtcNow, type);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Guid Create(SequentialGuidTypes type, NoRepeatMode mode)
             => Create(mode == NoRepeatMode.On ? NoRepeatTimeStampManager.GetFactory().GetUtcTimeStamp() : DateTime.UtcNow, type);
 

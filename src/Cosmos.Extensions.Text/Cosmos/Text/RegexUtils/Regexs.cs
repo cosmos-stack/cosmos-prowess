@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
 
 namespace Cosmos.Text.RegexUtils
 {
@@ -14,6 +15,7 @@ namespace Cosmos.Text.RegexUtils
         /// </summary>
         /// <param name="input">输入字符串</param>
         /// <param name="pattern">模式字符串</param>        
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsMatch(string input, string pattern)
             => IsMatch(input, pattern, RegexOptions.IgnoreCase);
 
@@ -23,6 +25,7 @@ namespace Cosmos.Text.RegexUtils
         /// <param name="input">输入的字符串</param>
         /// <param name="pattern">模式字符串</param>
         /// <param name="options">筛选条件,比如是否忽略大小写</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsMatch(string input, string pattern, RegexOptions options)
             => Regex.IsMatch(input, pattern, options);
     }

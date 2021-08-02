@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using Cosmos.Exceptions;
 using Cosmos.Optionals;
 using Cosmos.Reflection.Core;
@@ -549,51 +550,67 @@ namespace Cosmos.Reflection
 
     public static class PropertyValueAccessorExtensions
     {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor(this object that, Type type)
             => A.GetValueAccessor(that, type);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor(this object that, Type type, Func<Type, object, string, BindingFlags, object> getter)
             => A.GetValueAccessor(that, type, getter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor(this object that, Type type, Action<Type, object, string, BindingFlags, object> setter)
             => A.GetValueAccessor(that, type, setter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor(this object that, Type type, Func<Type, object, string, BindingFlags, object> getter, Action<Type, object, string, BindingFlags, object> setter)
             => A.GetValueAccessor(that, type, getter, setter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor(this object that, Type type, IPropertyValueGetter getter)
             => A.GetValueAccessor(that, type, getter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor(this object that, Type type, IPropertyValueSetter setter)
             => A.GetValueAccessor(that, type, setter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor(this object that, Type type, IPropertyValueGetter getter, IPropertyValueSetter setter)
             => A.GetValueAccessor(that, type, getter, setter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor<T>(this T that)
             => A.GetValueAccessor(that);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor<T>(this T that, Func<Type, object, string, BindingFlags, object> getter)
             => A.GetValueAccessor(that, getter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor<T>(this T that, Action<Type, object, string, BindingFlags, object> setter)
             => A.GetValueAccessor(that, setter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor<T>(this T that, Func<Type, object, string, BindingFlags, object> getter, Action<Type, object, string, BindingFlags, object> setter)
             => A.GetValueAccessor(that, getter, setter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor<T>(this T that, IPropertyValueGetter getter)
             => A.GetValueAccessor(that, getter);
 
-        public static IPropertyValueAccessor GetValueAccessor<T>(this T that, IPropertyValueSetter setter)
+          [MethodImpl(MethodImplOptions.AggressiveInlining)]
+              public static IPropertyValueAccessor GetValueAccessor<T>(this T that, IPropertyValueSetter setter)
             => A.GetValueAccessor(that, setter);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyValueAccessor GetValueAccessor<T>(this T that, IPropertyValueGetter getter, IPropertyValueSetter setter)
             => A.GetValueAccessor(that, getter, setter);
 
-        public static IPropertyPathValueAccessor GetValueAccessor<T, TVal>(this T that, Func<PropertyPath<T>, PropertyPath<TVal>> pathFunc)
+         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+              public static IPropertyPathValueAccessor GetValueAccessor<T, TVal>(this T that, Func<PropertyPath<T>, PropertyPath<TVal>> pathFunc)
             => A.GetValueAccessor(that, pathFunc);
         
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IPropertyPathValueAccessor GetValueAccessor<T, TProperty>(this object that, Expression<Func<T, TProperty>> expression)
             => A.GetValueAccessor(that, PropertyPath.Of<T>().Then(expression));
     }

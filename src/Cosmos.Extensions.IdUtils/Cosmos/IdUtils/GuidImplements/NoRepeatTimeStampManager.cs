@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Cosmos.Date;
 using Cosmos.IdUtils.CombImplements.Providers;
 
@@ -13,8 +14,10 @@ namespace Cosmos.IdUtils.GuidImplements
             _factory = new NoRepeatTimeStampFactory();
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static NoRepeatTimeStampFactory GetFactory() => _factory;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static InternalTimeStampProvider GetTimeStampProvider(NoRepeatMode mode)
         {
             if (mode == NoRepeatMode.On)

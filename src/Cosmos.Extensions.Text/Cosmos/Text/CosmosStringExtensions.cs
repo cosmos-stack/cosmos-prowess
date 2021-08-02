@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Cosmos.Collections;
 
@@ -13,19 +14,19 @@ namespace Cosmos.Text
     {
         #region Contains
 
-        ///// <summary>
-        ///// Determine whether the specified text contains Chinese characters.<br />
-        ///// 判断指定文本是否包含中文汉字。
-        ///// </summary>
-        ///// <param name="text"></param>
-        //public static bool ContainsChinese(string text) => StringJudgment.ContainsChineseCharacters(text);
+        /// <summary>
+        /// Determine whether the specified text contains Chinese characters.<br />
+        /// 判断指定文本是否包含中文汉字。
+        /// </summary>
+        /// <param name="text"></param>
+        public static bool ContainsChinese(string text) => StringJudge.ContainsChineseCharacters(text);
 
-        ///// <summary>
-        ///// Determine whether the specified text contains numbers.<br />
-        ///// 判断指定文本是否包含数字。
-        ///// </summary>
-        ///// <param name="text">文本</param>
-        //public static bool ContainsNumber(string text) => StringJudgment.ContainsNumber(text);
+        /// <summary>
+        /// Determine whether the specified text contains numbers.<br />
+        /// 判断指定文本是否包含数字。
+        /// </summary>
+        /// <param name="text">文本</param>
+        public static bool ContainsNumber(string text) => StringJudge.ContainsNumber(text);
 
         /// <summary>
         /// Determine whether the specified text contains the given word. <br />
@@ -103,6 +104,7 @@ namespace Cosmos.Text
         /// <param name="text"></param>
         /// <param name="toCheck"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool ContainsWholePhraseAny(this string text, params string[] toCheck) => toCheck.Any(text.ContainsWholePhrase);
 
         /// <summary>
@@ -114,6 +116,7 @@ namespace Cosmos.Text
         /// <param name="text"></param>
         /// <param name="toCheck"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool ContainsWholePhraseAll(this string text, params string[] toCheck) => toCheck.All(text.ContainsWholePhrase);
 
         /// <summary>
@@ -156,7 +159,7 @@ namespace Cosmos.Text
         /// <returns></returns>
         public static bool ContainsAllIgnoreCase(this string text, params string[] toCheck)
         {
-            if (toCheck == null || toCheck.Length == 0)
+            if (toCheck is null || toCheck.Length == 0)
                 throw new ArgumentException($"The given phrase '{toCheck}' cannot be empty.");
             return toCheck.All(checking => text.IndexOfIgnoreCase(checking) >= 0);
         }
@@ -306,6 +309,7 @@ namespace Cosmos.Text
         /// <param name="that"></param>
         /// <param name="lengthAtLeast"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static IEnumerable<string> SplitInWordsLongerThan(this string that, int lengthAtLeast)
         {
             return SplitWordsPattern.Split(that).Where(word => word.Length > lengthAtLeast);
@@ -317,6 +321,7 @@ namespace Cosmos.Text
         /// </summary>
         /// <param name="that"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string[] SplitInLines(this string that)
         {
             return that.Split(new[] {Environment.NewLine}, StringSplitOptions.None);
@@ -331,6 +336,7 @@ namespace Cosmos.Text
         /// <typeparam name="T"></typeparam>
         /// <param name="that"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T[] SplitInLinesTyped<T>(this string that) where T : IComparable
         {
             return SplitTyped<T>(that, Environment.NewLine);
@@ -342,6 +348,7 @@ namespace Cosmos.Text
         /// </summary>
         /// <param name="that"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string[] SplitInLinesWithoutEmpty(this string that)
         {
             return that.Split(new[] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
@@ -478,6 +485,7 @@ namespace Cosmos.Text
         /// </summary>
         /// <param name="that"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string LastWord(this string that) => IndexOfWord(that, -1);
 
         /// <summary>
@@ -486,6 +494,7 @@ namespace Cosmos.Text
         /// </summary>
         /// <param name="that"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string SecondWord(this string that) => IndexOfWord(that, 2);
 
         /// <summary>
@@ -494,6 +503,7 @@ namespace Cosmos.Text
         /// </summary>
         /// <param name="that"></param>
         /// <returns></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string FirstWord(this string that) => IndexOfWord(that, 1);
 
         /// <summary>
