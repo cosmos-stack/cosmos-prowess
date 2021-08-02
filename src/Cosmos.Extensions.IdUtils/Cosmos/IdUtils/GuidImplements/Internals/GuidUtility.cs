@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 
 /*
  * Reference to:
@@ -56,11 +57,10 @@ namespace Cosmos.IdUtils.GuidImplements.Internals
             Swap(guid, 6, 7);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static void Swap(byte[] array, int index1, int index2)
         {
-            var temp = array[index1];
-            array[index1] = array[index2];
-            array[index2] = temp;
+            (array[index1], array[index2]) = (array[index2], array[index1]);
         }
     }
 }
