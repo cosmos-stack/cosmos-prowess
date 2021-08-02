@@ -14,7 +14,7 @@ namespace Cosmos.IdUtils
         /// <param name="maker"></param>
         public TraceIdAccessor(ITraceIdMaker maker)
         {
-            _id = maker == null ? DefaultMaker.CreateId() : maker.CreateId();
+            _id = maker is null ? DefaultMaker.CreateId() : maker.CreateId();
         }
 
         /// <summary>

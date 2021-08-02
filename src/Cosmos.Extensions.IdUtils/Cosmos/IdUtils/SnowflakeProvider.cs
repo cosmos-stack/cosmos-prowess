@@ -26,7 +26,7 @@
         /// <param name="sequence"></param>
         /// <returns></returns>
         public static TSnowflakeIdWorker Create<TSnowflakeIdWorker>(long workerId, long dataCenterId, long sequence = 0L)
-        where TSnowflakeIdWorker : SnowflakeIdWorker
+            where TSnowflakeIdWorker : SnowflakeIdWorker
         {
             return Reflection.TypeVisit.CreateInstance<TSnowflakeIdWorker>(workerId, dataCenterId, sequence);
         }

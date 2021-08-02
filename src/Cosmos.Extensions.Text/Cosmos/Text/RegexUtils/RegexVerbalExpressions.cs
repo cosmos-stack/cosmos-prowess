@@ -38,13 +38,13 @@ namespace Cosmos.Text.RegexUtils
         /// Returns a default instance of RegexVerbalExpressions
         /// having the Multiline option enabled
         /// </summary>
-        public static RegexVerbalExpressions DefaultExpression => new RegexVerbalExpressions();
+        public static RegexVerbalExpressions DefaultExpression => new();
 
         // ReSharper disable once InconsistentNaming
-        private readonly RegexCache regexCache = new RegexCache();
+        private readonly RegexCache regexCache = new();
 
         // ReSharper disable FieldCanBeMadeReadOnly.Local
-        private StringBuilder _prefixes = new StringBuilder(), _source = new StringBuilder(), _suffixes = new StringBuilder();
+        private StringBuilder _prefixes = new(), _source = new(), _suffixes = new();
 
         private RegexOptions _modifiers = RegexOptions.Multiline;
 
@@ -69,7 +69,7 @@ namespace Cosmos.Text.RegexUtils
         /// <returns></returns>
         public RegexVerbalExpressions Add(string value, bool sanitize = true)
         {
-            if (value == null)
+            if (value is null)
                 throw new ArgumentNullException(nameof(value), "value must be provided");
             _source.Append(sanitize ? Sanitize(value) : value);
             return this;
@@ -233,15 +233,15 @@ namespace Cosmos.Text.RegexUtils
                 throw new ArgumentOutOfRangeException(nameof(arguments));
 
             var sanitizedStrings = arguments.Select(argument =>
-                {
-                    if (argument is null)
-                        return string.Empty;
-                    var castRet = argument.ToString();
-                    return string.IsNullOrEmpty(castRet) ? string.Empty : Sanitize(castRet);
-                })
-               .Where(sanitizedString => !string.IsNullOrEmpty(sanitizedString))
-               .OrderBy(s => s)
-               .ToArray();
+                                            {
+                                                if (argument is null)
+                                                    return string.Empty;
+                                                var castRet = argument.ToString();
+                                                return string.IsNullOrEmpty(castRet) ? string.Empty : Sanitize(castRet);
+                                            })
+                                            .Where(sanitizedString => !string.IsNullOrEmpty(sanitizedString))
+                                            .OrderBy(s => s)
+                                            .ToArray();
 
             if (sanitizedStrings.Length > 3)
                 throw new ArgumentOutOfRangeException(nameof(arguments));
@@ -400,15 +400,7 @@ namespace Cosmos.Text.RegexUtils
         /// <returns></returns>
         public RegexVerbalExpressions WithAnyCase(bool enable = true)
         {
-            if (enable)
-            {
-                AddModifier('i');
-            }
-            else
-            {
-                RemoveModifier('i');
-            }
-
+            enable.Ifttt(() => AddModifier('i'), () => RemoveModifier('i'));
             return this;
         }
 
@@ -419,15 +411,7 @@ namespace Cosmos.Text.RegexUtils
         /// <returns></returns>
         public RegexVerbalExpressions UseOneLineSearchOption(bool enable)
         {
-            if (enable)
-            {
-                RemoveModifier('m');
-            }
-            else
-            {
-                AddModifier('m');
-            }
-
+            enable.Ifttt(() => RemoveModifier('m'), () => AddModifier('m'));
             return this;
         }
 
