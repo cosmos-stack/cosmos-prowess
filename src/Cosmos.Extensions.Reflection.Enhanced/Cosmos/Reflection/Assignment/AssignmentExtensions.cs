@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace Cosmos.Reflection.Assignment
 {
-    public static class AssignmentExtensions
+    public static partial class AssignmentExtensions
     {
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object GetValue<T>(this T t, string memberName)
