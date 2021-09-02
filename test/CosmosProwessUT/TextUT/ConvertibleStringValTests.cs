@@ -37,8 +37,8 @@ namespace CosmosProwessUT.TextUT
         public void MayBeTest()
         {
             var s = ConvertibleStringVal.Of("1");
-            var m_d = s.ToMaybe<DateTime>();
-            var m_int32 = s.ToMaybe<int>();
+            var m_d = s.AsOptionals<DateTime>();
+            var m_int32 = s.AsOptionals<int>();
 
             m_d.HasValue.ShouldBeTrue();
             m_d.Value.ShouldBe(new DateTime(0));

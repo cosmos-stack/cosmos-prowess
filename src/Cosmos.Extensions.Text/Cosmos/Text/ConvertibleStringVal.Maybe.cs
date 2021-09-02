@@ -10,7 +10,7 @@ namespace Cosmos.Text
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public Maybe<T> ToMaybe<T>() => Optional.From(As<T>());
+        public Maybe<T> AsOptionals<T>() => Optional.From(As<T>());
 
         /// <summary>
         /// Maybe
@@ -18,7 +18,7 @@ namespace Cosmos.Text
         /// <param name="condition"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public Maybe<T> ToMaybe<T>(Func<T, bool> condition) => Optional.From(As<T>(), condition);
+        public Maybe<T> AsOptionals<T>(Func<T, bool> condition) => Optional.From(As<T>(), condition);
 
         /// <summary>
         /// Maybe
@@ -26,7 +26,7 @@ namespace Cosmos.Text
         /// <param name="defaultVal"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public Maybe<T> ToMaybe<T>(T defaultVal) => Optional.From(As<T>()).Or(defaultVal);
+        public Maybe<T> AsOptionals<T>(T defaultVal) => Optional.From(As<T>()).Or(defaultVal);
 
         /// <summary>
         /// Maybe
@@ -35,14 +35,14 @@ namespace Cosmos.Text
         /// <param name="defaultVal"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public Maybe<T> ToMaybe<T>(Func<T, bool> condition, T defaultVal) => Optional.From(As<T>(), condition).Or(defaultVal);
+        public Maybe<T> AsOptionals<T>(Func<T, bool> condition, T defaultVal) => Optional.From(As<T>(), condition).Or(defaultVal);
 
         /// <summary>
         /// Maybe value
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T MaybeValue<T>() => ToMaybe<T>().Value;
+        public T MaybeValue<T>() => AsOptionals<T>().Value;
 
         /// <summary>
         /// Maybe value
@@ -50,7 +50,7 @@ namespace Cosmos.Text
         /// <param name="condition"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T MaybeValue<T>(Func<T, bool> condition) => ToMaybe(condition).Value;
+        public T MaybeValue<T>(Func<T, bool> condition) => AsOptionals(condition).Value;
 
         /// <summary>
         /// Maybe value
@@ -58,7 +58,7 @@ namespace Cosmos.Text
         /// <param name="defaultVal"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T MaybeValue<T>(T defaultVal) => ToMaybe<T>().ValueOr(defaultVal);
+        public T MaybeValue<T>(T defaultVal) => AsOptionals<T>().ValueOr(defaultVal);
 
         /// <summary>
         /// Maybe value
@@ -67,6 +67,6 @@ namespace Cosmos.Text
         /// <param name="defaultVal"></param>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        public T MaybeValue<T>(Func<T, bool> condition, T defaultVal) => ToMaybe(condition).ValueOr(defaultVal);
+        public T MaybeValue<T>(Func<T, bool> condition, T defaultVal) => AsOptionals(condition).ValueOr(defaultVal);
     }
 }

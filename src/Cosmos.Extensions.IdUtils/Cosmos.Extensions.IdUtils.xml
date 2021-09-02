@@ -712,12 +712,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="T:Cosmos.IdUtils.SnowflakeProvider">
+        <member name="T:Cosmos.IdUtils.SnowflakeGenerator">
             <summary>
-            Snowflake Provider
+            Snowflake Generator
             </summary>
         </member>
-        <member name="M:Cosmos.IdUtils.SnowflakeProvider.Create(System.Int64,System.Int64,System.Int64)">
+        <member name="M:Cosmos.IdUtils.SnowflakeGenerator.Create(System.Int64,System.Int64,System.Int64)">
             <summary>
             Create
             </summary>
@@ -726,7 +726,7 @@
             <param name="sequence"></param>
             <returns></returns>
         </member>
-        <member name="M:Cosmos.IdUtils.SnowflakeProvider.Create``1(System.Int64,System.Int64,System.Int64)">
+        <member name="M:Cosmos.IdUtils.SnowflakeGenerator.Create``1(System.Int64,System.Int64,System.Int64)">
             <summary>
             Create
             </summary>
