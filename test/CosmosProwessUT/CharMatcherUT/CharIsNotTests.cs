@@ -1,4 +1,4 @@
-﻿using Cosmos.CharMatchers;
+﻿using CosmosStack.Text.CharMatchers;
 using Shouldly;
 using Xunit;
 

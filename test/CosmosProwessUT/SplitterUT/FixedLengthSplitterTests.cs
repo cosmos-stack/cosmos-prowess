@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Cosmos.Splitters;
+using CosmosStack.Text.Splitters;
 using Shouldly;
 using Xunit;
 

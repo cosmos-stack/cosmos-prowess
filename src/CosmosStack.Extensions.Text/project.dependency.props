@@ -1,0 +1,27 @@
+<Project>
+
+    <ItemGroup>
+        <PackageReference Include="CosmosStack.Extensions.Guard" Version="$(Standard-RefVersion)" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net462' ">
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net472' ">
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net48' ">
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.1" />
+    </ItemGroup>
+
+    <ItemGroup Condition=" '$(TargetFramework)' == 'net5.0' ">
+        <PackageReference Include="System.Text.Encoding.CodePages" Version="4.7.1" />
+    </ItemGroup>
+
+</Project>

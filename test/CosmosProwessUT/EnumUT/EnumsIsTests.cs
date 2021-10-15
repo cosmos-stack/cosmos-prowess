@@ -1,5 +1,5 @@
-﻿using Cosmos;
-using CosmosProwessUT.EnumUT.Models;
+﻿using CosmosProwessUT.EnumUT.Models;
+using CosmosStack.EnumUtils;
 using Shouldly;
 using Xunit;
 

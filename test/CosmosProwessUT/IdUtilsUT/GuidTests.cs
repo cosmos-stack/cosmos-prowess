@@ -1,5 +1,5 @@
-﻿using Cosmos.IdUtils;
-using Cosmos.Text;
+﻿using CosmosStack.IdUtils;
+using CosmosStack.Text;
 using Shouldly;
 using Xunit;
 

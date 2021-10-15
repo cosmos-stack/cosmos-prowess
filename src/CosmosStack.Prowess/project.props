@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>CosmosStack.Prowess</AssemblyName>
+        <PackageId>CosmosStack.Prowess</PackageId>
+        <Description>Cosmos Prowess Expansion pack for Cosmos Stack</Description>
+    </PropertyGroup>
+
+</Project>

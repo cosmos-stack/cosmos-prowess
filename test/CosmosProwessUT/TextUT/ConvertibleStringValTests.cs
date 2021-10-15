@@ -1,6 +1,5 @@
 ﻿using System;
-using Cosmos.Date;
-using Cosmos.Text;
+using CosmosStack.Text;
 using Shouldly;
 using Xunit;
 
@@ -37,7 +36,9 @@ namespace CosmosProwessUT.TextUT
         public void MayBeTest()
         {
             var s = ConvertibleStringVal.Of("1");
+            // ReSharper disable once InconsistentNaming
             var m_d = s.AsOptionals<DateTime>();
+            // ReSharper disable once InconsistentNaming
             var m_int32 = s.AsOptionals<int>();
 
             m_d.HasValue.ShouldBeTrue();

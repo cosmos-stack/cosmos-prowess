@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>CosmosStack.Extensions.IdUtils</AssemblyName>
+        <PackageId>CosmosStack.Extensions.IdUtils</PackageId>
+        <Description>IdUtils extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+</Project>

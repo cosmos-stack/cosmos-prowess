@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Cosmos.Joiners;
+using CosmosStack.Text.Joiners;
 using Shouldly;
 using Xunit;
 
@@ -33,7 +33,7 @@ namespace CosmosProwessUT.JoinerUT
         [Fact]
         public void TupleToStringWithWhiteSpaceKvAndReplacerTest()
         {
-            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((t1, t2) => "NullKey", (t1, t2) => "NullValue")
+            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((_, _) => "NullKey", (_, _) => "NullValue")
                             .Join(OriginalMaterials.IncludeWhiteSpaceKvTupleList);
             str.ShouldBe("a=1&b=2&c=3&d=4&e=NullValue");
         }
@@ -41,7 +41,7 @@ namespace CosmosProwessUT.JoinerUT
         [Fact]
         public void TupleToStringWithNullKvAndReplacerTest()
         {
-            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((t1, t2) => "NullKey", (t1, t2) => "NullValue")
+            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((_, _) => "NullKey", (_, _) => "NullValue")
                             .Join(OriginalMaterials.IncludeNullKvTupleList);
             str.ShouldBe("a=1&b=2&c=3&d=4&e=NullValue");
         }
@@ -49,7 +49,7 @@ namespace CosmosProwessUT.JoinerUT
         [Fact]
         public void TupleToStringWithEmptyKvAndReplacerTest()
         {
-            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((t1, t2) => "NullKey", (t1, t2) => "NullValue")
+            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((_, _) => "NullKey", (_, _) => "NullValue")
                             .Join(OriginalMaterials.IncludeEmptyKvTupleList);
             str.ShouldBe("a=1&b=2&c=3&d=4&e=NullValue");
         }
@@ -57,7 +57,7 @@ namespace CosmosProwessUT.JoinerUT
         [Fact]
         public void TupleToStringWithWhiteSpaceValueAndReplacerTest()
         {
-            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((t1, t2) => "NullKey", (t1, t2) => "NullValue")
+            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((_, _) => "NullKey", (_, _) => "NullValue")
                             .Join(OriginalMaterials.IncludeWhiteSpaceValueTupleList);
             str.ShouldBe("a=1&b=2&c=3&d=4&NullKey=NullValue");
         }
@@ -65,7 +65,7 @@ namespace CosmosProwessUT.JoinerUT
         [Fact]
         public void TupleToStringWithNullValueAndReplacerTest()
         {
-            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((t1, t2) => "NullKey", (t1, t2) => "NullValue")
+            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((_, _) => "NullKey", (_, _) => "NullValue")
                             .Join(OriginalMaterials.IncludeNullValueTupleList);
             str.ShouldBe("a=1&b=2&c=3&d=4&NullKey=NullValue");
         }
@@ -73,7 +73,7 @@ namespace CosmosProwessUT.JoinerUT
         [Fact]
         public void TupleToStringWithEmptyValueAndReplacerTest()
         {
-            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((t1, t2) => "NullKey", (t1, t2) => "NullValue")
+            var str = Joiner.On("&").WithKeyValueSeparator("=").FromTuple().UseForNull<string, string>((_, _) => "NullKey", (_, _) => "NullValue")
                             .Join(OriginalMaterials.IncludeEmptyValueTupleList);
             str.ShouldBe("a=1&b=2&c=3&d=4&NullKey=NullValue");
         }

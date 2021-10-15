@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Cosmos;
-using Cosmos.Joiners;
+using CosmosStack;
+using CosmosStack.Text.Joiners;
 using Shouldly;
 using Xunit;
 
@@ -364,7 +364,7 @@ namespace CosmosProwessUT.JoinerUT
         public void MapToStringWithWhiteSpaceKvAndReplaceTest()
         {
             var str1 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull("NullKey", "NullValue").Join(OriginalMaterials.IncludeWhiteSpaceKvList);
-            var str2 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(s => "NullKeyFunc", s => "NullValueFunc").Join(OriginalMaterials.IncludeWhiteSpaceKvList);
+            var str2 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(_ => "NullKeyFunc", _ => "NullValueFunc").Join(OriginalMaterials.IncludeWhiteSpaceKvList);
 
             str1.ShouldBe("a=1&b=2&c=3&d=4&e=5&NullKey=NullValue");
             str2.ShouldBe("a=1&b=2&c=3&d=4&e=5&NullKeyFunc=NullValueFunc");
@@ -374,7 +374,7 @@ namespace CosmosProwessUT.JoinerUT
         public void MapToStringWithNullKvAndReplaceTest()
         {
             var str3 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull("NullKey", "NullValue").Join(OriginalMaterials.IncludeNullKvList);
-            var str4 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(s => "NullKeyFunc", s => "NullValueFunc").Join(OriginalMaterials.IncludeNullKvList);
+            var str4 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(_ => "NullKeyFunc", _ => "NullValueFunc").Join(OriginalMaterials.IncludeNullKvList);
 
             str3.ShouldBe("a=1&b=2&c=3&d=4&e=5&NullKey=NullValue");
             str4.ShouldBe("a=1&b=2&c=3&d=4&e=5&NullKeyFunc=NullValueFunc");
@@ -384,7 +384,7 @@ namespace CosmosProwessUT.JoinerUT
         public void MapToStringWithEmptyKvAndReplaceTest()
         {
             var str5 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull("NullKey", "NullValue").Join(OriginalMaterials.IncludeEmptyKvList);
-            var str6 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(s => "NullKeyFunc", s => "NullValueFunc").Join(OriginalMaterials.IncludeEmptyKvList);
+            var str6 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(_ => "NullKeyFunc", _ => "NullValueFunc").Join(OriginalMaterials.IncludeEmptyKvList);
 
             str5.ShouldBe("a=1&b=2&c=3&d=4&e=5&NullKey=NullValue");
             str6.ShouldBe("a=1&b=2&c=3&d=4&e=5&NullKeyFunc=NullValueFunc");
@@ -394,7 +394,7 @@ namespace CosmosProwessUT.JoinerUT
         public void MapToStringWithWhiteSpaceValueAndReplaceTest()
         {
             var str11 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull("NullKey", "NullValue").Join(OriginalMaterials.IncludeWhiteSpaceValueList);
-            var str21 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(s => "NullKeyFunc", s => "NullValueFunc").Join(OriginalMaterials.IncludeWhiteSpaceValueList);
+            var str21 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(_ => "NullKeyFunc", s => "NullValueFunc").Join(OriginalMaterials.IncludeWhiteSpaceValueList);
 
             str11.ShouldBe("a=1&b=2&c=3&d=4&e=5&f=NullValue");
             str21.ShouldBe("a=1&b=2&c=3&d=4&e=5&f=NullValueFunc");
@@ -404,7 +404,7 @@ namespace CosmosProwessUT.JoinerUT
         public void MapToStringWithNullValueAndReplaceTest()
         {
             var str31 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull("NullKey", "NullValue").Join(OriginalMaterials.IncludeNullValueList);
-            var str41 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(s => "NullKeyFunc", s => "NullValueFunc").Join(OriginalMaterials.IncludeNullValueList);
+            var str41 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(_ => "NullKeyFunc", _ => "NullValueFunc").Join(OriginalMaterials.IncludeNullValueList);
 
             str31.ShouldBe("a=1&b=2&c=3&d=4&e=5&f=NullValue");
             str41.ShouldBe("a=1&b=2&c=3&d=4&e=5&f=NullValueFunc");
@@ -414,7 +414,7 @@ namespace CosmosProwessUT.JoinerUT
         public void MapToStringWithEmptyValueAndReplaceTest()
         {
             var str51 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull("NullKey", "NullValue").Join(OriginalMaterials.IncludeEmptyValueList);
-            var str61 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(s => "NullKeyFunc", s => "NullValueFunc").Join(OriginalMaterials.IncludeEmptyValueList);
+            var str61 = Joiner.On("&").WithKeyValueSeparator("=").UseForNull(_ => "NullKeyFunc", _ => "NullValueFunc").Join(OriginalMaterials.IncludeEmptyValueList);
 
             str51.ShouldBe("a=1&b=2&c=3&d=4&e=5&f=NullValue");
             str61.ShouldBe("a=1&b=2&c=3&d=4&e=5&f=NullValueFunc");

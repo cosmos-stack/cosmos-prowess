@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CosmosStack.Extensions.Enums.Enhanced</name>
+    </assembly>
+    <members>
+        <member name="T:CosmosStack.EnumUtils.Enums">
+            <summary>
+            Enum Utilities <br />
+            枚举工具
+            </summary>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.Of``1(System.String,System.Boolean,``0)">
+            <summary>
+            Of <br />
+            将给定的字符串转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.Of``1(System.Object,``0)">
+            <summary>
+            Of <br />
+            将给定的对象转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.Of(System.String,System.Type,System.Boolean,System.Object)">
+            <summary>
+            Of <br />
+            将给定的字符串转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.Of(System.Object,System.Type,System.Object)">
+            <summary>
+            Of <br />
+            将给定的对象转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.NameOf``1(``0)">
+            <summary>
+            Name of <br />
+            获取给定枚举值的名称
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.NameOf(System.Type,System.Object)">
+            <summary>
+            Name of <br />
+            获取给定枚举值的名称
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.DescriptionOf``1(``0)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.DescriptionOf(System.Type,System.Object)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.Count``1">
+            <summary>
+            Counts the number of enums values contained in a given enum type. <br />
+            计算给定枚举类型中包含的枚举值的数量。
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.GetValues``1">
+            <summary>
+            Get values <br />
+            从给定枚举类型中获取一组枚举值
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.GetValues(System.Type)">
+            <summary>
+            Get values <br />
+            从给定枚举类型中获取一组枚举值
+            </summary>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.Enums.RandomValue``1">
+            <summary>
+            Random value <br />
+            根据给定的枚举类型，随机获得一个枚举的值
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:CosmosStack.EnumUtils.EnumVisit">
+            <summary>
+            Enum Visit <br />
+            枚举访问器
+            </summary>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum``1">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum(System.Type)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum(System.Reflection.MemberInfo)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum(System.Reflection.PropertyInfo)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum(System.Object,System.Type)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum(System.Object,System.Type,CosmosStack.EnumUtils.IEnumVisitOptions)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum``1(``0)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisit.IsEnum``1(``0,CosmosStack.EnumUtils.IEnumVisitOptions)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:CosmosStack.EnumUtils.IConfigurableEnumVisitOptions">
+            <summary>
+            Configurable Enum Visit Options Interface <br />
+            接口，用于可配置的枚举访问器
+            </summary>
+        </member>
+        <member name="T:CosmosStack.EnumUtils.IEnumVisitOptions">
+            <summary>
+            Enum Visit Options Interface <br />
+            接口，枚举访问器选项
+            </summary>
+        </member>
+        <member name="P:CosmosStack.EnumUtils.IEnumVisitOptions.Value">
+            <summary>
+            Get value <br />
+            获取值
+            </summary>
+        </member>
+        <member name="T:CosmosStack.EnumUtils.EnumVisitOptions">
+            <summary>
+            Enum Visit Options <br />
+            枚举访问器选项
+            </summary>
+        </member>
+        <member name="P:CosmosStack.EnumUtils.EnumVisitOptions.For">
+            <summary>
+            Obtain a configuration entry so that the new configuration can take effect. <br />
+            获取一个配置入口，以便能将新配置生效。
+            </summary>
+        </member>
+        <member name="T:CosmosStack.EnumUtils.EnumVisitOptionsExtensions">
+            <summary>
+            Enum Visit Options Extensions <br />
+            枚举访问器选项扩展
+            </summary>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisitOptionsExtensions.Default(CosmosStack.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Default <br />
+            默认
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisitOptionsExtensions.Type(CosmosStack.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Type <br />
+            类型，判断给定类型是否为枚举
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisitOptionsExtensions.Value(CosmosStack.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Value <br />
+            值，判断给定值是否为枚举
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.EnumUtils.EnumVisitOptionsExtensions.TypeAndValue(CosmosStack.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Type and Value <br />
+            类型与值，判断给定的类型和值是否为枚举，任何一个为 True 则返回 True
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

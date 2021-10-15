@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>CosmosStack.Extensions.Reflection.Enhanced</AssemblyName>
+        <PackageId>CosmosStack.Extensions.Reflection.Enhanced</PackageId>
+        <Description>An enhanced reflection library, a further extension of Cosmos.Extensions.Reflection, and a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+</Project>

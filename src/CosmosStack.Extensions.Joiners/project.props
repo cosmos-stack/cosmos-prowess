@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>CosmosStack.Extensions.Joiners</AssemblyName>
+        <PackageId>CosmosStack.Extensions.Joiners</PackageId>
+        <Description>Joiners extensions, a part of Cosmos Prowess Expansion pack for Cosmos Stack</Description>
+    </PropertyGroup>
+
+</Project>

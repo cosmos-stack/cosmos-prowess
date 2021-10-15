@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using Cosmos;
+using CosmosStack;
+using CosmosStack.Text.Splitters;
 using Shouldly;
 using Xunit;
-using Splitter = Cosmos.Splitters.Splitter;
 
 namespace CosmosProwessUT.SplitterUT
 {

@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>Cosmos.Extensions.Joiners</AssemblyName>
-        <PackageId>Cosmos.Extensions.Joiners</PackageId>
-        <Description>Joiners extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
-    </PropertyGroup>
-
-</Project>

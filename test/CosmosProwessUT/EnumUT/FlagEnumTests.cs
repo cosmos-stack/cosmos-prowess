@@ -1,7 +1,7 @@
 ﻿#if !NETFRAMEWORK
 
-using Cosmos;
 using CosmosProwessUT.EnumUT.Models;
+using CosmosStack.EnumUtils;
 using Shouldly;
 using Xunit;
 

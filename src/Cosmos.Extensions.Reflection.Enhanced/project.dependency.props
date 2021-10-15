@@ -1,7 +1,0 @@
-<Project>
-
-    <ItemGroup>
-        <PackageReference Include="Cosmos.Extensions.Reflection" Version="$(Standard-PkgVersion)" />
-    </ItemGroup>
-
-</Project>

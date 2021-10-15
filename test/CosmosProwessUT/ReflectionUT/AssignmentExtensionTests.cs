@@ -1,5 +1,5 @@
-﻿using Cosmos.Reflection;
-using Cosmos.Reflection.Assignment;
+﻿using CosmosStack.Reflection;
+using CosmosStack.Reflection.Assignment;
 using Shouldly;
 using Xunit;
 

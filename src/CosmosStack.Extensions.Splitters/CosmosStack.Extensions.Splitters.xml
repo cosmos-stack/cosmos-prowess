@@ -1,0 +1,932 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CosmosStack.Extensions.Splitters</name>
+    </assembly>
+    <members>
+        <member name="T:CosmosStack.Text.Splitters.IFixedLengthSplitter">
+            <summary>
+            Fixed length splitter interface <br />
+            修正长度的 Splitter 接口
+            </summary>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.TrimResults">
+            <summary>
+            Trim results <br />
+            裁剪结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.TrimResults(System.Func{System.String,System.String})">
+            <summary>
+            Trim results <br />
+            裁剪结果
+            </summary>
+            <param name="trimFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.Limit(System.Int32)">
+            <summary>
+            Limit <br />
+            限制
+            </summary>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.WithKeyValueSeparator(System.Char)">
+            <summary>
+            With KeyValue separator <br />
+            设置键值对间隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.WithKeyValueSeparator(System.String)">
+            <summary>
+            With KeyValue separator <br />
+            设置键值对间隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.Split(System.String)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.Split``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.Split``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.Split``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToList(System.String)">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToList``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToList``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToList``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToArray(System.String)">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToArray``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToArray``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IFixedLengthSplitter.SplitToArray``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CosmosStack.Text.Splitters.IMapSplitter">
+            <summary>
+            MapSplitter interface <br />
+            MapSplitter 接口
+            </summary>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.TrimResults">
+            <summary>
+            Trim results <br />
+            裁剪结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.TrimResults(System.Func{System.String,System.String},System.Func{System.String,System.String})">
+            <summary>
+            Trim results <br />
+            裁剪结果
+            </summary>
+            <param name="keyTrimFunc"></param>
+            <param name="valueTrimFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.Limit(System.Int32)">
+            <summary>
+            Limit <br />
+            限制
+            </summary>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.Split(System.String)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.Split``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.Split``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.Split``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.SplitToDictionary(System.String)">
+            <summary>
+            Split to dictionary <br />
+            切割为字典
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.SplitToDictionary``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to dictionary <br />
+            切割为字典
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.SplitToDictionary``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to dictionary <br />
+            切割为字典
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.IMapSplitter.SplitToDictionary``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to dictionary <br />
+            切割为字典
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CosmosStack.Text.Splitters.ISplitter">
+            <summary>
+            Splitter interface <br />
+            Splitter 接口
+            </summary>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.OmitEmptyStrings">
+            <summary>
+            Omit empty strings <br />
+            忽略空字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.TrimResults">
+            <summary>
+            Trim results <br />
+            裁剪结果
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.TrimResults(System.Func{System.String,System.String})">
+            <summary>
+            Trim results <br />
+            裁剪结果
+            </summary>
+            <param name="trimFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.Limit(System.Int32)">
+            <summary>
+            Limit <br />
+            限制
+            </summary>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.WithKeyValueSeparator(System.Char)">
+            <summary>
+            With KeyValue separator <br />
+            设置键值对分隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.WithKeyValueSeparator(System.String)">
+            <summary>
+            With KeyValue separator <br />
+            设置键值对分隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.Split(System.String)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.Split``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.Split``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.Split``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split <br />
+            切割
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToList(System.String)">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToList``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToList``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToList``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to list <br />
+            切割为列表
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToArray(System.String)">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToArray``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToArray``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.ISplitter.SplitToArray``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to array <br />
+            切割为数组
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CosmosStack.Text.Splitters.Splitter">
+            <summary>
+            Splitter<br />
+            字符串分割器
+            </summary>
+            <summary>
+            Splitter<br />
+            字符串分割器
+            </summary>
+            <summary>
+            Splitter<br />
+            字符串分割器
+            </summary>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.OmitEmptyStrings">
+            <summary>
+            Omit empty string<br />
+            移除空字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#WithKeyValueSeparator(System.String)">
+            <summary>
+            With KeyValue separator<br />
+            设置键值对分隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#WithKeyValueSeparator(System.Char)">
+            <summary>
+            With KeyValue separator<br />
+            设置键值对分隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#TrimResults">
+            <summary>
+            Trim results<br />
+            修整结果两端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#TrimResults(System.Func{System.String,System.String})">
+            <summary>
+            Trim results<br />
+            修整结果，按照指定的方法
+            </summary>
+            <param name="trimFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#Limit(System.Int32)">
+            <summary>
+            Limit<br />
+            设置限制的值
+            </summary>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#Split(System.String)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#Split``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#Split``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#Split``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToList(System.String)">
+            <summary>
+            Split to list<br />
+            分割为列表
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToList``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to list<br />
+            分割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToList``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to list<br />
+            分割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToList``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to list<br />
+            分割为列表
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToArray(System.String)">
+            <summary>
+            Split to array
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToArray``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToArray``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#ISplitter#SplitToArray``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.On(System.Char,System.Char[])">
+            <summary>
+            On. Set a symbol, execute split when the symbol is hit, and return a new Splitter instance. <br />
+            On 操作，设置一个符号，当命中该符号时执行切割，并返回一个 Splitter 实例。
+            </summary>
+            <param name="on"></param>
+            <param name="on2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.On(System.String,System.String[])">
+            <summary>
+            On. Set a symbol, execute split when the symbol is hit, and return a new Splitter instance. <br />
+            On 操作，设置一个符号，当命中该符号时执行切割，并返回一个 Splitter 实例。
+            </summary>
+            <param name="on"></param>
+            <param name="on2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.On(System.Text.RegularExpressions.Regex)">
+            <summary>
+            On. Set a symbol, execute split when the symbol is hit, and return a new Splitter instance. <br />
+            On 操作，设置一个符号，当命中该符号时执行切割，并返回一个 Splitter 实例。
+            </summary>
+            <param name="pattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.OnPattern(System.String)">
+            <summary>
+            On. Set a symbol, execute split when the symbol is hit, and return a new Splitter instance. <br />
+            On 操作，设置一个符号，当命中该符号时执行切割，并返回一个 Splitter 实例。
+            </summary>
+            <param name="separatorPattern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.FixedLength(System.Int32)">
+            <summary>
+            Fixed length<br />
+            固定长度
+            </summary>
+            <param name="length">长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#TrimResults">
+            <summary>
+            Trim results<br />
+            修整结果两端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#TrimResults(System.Func{System.String,System.String})">
+            <summary>
+            Trim results<br />
+            修整结果，按照指定的方法
+            </summary>
+            <param name="trimFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#Limit(System.Int32)">
+            <summary>
+            Limit<br />
+            设置限制的值
+            </summary>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#WithKeyValueSeparator(System.String)">
+            <summary>
+            With KeyValue separator<br />
+            设置键值对分隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#WithKeyValueSeparator(System.Char)">
+            <summary>
+            With KeyValue separator<br />
+            设置键值对分隔符
+            </summary>
+            <param name="separator"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#Split(System.String)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#Split``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#Split``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#Split``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToList(System.String)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToList``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to list<br />
+            分割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToList``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to list<br />
+            分割为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToList``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to list<br />
+            分割为列表
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToArray(System.String)">
+            <summary>
+            Split to array
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToArray``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToArray``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IFixedLengthSplitter#SplitToArray``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to array
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IMapSplitter#TrimResults">
+            <summary>
+            Trim results<br />
+            修整结果两端
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IMapSplitter#TrimResults(System.Func{System.String,System.String},System.Func{System.String,System.String})">
+            <summary>
+            Trim results<br />
+            修整结果，按照指定的方法
+            </summary>
+            <param name="keyTrimFunc"></param>
+            <param name="valueTrimFunc"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IMapSplitter#Limit(System.Int32)">
+            <summary>
+            Limit<br />
+            设置限制的值
+            </summary>
+            <param name="limit"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IMapSplitter#Split``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IMapSplitter#Split``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IMapSplitter#Split(System.String)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.CosmosStack#Text#Splitters#IMapSplitter#Split``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split<br />
+            分割
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.SplitToDictionary(System.String)">
+            <summary>
+            Split to dictionary<br />
+            分割为字典
+            </summary>
+            <param name="originalString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.SplitToDictionary``1(System.String,CosmosStack.Serialization.IObjectSerializer)">
+            <summary>
+            Split to dictionary<br />
+            分割为字典
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.SplitToDictionary``1(System.String,CosmosStack.ITypeConverter{System.String,``0})">
+            <summary>
+            Split to dictionary<br />
+            分割为字典
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="converter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.Splitters.Splitter.SplitToDictionary``2(System.String,CosmosStack.Serialization.IObjectSerializer,CosmosStack.IGenericObjectMapper)">
+            <summary>
+            Split to dictionary<br />
+            分割为字典
+            </summary>
+            <typeparam name="TMiddle"></typeparam>
+            <typeparam name="T"></typeparam>
+            <param name="originalString"></param>
+            <param name="serializer"></param>
+            <param name="mapper"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

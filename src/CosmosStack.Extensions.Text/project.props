@@ -1,0 +1,9 @@
+<Project>
+
+    <PropertyGroup>
+        <AssemblyName>CosmosStack.Extensions.Text</AssemblyName>
+        <PackageId>CosmosStack.Extensions.Text</PackageId>
+        <Description>Text extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+</Project>
