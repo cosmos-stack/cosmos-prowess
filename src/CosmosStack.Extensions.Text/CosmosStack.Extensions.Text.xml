@@ -821,6 +821,25 @@
             Encoding 扩展
             </summary>
         </member>
+        <member name="M:CosmosStack.Text.EncodingServices.EncodingExtensions.GetSafeString(System.Text.Encoding,System.ReadOnlySpan{System.Byte})">
+            <summary>
+            Get the string safely <br />
+            安全地获取字符串
+            </summary>
+            <param name="encoding"></param>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.EncodingServices.EncodingExtensions.GetSafeString(System.Text.Encoding,System.Byte*,System.Int32)">
+            <summary>
+            Get the string safely <br />
+            安全地获取字符串
+            </summary>
+            <param name="encoding"></param>
+            <param name="bytes"></param>
+            <param name="byteCount"></param>
+            <returns></returns>
+        </member>
         <member name="M:CosmosStack.Text.EncodingServices.EncodingExtensions.GetSafeString(System.Text.Encoding,System.Byte[])">
             <summary>
             Get the string safely <br />
@@ -840,6 +859,726 @@
             <param name="index"></param>
             <param name="count"></param>
             <returns></returns>
+        </member>
+        <member name="M:CosmosStack.Text.EncodingServices.EncodingExtensions.GetSafeString(System.Text.Encoding,System.Buffers.ReadOnlySequence{System.Byte}@)">
+            <summary>
+            Get the string safely <br />
+            安全地获取字符串
+            </summary>
+            <param name="encoding"></param>
+            <param name="bytes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CosmosStack.Text.EncodingServices.EncodingFactory">
+            <summary>
+            Cosmos <see cref="T:System.Text.Encoding"/> factory.<br />
+            Encoding 工厂 <br />
+            References to:
+                https://docs.microsoft.com/zh-cn/dotnet/api/system.text.encodinginfo.name?view=netcore-3.1 <br />
+            and
+                https://github.com/zmjack/NStandard/blob/master/NStandard.Encoding/EncodingEx.cs ,<br />
+                Author: zmjack
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ASMO_708">
+            <summary>
+            Arabic (ASMO 708)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.BIG5">
+            <summary>
+            Chinese Traditional (Big5)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.CP1025">
+            <summary>
+            IBM EBCDIC (Cyrillic Serbian-Bulgarian)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.CP866">
+            <summary>
+            Cyrillic (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.CP875">
+            <summary>
+            IBM EBCDIC (Greek Modern)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.CSISO2022JP">
+            <summary>
+            Japanese (JIS-Allow 1 byte Kana)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.DOS_720">
+            <summary>
+            Arabic (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.DOS_862">
+            <summary>
+            Hebrew (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.EUC_CN">
+            <summary>
+            Chinese Simplified (EUC)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.EUC_JP">
+            <summary>
+            Japanese (EUC)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.EUC_JP_1990">
+            <summary>
+            Japanese (JIS 0208-1990 and 0212-1990)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.EUC_KR">
+            <summary>
+            Korean (EUC)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.GB18030">
+            <summary>
+            Chinese Simplified (GB18030)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.GB2312">
+            <summary>
+            Chinese Simplified (GB2312)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.HZ_GB_2312">
+            <summary>
+            Chinese Simplified (HZ)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM00858">
+            <summary>
+            OEM Multilingual Latin I
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM00924">
+            <summary>
+            IBM Latin-1
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01047">
+            <summary>
+            IBM Latin-1
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01140">
+            <summary>
+            IBM EBCDIC (US-Canada-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01141">
+            <summary>
+            IBM EBCDIC (Germany-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01142">
+            <summary>
+            IBM EBCDIC (Denmark-Norway-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01143">
+            <summary>
+            IBM EBCDIC (Finland-Sweden-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01144">
+            <summary>
+            IBM EBCDIC (Italy-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01145">
+            <summary>
+            IBM EBCDIC (Spain-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01146">
+            <summary>
+            IBM EBCDIC (UK-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01147">
+            <summary>
+            IBM EBCDIC (France-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01148">
+            <summary>
+            IBM EBCDIC (International-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM01149">
+            <summary>
+            IBM EBCDIC (Icelandic-Euro)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM037">
+            <summary>
+            IBM EBCDIC (US-Canada)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM1026">
+            <summary>
+            IBM EBCDIC (Turkish Latin-5)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM273">
+            <summary>
+            IBM EBCDIC (Germany)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM277">
+            <summary>
+            IBM EBCDIC (Denmark-Norway)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM278">
+            <summary>
+            IBM EBCDIC (Finland-Sweden)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM280">
+            <summary>
+            IBM EBCDIC (Italy)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM284">
+            <summary>
+            IBM EBCDIC (Spain)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM285">
+            <summary>
+            IBM EBCDIC (UK)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM290">
+            <summary>
+            IBM EBCDIC (Japanese katakana)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM297">
+            <summary>
+            IBM EBCDIC (France)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM420">
+            <summary>
+            IBM EBCDIC (Arabic)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM423">
+            <summary>
+            IBM EBCDIC (Greek)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM424">
+            <summary>
+            IBM EBCDIC (Hebrew)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM437">
+            <summary>
+            OEM United States
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM500">
+            <summary>
+            IBM EBCDIC (International)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM737">
+            <summary>
+            Greek (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM775">
+            <summary>
+            Baltic (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM850">
+            <summary>
+            Western European (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM852">
+            <summary>
+            Central European (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM855">
+            <summary>
+            OEM Cyrillic
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM857">
+            <summary>
+            Turkish (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM860">
+            <summary>
+            Portuguese (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM861">
+            <summary>
+            Icelandic (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM863">
+            <summary>
+            French Canadian (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM864">
+            <summary>
+            Arabic (864)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM865">
+            <summary>
+            Nordic (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM869">
+            <summary>
+            Greek, Modern (DOS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM870">
+            <summary>
+            IBM EBCDIC (Multilingual Latin-2)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM871">
+            <summary>
+            IBM EBCDIC (Icelandic)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM880">
+            <summary>
+            IBM EBCDIC (Cyrillic Russian)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM905">
+            <summary>
+            IBM EBCDIC (Turkish)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.IBM_THAI">
+            <summary>
+            IBM EBCDIC (Thai)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_2022_JP">
+            <summary>
+            Japanese (JIS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_2022_JP_AllowOneByteKana">
+            <summary>
+            Japanese (JIS-Allow 1 byte Kana - SO/SI)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_2022_KR">
+            <summary>
+            Korean (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_1">
+            <summary>
+            Western European (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_13">
+            <summary>
+            Estonian (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_15">
+            <summary>
+            Latin 9 (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_2">
+            <summary>
+            Central European (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_3">
+            <summary>
+            Latin 3 (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_4">
+            <summary>
+            Baltic (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_5">
+            <summary>
+            Cyrillic (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_6">
+            <summary>
+            Arabic (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_7">
+            <summary>
+            Greek (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_8">
+            <summary>
+            Hebrew (ISO-Visual)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_8_I">
+            <summary>
+            Hebrew (ISO-Logical)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.ISO_8859_9">
+            <summary>
+            Turkish (ISO)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.JOHAB">
+            <summary>
+            Korean (Johab)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.KOI8_R">
+            <summary>
+            Cyrillic (KOI8-R)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.KOI8_U">
+            <summary>
+            Cyrillic (KOI8-U)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.KS_C_5601_1987">
+            <summary>
+            Korean
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.MACINTOSH">
+            <summary>
+            Western European (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.SHIFT_JIS">
+            <summary>
+            Japanese (Shift-JIS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.US_ASCII">
+            <summary>
+            US-ASCII
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.UTF_16">
+            <summary>
+            Unicode
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.UTF_16BE">
+            <summary>
+            Unicode (Big-Endian)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.UTF_32">
+            <summary>
+            Unicode (UTF-32)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.UTF_32BE">
+            <summary>
+            Unicode (UTF-32 Big-Endian)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.UTF_7">
+            <summary>
+            Unicode (UTF-7)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.UTF_8">
+            <summary>
+            Unicode (UTF-8)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1250">
+            <summary>
+            Central European (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1251">
+            <summary>
+            Cyrillic (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1252">
+            <summary>
+            Western European (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1253">
+            <summary>
+            Greek (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1254">
+            <summary>
+            Turkish (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1255">
+            <summary>
+            Hebrew (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1256">
+            <summary>
+            Arabic (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1257">
+            <summary>
+            Baltic (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_1258">
+            <summary>
+            Vietnamese (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.WINDOWS_874">
+            <summary>
+            Thai (Windows)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CHINESE_CNS">
+            <summary>
+            Chinese Traditional (CNS)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CHINESE_ETEN">
+            <summary>
+            Chinese Traditional (Eten)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20001">
+            <summary>
+            TCA Taiwan
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20003">
+            <summary>
+            IBM5550 Taiwan
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20004">
+            <summary>
+            TeleText Taiwan
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20005">
+            <summary>
+            Wang Taiwan
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20261">
+            <summary>
+            T.61
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20269">
+            <summary>
+            ISO-6937
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20936">
+            <summary>
+            Chinese Simplified (GB2312-80)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP20949">
+            <summary>
+            Korean Wansung
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_CP50227">
+            <summary>
+            Chinese Simplified (ISO-2022)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_EBCDIC_KOREANEXTENDED">
+            <summary>
+            IBM EBCDIC (Korean Extended)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_EUROPA">
+            <summary>
+            Europa
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_IA5">
+            <summary>
+            Western European (IA5)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_IA5_GERMAN">
+            <summary>
+            German (IA5)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_IA5_NORWEGIAN">
+            <summary>
+            Norwegian (IA5)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_IA5_SWEDISH">
+            <summary>
+            Swedish (IA5)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_AS">
+            <summary>
+            ISCII Assamese
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_BE">
+            <summary>
+            ISCII Bengali
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_DE">
+            <summary>
+            ISCII Devanagari
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_GU">
+            <summary>
+            ISCII Gujarati
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_KA">
+            <summary>
+            ISCII Kannada
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_MA">
+            <summary>
+            ISCII Malayalam
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_OR">
+            <summary>
+            ISCII Oriya
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_PA">
+            <summary>
+            ISCII Punjabi
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_TA">
+            <summary>
+            ISCII Tamil
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_ISCII_TE">
+            <summary>
+            ISCII Telugu
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_ARABIC">
+            <summary>
+            Arabic (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_CE">
+            <summary>
+            Central European (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_CHINESESIMP">
+            <summary>
+            Chinese Simplified (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_CHINESETRAD">
+            <summary>
+            Chinese Traditional (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_CROATIAN">
+            <summary>
+            Croatian (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_CYRILLIC">
+            <summary>
+            Cyrillic (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_GREEK">
+            <summary>
+            Greek (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_HEBREW">
+            <summary>
+            Hebrew (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_ICELANDIC">
+            <summary>
+            Icelandic (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_JAPANESE">
+            <summary>
+            Japanese (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_KOREAN">
+            <summary>
+            Korean (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_ROMANIAN">
+            <summary>
+            Romanian (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_THAI">
+            <summary>
+            Thai (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_TURKISH">
+            <summary>
+            Turkish (Mac)
+            </summary>
+        </member>
+        <member name="P:CosmosStack.Text.EncodingServices.EncodingFactory.X_MAC_UKRAINIAN">
+            <summary>
+            Ukrainian (Mac)
+            </summary>
         </member>
         <member name="T:CosmosStack.Text.RegexUtils.RegexCache">
             <summary>
