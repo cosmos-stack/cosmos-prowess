@@ -1,9 +1,0 @@
-<Project>
-
-    <PropertyGroup>
-        <AssemblyName>CosmosStack.Extensions.CharMatchers</AssemblyName>
-        <PackageId>CosmosStack.Extensions.CharMatchers</PackageId>
-        <Description>CharMatchers extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
-    </PropertyGroup>
-
-</Project>

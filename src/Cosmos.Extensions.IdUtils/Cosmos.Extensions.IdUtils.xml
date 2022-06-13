@@ -1,0 +1,842 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.IdUtils</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.IdUtils.CombStyle">
+            <summary>
+            Comb styles <br />
+            Comb 风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.CombStyle.NormalStyle">
+            <summary>
+            Normal style <br />
+            普通风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.CombStyle.UnixStyle">
+            <summary>
+            Unix style <br />
+            Unix 风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.CombStyle.SqlStyle">
+            <summary>
+            Sql style <br />
+            Sql 风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.CombStyle.LegacySqlStyle">
+            <summary>
+            Legacy sql style <br />
+            合法的 Sql 风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.CombStyle.PostgreSqlStyle">
+            <summary>
+            PostgreSql style <br />
+            PostgreSQL 风格
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidBytesStyle">
+            <summary>
+            Guid bytes styles <br />
+            GUID 字节风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidBytesStyle.LittleEndianByteArray">
+            <summary>
+            Little endian byte array <br />
+            小端字节数组
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidBytesStyle.BigEndianByteArray">
+            <summary>
+            Big endian by array <br />
+            大端字节数组
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid">
+            <summary>
+            A <see cref="T:System.Guid"/> that has been decoded into its fields.
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.#ctor(System.Guid@)">
+            <summary>
+            Create a new <see cref="T:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid"/> instance.
+            </summary>
+            <param name="guid"></param>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.#ctor(System.Byte[])">
+            <summary>
+            Create a new <see cref="T:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid"/> instance.
+            </summary>
+            <param name="littleEndianGuidBytes"></param>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.ToGuid">
+            <summary>
+            Converts the decoded GUID back to a <see cref="T:System.Guid"/>.
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.ToLittleEndianByteArray">
+            <summary>
+            Converts the decoded GUID to a binary little-endian representation.
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.ToBigEndianByteArray">
+            <summary>
+            Converts the decoded GUID to a binary big-endian representation.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Variant">
+            <summary>
+            Gets the 3-bit Variant field of the GUID.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version">
+            <summary>
+            Gets the 4-bit Version field of the GUID. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Variant"/> returns <see cref="F:Cosmos.IdUtils.GuidImplements.Internals.GuidVariant.Rfc4122"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Domain">
+            <summary>
+            Gets the Domain field of the security GUID. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.DceSecurity"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.LocalIdentifier">
+            <summary>
+            Gets the Local Identifier field of the security GUID. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.DceSecurity"/>
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Timestamp">
+            <summary>
+            Gets the 60-bit Timestamp field of the GUID. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.TimeBased"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.PartialTimestamp">
+            <summary>
+            Gets the 28-bit Timestamp field of the GUID; the lowest 32 bits of the returned value are always zero. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.DceSecurity"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.CreateTime">
+            <summary>
+            Gets the date and time that this GUID was created, in UTC. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.TimeBased"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.PartialCreateTime">
+            <summary>
+            Gets the approximate date and time that this GUID was created, in UTC. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.DceSecurity"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.ClockSequence">
+            <summary>
+            Gets the 14-bit Clock Sequence field of the GUID. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.TimeBased"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.PartialClockSequence">
+            <summary>
+            Gets the 6-bit Clock Sequence field of the GUID. The lowest 8 bits of the returned value are always 0. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.DceSecurity"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Node">
+            <summary>
+            Gets the 6-byte (48-bit) Node field of the GUID. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.TimeBased"/> or <see cref="F:Cosmos.IdUtils.GuidVersion.DceSecurity"/>.
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.NodeIsMac">
+            <summary>
+            Returns <c>true</c> if the Node field is a MAC address; returns <c>false</c> if the Node field is a random value. This is only valid if <see cref="P:Cosmos.IdUtils.GuidImplements.Core.DecodedGuid.Version"/> returns <see cref="F:Cosmos.IdUtils.GuidVersion.TimeBased"/> or <see cref="F:Cosmos.IdUtils.GuidVersion.DceSecurity"/>.
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidImplements.Internals.DceDomain">
+            <summary>
+            Known values of DCE domains. <br />
+            已知值的 DCE 域
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.DceDomain.Person">
+            <summary>
+            The principal domain. On POSIX machines, this is the POSIX UID domain.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.DceDomain.Group">
+            <summary>
+            The group domain. On POSIX machines, this is the POSIX GID domain.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.DceDomain.Organization">
+            <summary>
+            The organization domain.
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Internals.GuidExtensions.ToBigEndianByteArray(System.Guid@)">
+            <summary>
+            Returns a 16-element byte array that contains the value of the GUID, in big-endian format.
+            </summary>
+            <param name="guid">The GUID.</param>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Internals.GuidExtensions.Decode(System.Guid@)">
+            <summary>
+            Decodes a GUID into its fields.
+            </summary>
+            <param name="guid">The GUID to decode.</param>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidImplements.Internals.GuidNamespaces">
+            <summary>
+            Guid namespace
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidNamespaces.Dns">
+            <summary>
+            For names that are fully-qualified domain names.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidNamespaces.Url">
+            <summary>
+            For names that are URLs.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidNamespaces.Oid">
+            <summary>
+            For names that are ISO OIDs.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidNamespaces.X500">
+            <summary>
+            For names that are X.500 DNs (in DER or a text output format).
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Internals.GuidUtility.Copy(System.Byte[])">
+            <summary>
+            Creates a new array that is a copy of the specified array.
+            </summary>
+            <param name="guid">The GUID, as a byte array.</param>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Internals.GuidUtility.CopyWithEndianSwap(System.Byte[])">
+            <summary>
+            Creates a new array that is an endian conversion of the specified array, converting big-endian to little-endian or vice versa.
+            </summary>
+            <param name="guid">The GUID, as a byte array.</param>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.Internals.GuidUtility.EndianSwap(System.Byte[])">
+            <summary>
+            Converts a big-endian GUID to a little-endian GUID, or vice versa. This method modifies the array in-place.
+            </summary>
+            <param name="guid">The GUID, as a byte array.</param>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidImplements.Internals.GuidVariant">
+            <summary>
+            Known values for the <see cref="T:System.Guid"/> Variant field.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidVariant.NcsBackwardCompatibility">
+            <summary>
+            Reserved for NCS backward compatibility.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidVariant.Rfc4122">
+            <summary>
+            A GUID conforming to RFC 4122.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidVariant.MicrosoftBackwardCompatibility">
+            <summary>
+            Reserved for Microsoft backward compatibility.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidImplements.Internals.GuidVariant.ReservedForFutureDefinition">
+            <summary>
+            Reserved for future definition.
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidImplements.UnixTimeStampStyleProvider">
+            <summary>
+            Unix timestamp style provider
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.UnixTimeStampStyleProvider.Create">
+            <summary>
+            Create
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.UnixTimeStampStyleProvider.Create(System.Guid)">
+            <summary>
+            Create
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.UnixTimeStampStyleProvider.Create(Cosmos.IdUtils.NoRepeatMode)">
+            <summary>
+            Create
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.UnixTimeStampStyleProvider.Create(System.Guid,Cosmos.IdUtils.NoRepeatMode)">
+            <summary>
+            Create
+            </summary>
+            <param name="value"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.UnixTimeStampStyleProvider.Create(System.DateTime)">
+            <summary>
+            Create
+            </summary>
+            <param name="secureTimestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidImplements.UnixTimeStampStyleProvider.Create(System.Guid,System.DateTime)">
+            <summary>
+            Create
+            </summary>
+            <param name="value"></param>
+            <param name="secureTimestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidProvider">
+            <summary>
+            Guid provider
+            </summary>
+            <summary>
+            Guid provider <br />
+            GUID 提供者程序
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(Cosmos.IdUtils.CombStyle,Cosmos.IdUtils.NoRepeatMode)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="style"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(System.Guid,Cosmos.IdUtils.CombStyle,Cosmos.IdUtils.NoRepeatMode)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="value"></param>
+            <param name="style"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(System.DateTime,Cosmos.IdUtils.CombStyle)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="secureTimestamp"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(System.Guid,System.DateTime,Cosmos.IdUtils.CombStyle)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="value"></param>
+            <param name="secureTimestamp"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.CreateRandom">
+            <summary>
+            Create random style guid <br />
+            创建随机 GUID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(Cosmos.IdUtils.GuidStyle,Cosmos.IdUtils.NoRepeatMode)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="style"></param>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(System.DateTime,Cosmos.IdUtils.GuidStyle)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="secureTimestamp"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(System.Byte[],Cosmos.IdUtils.GuidBytesStyle)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="endianGuidBytes"></param>
+            <param name="style"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.GuidProvider.Create(System.Guid,System.Byte[],Cosmos.IdUtils.GuidVersion)">
+            <summary>
+            Create <br />
+            创建 GUID
+            </summary>
+            <param name="namespace"></param>
+            <param name="name"></param>
+            <param name="version"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidStyle">
+            <summary>
+            Guid style <br />
+            GUID 风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.BasicStyle">
+            <summary>
+            Basic <br />
+            基础
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.TimeStampStyle">
+            <summary>
+            Timestamp <br />
+            时间戳
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.UnixTimeStampStyle">
+            <summary>
+            Unix timestamp <br />
+            UNIX 时间戳
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.SqlTimeStampStyle">
+            <summary>
+            Sql timestamp <br />
+            SQL 时间戳
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.LegacySqlTimeStampStyle">
+            <summary>
+            Legacy sql timestamp <br />
+            合法 SQL 时间戳
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.PostgreSqlTimeStampStyle">
+            <summary>
+            PostgreSql timestamp <br />
+            PostgreSQL 时间戳
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.CombStyle">
+            <summary>
+            Comb <br />
+            Comb 风格
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.SequentialAsStringStyle">
+            <summary>
+            Sequential as string <br />
+            字符串序列
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.SequentialAsBinaryStyle">
+            <summary>
+            Sequential as binary<br />
+            二进制序列
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.SequentialAsEndStyle">
+            <summary>
+            Sequential as end<br />
+            顺序
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidStyle.EquifaxStyle">
+            <summary>
+            Equifax <br />
+            Equifax 风格
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.GuidVersion">
+            <summary>
+            Known values for the <see cref="T:System.Guid"/> Version field. <br />
+            已知值的 GUID 版本字段
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidVersion.TimeBased">
+            <summary>
+            Time-based (sequential) GUID.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidVersion.DceSecurity">
+            <summary>
+            DCE Security GUID with embedded POSIX UID/GID. See "DCE 1.1: Authentication and Security Services", Chapter 5 and "DCE 1.1: RPC", Appendix A.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidVersion.NameBasedMd5">
+            <summary>
+            Name-based GUID using the MD5 hashing algorithm.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidVersion.Random">
+            <summary>
+            Random GUID.
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.GuidVersion.NameBasedSha1">
+            <summary>
+            Name-based GUID using the SHA-1 hashing algorithm.
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.ModelIdAccessor">
+            <summary>
+            Model Id Accessor <br />
+            模型 ID 获取器
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.ModelIdAccessor.#ctor">
+            <summary>
+            Create a new <see cref="T:Cosmos.IdUtils.ModelIdAccessor"/> instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.ModelIdAccessor.GetNextIndex">
+            <summary>
+            Get next index
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.ModelIdAccessor.GetTimeSpot">
+            <summary>
+            Get time spot
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.ModelIdAccessor.RefreshTimeSpot">
+            <summary>
+            Refresh time spot
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.NanoIdGenerator">
+            <summary>
+            Nano Id Generator <br />
+            Nano Id 生成器
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.Generate(System.String,System.Int32)">
+            <summary>
+            Generate NanoId <br />
+            生成 Nano Id
+            </summary>
+            <param name="alphabet"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.GenerateAsync(System.String,System.Int32)">
+            <summary>
+            Generate NanoId <br />
+            生成 Nano Id
+            </summary>
+            <param name="alphabet"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.Generate(System.Random,System.String,System.Int32)">
+            <summary>
+            Generate NanoId <br />
+            生成 Nano Id
+            </summary>
+            <param name="random"></param>
+            <param name="alphabet"></param>
+            <param name="size"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"></exception>
+        </member>
+        <member name="M:Cosmos.IdUtils.NanoIdGenerator.Clz32(System.Int32)">
+            <summary>
+            Counts leading zeros of <paramref name="x"/>.
+            </summary>
+            <param name="x">Input number.</param>
+            <returns>Number of leading zeros.</returns>
+            <remarks>
+            Courtesy of spender/Sunsetquest see https://stackoverflow.com/a/10439333/623392.
+            </remarks>
+        </member>
+        <member name="T:Cosmos.IdUtils.NoRepeatMode">
+            <summary>
+            No repeat mode <br />
+            No-Repeat 不重复模式
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.NoRepeatMode.Off">
+            <summary>
+            Off<br />
+            关
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.NoRepeatMode.On">
+            <summary>
+            On<br />
+            开
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.RandomIdGenerator">
+            <summary>
+            Random Id Provider <br />
+            随机 Id 提供者程序
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.ALLNUMBERS">
+            <summary>
+            All numbers from 0 to 9 <br />
+            常量，0 - 9 的所有数字
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.ALLWORDS">
+            <summary>
+            1234567890qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPASDFGHJKLZXCVBNM <br />
+            常量，包含 0 -9，a - z 和 A - Z
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.SIMPLEWORDS">
+            <summary>
+            2345678wertyuiopasdfghjkzxcvbnm23456780QWERTYUPASDFGHJKLZXCVBNM <br />
+            常量，但不包含容易混淆的字符，比如 1 和 I，0 和 O 等
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.RandomIdGenerator.NANOWORDS">
+            <summary>
+            NanoId's default alphabet <br />
+            常量，Nano Id 所需的字符
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomIdGenerator.Create(System.Int32,System.String)">
+            <summary>
+            Create Random Id <br />
+            创建一个随机 Id
+            </summary>
+            <param name="length">Length of random id you want to create</param>
+            <param name="dict">Random Charter Dictionary, 0-9a-zA-Z as default.</param>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomIdGenerator.Create(System.String,System.String)">
+            <summary>
+            Create Random Id <br />
+            创建一个随机 Id
+            </summary>
+            <param name="format">Format of random id you want to create</param>
+            <param name="dict">Random Charter Dictionary, 0-9a-zA-Z as default.</param>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomId.#ctor(System.Int32,System.String)">
+            <summary> 构造函数
+            </summary>
+            <param name="length">生成Id长度</param>
+            <param name="dict">随机字符字典,默认字典为0-9a-zA-Z</param>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomId.#ctor(System.String,System.String)">
+            <summary> 构造函数
+            </summary>
+            <param name="format">生成Id格式</param>
+            <param name="dict">随机字符字典,默认字典为0-9a-zA-Z</param>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomId.Create">
+            <summary> 生成Id
+            </summary>
+        </member>
+        <member name="T:Cosmos.IdUtils.RandomNonceStrGenerator">
+            <summary>
+            Random NonceStr Provider <br />
+            随机字符串提供者程序
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomNonceStrGenerator.Create(System.Boolean)">
+            <summary>
+            Create random NonceStr <br />
+            生成随机字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.RandomNonceStrGenerator.Create(System.Int32,System.Boolean)">
+            <summary>
+            Create random NonceStr <br />
+            生成随机字符串
+            </summary>
+            <param name="length"></param>
+            <param name="forceToAvoidRepetition"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.IdUtils.SnowflakeIdWorker">
+            <summary>
+            Snowflake Id worker <br />
+            雪花 Id 工作者
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.TWEPOCH">
+            <summary>
+            基准时间
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.WORKER_ID_BITS">
+            <summary>
+            机器标识位数
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.DATA_CENTER_ID_BITS">
+            <summary>
+            数据标志位数
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.SEQUENCE_BITS">
+            <summary>
+            序列号识位数
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.MAX_WORKER_ID">
+            <summary>
+            机器ID最大值
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.MAX_DATA_CENTER_ID">
+            <summary>
+            数据标志ID最大值
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.SEQUENCE_MASK">
+            <summary>
+            序列号ID最大值
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.WORKER_ID_SHIFT">
+            <summary>
+            机器ID偏左移12位
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.DATA_CENTER_ID_SHIFT">
+            <summary>
+            数据ID偏左移17位
+            </summary>
+        </member>
+        <member name="F:Cosmos.IdUtils.SnowflakeIdWorker.TIMESTAMP_LEFT_SHIFT">
+            <summary>
+            时间毫秒左移22位
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.SnowflakeIdWorker.WorkerId">
+            <summary>
+            Worker Id
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.SnowflakeIdWorker.DataCenterId">
+            <summary>
+            Data center Id
+            </summary>
+        </member>
+        <member name="P:Cosmos.IdUtils.SnowflakeIdWorker.Sequence">
+            <summary>
+            Sequence
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.SnowflakeIdWorker.#ctor(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Create a new <see cref="T:Cosmos.IdUtils.SnowflakeIdWorker"/> instance.
+            </summary>
+            <param name="workerId"></param>
+            <param name="dataCenterId"></param>
+            <param name="sequence"></param>
+        </member>
+        <member name="M:Cosmos.IdUtils.SnowflakeIdWorker.NextId">
+            <summary>
+            Next Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.SnowflakeIdWorker.TilNextMillis(System.Int64)">
+            <summary>
+            防止产生的时间比之前的时间还要小（由于NTP回拨等问题）,保持增量的趋势.
+            </summary>
+            <param name="lastTimestamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.SnowflakeIdWorker.TimeGen">
+            <summary>
+            获取当前的时间戳
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.IdUtils.SnowflakeGenerator">
+            <summary>
+            Snowflake Generator <br />
+            雪花编号生成器
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.SnowflakeGenerator.Create(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Create
+            </summary>
+            <param name="workerId"></param>
+            <param name="dataCenterId"></param>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.IdUtils.SnowflakeGenerator.Create``1(System.Int64,System.Int64,System.Int64)">
+            <summary>
+            Create <br />
+            生成
+            </summary>
+            <typeparam name="TSnowflakeIdWorker"></typeparam>
+            <param name="workerId"></param>
+            <param name="dataCenterId"></param>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.IdUtils.TraceIdAccessor">
+            <summary>
+            Trace Id Accessor <br />
+            Trace Id 获取器
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.TraceIdAccessor.#ctor(Cosmos.IdUtils.ITraceIdMaker)">
+            <summary>
+            Create a new <see cref="T:Cosmos.IdUtils.TraceIdAccessor"/> instance.
+            </summary>
+            <param name="maker"></param>
+        </member>
+        <member name="M:Cosmos.IdUtils.TraceIdAccessor.GetTraceId">
+            <summary>
+            Get Trace Id <br />
+            获取一个 Trace Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.IdUtils.DefaultTraceIdMaker">
+            <summary>
+            Default TraceIdMaker <br />
+            默认的 Trace Id 生成器
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.DefaultTraceIdMaker.CreateId">
+            <summary>
+            Create Id <br />
+            创建 Id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.IdUtils.ITraceIdMaker">
+            <summary>
+            Trace Maker Interface <br />
+            Trace Id 生成器接口
+            </summary>
+        </member>
+        <member name="M:Cosmos.IdUtils.ITraceIdMaker.CreateId">
+            <summary>
+            Create Id <br />
+            生成 Id
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

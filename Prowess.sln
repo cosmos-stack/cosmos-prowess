@@ -34,25 +34,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{662E6957-33C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{088246B9-1B92-479C-8279-AF2F04EFA365}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Prowess", "src\CosmosStack.Prowess\CosmosStack.Prowess.csproj", "{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Prowess", "src\Cosmos.Prowess\Cosmos.Prowess.csproj", "{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.Joiners", "src\CosmosStack.Extensions.Joiners\CosmosStack.Extensions.Joiners.csproj", "{E3F90AB8-3B87-42AE-815A-2F468601345B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Joiners", "src\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj", "{E3F90AB8-3B87-42AE-815A-2F468601345B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.CharMatchers", "src\CosmosStack.Extensions.CharMatchers\CosmosStack.Extensions.CharMatchers.csproj", "{9B1D4AB8-CF1C-4821-B713-57A16E34EE06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.CharMatchers", "src\Cosmos.Extensions.CharMatchers\Cosmos.Extensions.CharMatchers.csproj", "{9B1D4AB8-CF1C-4821-B713-57A16E34EE06}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functions", "functions", "{6354F69A-DDC4-4731-BD7B-5275D0789565}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.Splitters", "src\CosmosStack.Extensions.Splitters\CosmosStack.Extensions.Splitters.csproj", "{DC521C6A-370E-4C14-8A44-0E315B19BFC7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Splitters", "src\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj", "{DC521C6A-370E-4C14-8A44-0E315B19BFC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.Text", "src\CosmosStack.Extensions.Text\CosmosStack.Extensions.Text.csproj", "{A739AED2-444C-4955-BDA0-BD3906778738}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Text", "src\Cosmos.Extensions.Text\Cosmos.Extensions.Text.csproj", "{A739AED2-444C-4955-BDA0-BD3906778738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.IdUtils", "src\CosmosStack.Extensions.IdUtils\CosmosStack.Extensions.IdUtils.csproj", "{97648E0D-66C8-4DDB-9912-253A13D8F48C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.IdUtils", "src\Cosmos.Extensions.IdUtils\Cosmos.Extensions.IdUtils.csproj", "{97648E0D-66C8-4DDB-9912-253A13D8F48C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.Enums.Enhanced", "src\CosmosStack.Extensions.Enums.Enhanced\CosmosStack.Extensions.Enums.Enhanced.csproj", "{2D3949CB-4831-49B7-8EC4-6A3A1B04173B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Enums.Enhanced", "src\Cosmos.Extensions.Enums.Enhanced\Cosmos.Extensions.Enums.Enhanced.csproj", "{2D3949CB-4831-49B7-8EC4-6A3A1B04173B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosProwessUT", "test\CosmosProwessUT\CosmosProwessUT.csproj", "{AE7927F2-91A9-4A6A-AA5C-3E1FE725B617}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosStack.Extensions.Reflection.Enhanced", "src\CosmosStack.Extensions.Reflection.Enhanced\CosmosStack.Extensions.Reflection.Enhanced.csproj", "{7FA047A7-02C4-4490-9BEC-316DCC8E6668}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Reflection.Enhanced", "src\Cosmos.Extensions.Reflection.Enhanced\Cosmos.Extensions.Reflection.Enhanced.csproj", "{7FA047A7-02C4-4490-9BEC-316DCC8E6668}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3634EEC2-0800-4225-88DF-53B3B829F63D}"
 	ProjectSection(SolutionItems) = preProject

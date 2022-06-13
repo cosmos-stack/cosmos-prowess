@@ -1,0 +1,7 @@
+﻿<Project>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj" />
+    </ItemGroup>
+
+</Project>

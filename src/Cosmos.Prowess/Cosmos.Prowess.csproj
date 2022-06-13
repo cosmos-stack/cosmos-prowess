@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release;Gen-Xml</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Prowess</AssemblyName>
+        <PackageId>CosmosStack.Prowess</PackageId>
+        <Description>Cosmos Prowess Expansion pack for Cosmos Stack</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <ItemGroup>
+        <ProjectReference Include="..\Cosmos.Extensions.CharMatchers\Cosmos.Extensions.CharMatchers.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Enums.Enhanced\Cosmos.Extensions.Enums.Enhanced.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.IdUtils\Cosmos.Extensions.IdUtils.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Reflection.Enhanced\Cosmos.Extensions.Reflection.Enhanced.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.Text\Cosmos.Extensions.Text.csproj" />
+    </ItemGroup>
+
+</Project>

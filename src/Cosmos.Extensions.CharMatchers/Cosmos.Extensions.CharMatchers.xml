@@ -1,0 +1,757 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.CharMatchers</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.Text.CharMatchers.CharMatcher">
+            <summary>
+            Char matcher <br />
+            字符命中器
+            </summary>
+            <summary>
+            Char matcher <br />
+            字符命中器
+            </summary>
+            <summary>
+            Char matcher <br />
+            字符命中器
+            </summary>
+            <summary>
+            Char matcher <br />
+            字符命中器
+            </summary>
+            <summary>
+            Char matcher <br />
+            字符命中器
+            </summary>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.CharMatcher.Is(System.Char)">
+            <summary>
+            Set the character to be hit, and return a new <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> instance. <br />
+            设置需要被命中的字符，并返回一个新的 <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> 实例。
+            </summary>
+            <param name="match"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.CharMatcher.IsNot(System.Char)">
+            <summary>
+            Set the characters that are not hit, and return a new <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> instance. <br />
+            设置不被命中的字符，并返回一个新的 <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> 实例。
+            </summary>
+            <param name="match"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.CharMatcher.AnyOf(System.String)">
+            <summary>
+            Set a set of characters that can be hit arbitrarily, and return a new <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> instance. <br />
+            设置一组可以任意被命中的字符，并返回一个新的 <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> 实例。
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.CharMatcher.NoneOf(System.String)">
+            <summary>
+            Set a set of characters that have not been hit, and return a new <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> instance. <br />
+            设置一组无一被命中的字符，并返回一个新的 <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> 实例。
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Cosmos.Text.CharMatchers.CharMatcher.WHITESPACE">
+            <summary>
+            Whitespace <br />
+            以空格符号作为需要被命中的字符，回一个新的 <see cref="T:Cosmos.Text.CharMatchers.CharMatcher"/> 实例。
+            </summary>
+        </member>
+        <member name="T:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher">
+            <summary>
+            Interface to flag 'AnyOf' mode of char matcher <br />
+            用于 AnyOf 模式（任一模式）的字符命中器接口
+            </summary>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.Negate">
+            <summary>
+            Negate <br />
+            否定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.InRange(System.Char,System.Char)">
+            <summary>
+            In range <br />
+            在区间内
+            </summary>
+            <param name="startInclusive"></param>
+            <param name="endInclusive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.ForPredicate(System.Func{System.Char,System.Boolean})">
+            <summary>
+            For predicate <br />
+            设置条件
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.MatchesAnyOf(System.String)">
+            <summary>
+            Matches any of <br />
+            标记是否命中任一
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.MatchesAllOf(System.String)">
+            <summary>
+            Matches all of <br />
+            标记是否命中全部
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.MatchesNoneOf(System.String)">
+            <summary>
+            Matches none of <br />
+            标记是否无一命中
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.IndexIn(System.String)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.IndexIn(System.String,System.Int32)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.LastIndexIn(System.String)">
+            <summary>
+            Last index in <br />
+            返回字符所在序列中的倒序索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.CountIn(System.String)">
+            <summary>
+            Count in <br />
+            返回字符在序列中出现的次数
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.RemoveFrom(System.String)">
+            <summary>
+            Remove from <br />
+            从序列中移除相同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.RetainFrom(System.String)">
+            <summary>
+            Retain from <br />
+            从序列中移除不同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.ReplaceFrom(System.String,System.Char)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.ReplaceFrom(System.String,System.String)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.TrimFrom(System.String)">
+            <summary>
+            Trim from <br />
+            从两端裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.TrimLeadingForm(System.String)">
+            <summary>
+            Trim leading from <br />
+            从头部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.TrimTrailingFrom(System.String)">
+            <summary>
+            Trim trailing from <br />
+            从尾部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.CollapseFrom(System.String,System.Char)">
+            <summary>
+            Collapse from <br />
+            折叠
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.TrimAndCollapseFrom(System.String,System.Char)">
+            <summary>
+            Trim and collapse from <br />
+            折叠并裁剪
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IAnyOfModeCharMatcher.Apply(System.Char)">
+            <summary>
+            Apply <br />
+            执行匹配
+            </summary>
+            <param name="character"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Text.CharMatchers.ICharMatcher">
+            <summary>
+            Interface for char matcher <br />
+            字符命中器接口
+            </summary>
+        </member>
+        <member name="T:Cosmos.Text.CharMatchers.IIsModeCharMatcher">
+            <summary>
+            Interface to flag 'Is' mode of char matcher <br />
+            用于 Is 模式的字符命中器接口
+            </summary>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.Negate">
+            <summary>
+            Negate <br />
+            否定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.InRange(System.Char,System.Char)">
+            <summary>
+            In range <br />
+            在区间内
+            </summary>
+            <param name="startInclusive"></param>
+            <param name="endInclusive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.ForPredicate(System.Func{System.Char,System.Boolean})">
+            <summary>
+            For predicate <br />
+            设置条件
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.MatchesAnyOf(System.String)">
+            <summary>
+            Matches any of <br />
+            标记是否命中任一
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.MatchesAllOf(System.String)">
+            <summary>
+            Matches all of
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.MatchesNoneOf(System.String)">
+            <summary>
+            Matches none of <br />
+            标记是否无一命中
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.IndexIn(System.String)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.IndexIn(System.String,System.Int32)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.LastIndexIn(System.String)">
+            <summary>
+            Last index in <br />
+            返回字符所在序列中的倒序索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.CountIn(System.String)">
+            <summary>
+            Count in <br />
+            返回字符在序列中出现的次数
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.RemoveFrom(System.String)">
+            <summary>
+            Remove from <br />
+            从序列中移除相同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.RetainFrom(System.String)">
+            <summary>
+            Retain from <br />
+            从序列中移除不同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.ReplaceFrom(System.String,System.Char)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.ReplaceFrom(System.String,System.String)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.TrimFrom(System.String)">
+            <summary>
+            Trim from <br />
+            从两端裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.TrimLeadingForm(System.String)">
+            <summary>
+            Trim leading from <br />
+            从头部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.TrimTrailingFrom(System.String)">
+            <summary>
+            Trim trailing from <br />
+            从尾部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.CollapseFrom(System.String,System.Char)">
+            <summary>
+            Collapse from <br />
+            折叠
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.TrimAndCollapseFrom(System.String,System.Char)">
+            <summary>
+            Trim and collapse from <br />
+            折叠并裁剪
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsModeCharMatcher.Apply(System.Char)">
+            <summary>
+            Apply <br />
+            执行匹配
+            </summary>
+            <param name="character"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher">
+            <summary>
+            Interface to flag 'Is-Not' mode of char matcher <br />
+            用于 Is-Not 模式的字符命中器接口
+            </summary>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.Negate">
+            <summary>
+            Negate <br />
+            否定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.InRange(System.Char,System.Char)">
+            <summary>
+            In range <br />
+            在区间内
+            </summary>
+            <param name="startInclusive"></param>
+            <param name="endInclusive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.ForPredicate(System.Func{System.Char,System.Boolean})">
+            <summary>
+            For predicate <br />
+            设置条件
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.MatchesAnyOf(System.String)">
+            <summary>
+            Matches any of <br />
+            标记是否命中任一
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.MatchesAllOf(System.String)">
+            <summary>
+            Matches all of <br />
+            标记是否命中全部
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.MatchesNoneOf(System.String)">
+            <summary>
+            Matches none of <br />
+            标记是否无一命中
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.IndexIn(System.String)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.IndexIn(System.String,System.Int32)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.LastIndexIn(System.String)">
+            <summary>
+            Last index in <br />
+            返回字符所在序列中的倒序索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.CountIn(System.String)">
+            <summary>
+            Count in <br />
+            返回字符在序列中出现的次数
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.RemoveFrom(System.String)">
+            <summary>
+            Remove from <br />
+            从序列中移除相同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.RetainFrom(System.String)">
+            <summary>
+            Retain from <br />
+            从序列中移除不同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.ReplaceFrom(System.String,System.Char)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.ReplaceFrom(System.String,System.String)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.TrimFrom(System.String)">
+            <summary>
+            Trim from <br />
+            从两端裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.TrimLeadingForm(System.String)">
+            <summary>
+            Trim trailing from <br />
+            从头部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.TrimTrailingFrom(System.String)">
+            <summary>
+            Trim trailing from <br />
+            从尾部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.CollapseFrom(System.String,System.Char)">
+            <summary>
+            Collapse from <br />
+            折叠
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.TrimAndCollapseFrom(System.String,System.Char)">
+            <summary>
+            Trim and collapse from <br />
+            折叠并裁剪
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.IIsNotModeCharMatcher.Apply(System.Char)">
+            <summary>
+            Apply <br />
+            执行匹配
+            </summary>
+            <param name="character"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher">
+            <summary>
+            Interface to flag 'NoneOf' mode of char matcher <br />
+            用于 NoneOf 模式（无一模式）的字符命中器接口
+            </summary>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.Negate">
+            <summary>
+            Negate <br />
+            否定
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.InRange(System.Char,System.Char)">
+            <summary>
+            In range <br />
+            在区间内
+            </summary>
+            <param name="startInclusive"></param>
+            <param name="endInclusive"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.ForPredicate(System.Func{System.Char,System.Boolean})">
+            <summary>
+            For predicate <br />
+            设置条件
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.MatchesAnyOf(System.String)">
+            <summary>
+            Matches any of <br />
+            标记是否命中任一
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.MatchesAllOf(System.String)">
+            <summary>
+            Matches all of <br />
+            标记是否命中全部
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.MatchesNoneOf(System.String)">
+            <summary>
+            Matches none of <br />
+            标记是否无一命中
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.IndexIn(System.String)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.IndexIn(System.String,System.Int32)">
+            <summary>
+            Index in <br />
+            返回字符所在序列中的索引
+            </summary>
+            <param name="sequence"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.LastIndexIn(System.String)">
+            <summary>
+            Last index in <br />
+            返回字符所在序列中的倒序索引
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.CountIn(System.String)">
+            <summary>
+            Count in <br />
+            返回字符在序列中出现的次数
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.RemoveFrom(System.String)">
+            <summary>
+            Remove from <br />
+            从序列中移除相同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.RetainFrom(System.String)">
+            <summary>
+            Retain from <br />
+            从序列中移除不同字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.ReplaceFrom(System.String,System.Char)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.ReplaceFrom(System.String,System.String)">
+            <summary>
+            Replace from <br />
+            在序列中用给定的字符代替命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.TrimFrom(System.String)">
+            <summary>
+            Trim from <br />
+            从两端裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.TrimLeadingForm(System.String)">
+            <summary>
+            Trim leading from <br />
+            从头部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.TrimTrailingFrom(System.String)">
+            <summary>
+            Trim trailing from <br />
+            从尾部裁剪命中器中设置的字符
+            </summary>
+            <param name="sequence"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.CollapseFrom(System.String,System.Char)">
+            <summary>
+            Collapse from <br />
+            折叠
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.TrimAndCollapseFrom(System.String,System.Char)">
+            <summary>
+            Trim and collapse from <br />
+            折叠并裁剪
+            </summary>
+            <param name="sequence"></param>
+            <param name="replacement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.Text.CharMatchers.INoneOfModeCharMatcher.Apply(System.Char)">
+            <summary>
+            Apply <br />
+            执行匹配
+            </summary>
+            <param name="character"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

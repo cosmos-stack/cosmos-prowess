@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Text</AssemblyName>
+        <PackageId>CosmosStack.Extensions.Text</PackageId>
+        <Description>Text extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="dependency.props" />
+
+    <Import Project="references.props" />
+
+</Project>

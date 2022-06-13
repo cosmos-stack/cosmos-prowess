@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.IdUtils</AssemblyName>
+        <PackageId>CosmosStack.Extensions.IdUtils</PackageId>
+        <Description>IdUtils extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
+    </PropertyGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="dependency.props" />
+
+</Project>

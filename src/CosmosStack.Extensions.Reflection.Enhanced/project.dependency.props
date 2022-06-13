@@ -1,7 +1,0 @@
-<Project>
-
-    <ItemGroup>
-        <PackageReference Include="CosmosStack.Extensions.Reflection" Version="$(Standard-RefVersion)" />
-    </ItemGroup>
-
-</Project>
