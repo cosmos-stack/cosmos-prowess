@@ -1,4 +1,4 @@
-﻿using CosmosStack.IdUtils;
+﻿using Cosmos.IdUtils;
 using Shouldly;
 using Xunit;
 

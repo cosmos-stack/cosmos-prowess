@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using CosmosStack;
-using CosmosStack.Text.Joiners;
+using Cosmos.Conversions;
+using Cosmos.Text.Joiners;
 using Shouldly;
 using Xunit;
 

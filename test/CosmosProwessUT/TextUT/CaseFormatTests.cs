@@ -1,4 +1,4 @@
-﻿using CosmosStack.Text;
+﻿using Cosmos.Text;
 using Shouldly;
 using Xunit;
 

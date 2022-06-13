@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using CosmosStack.Text.Joiners;
+using Cosmos.Text.Joiners;
 using Shouldly;
 using Xunit;
 

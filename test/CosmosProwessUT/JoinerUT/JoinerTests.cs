@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using Cosmos.Text.Joiners;
 using Shouldly;
 using Xunit;
-using Joiner = CosmosStack.Text.Joiners.Joiner;
 
 namespace CosmosProwessUT.JoinerUT
 {

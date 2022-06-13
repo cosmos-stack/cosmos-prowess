@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Text.RegularExpressions;
-using CosmosStack.Text.Splitters;
+using Cosmos.Text.Splitters;
 using Shouldly;
 using Xunit;
 

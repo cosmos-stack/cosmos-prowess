@@ -1,7 +1,5 @@
-﻿#if !NETFRAMEWORK
-
-using CosmosProwessUT.EnumUT.Models;
-using CosmosStack.EnumUtils;
+﻿using CosmosProwessUT.EnumUT.Models;
+using Cosmos.EnumUtils;
 using Shouldly;
 using Xunit;
 
@@ -73,16 +71,14 @@ namespace CosmosProwessUT.EnumUT
         public void ContainsFlagEnumTest()
         {
             var week = WeekEnum.Monday;
-            
+
             FlagEnums.Contains(week, WeekEnum.Monday).ShouldBeTrue();
             FlagEnums.Contains(week, WeekEnum.Tuesday).ShouldBeFalse();
-            
+
             FlagEnums.Add(ref week, WeekEnum.Tuesday, WeekEnum.Wednesday);
-            
+
             FlagEnums.Contains(week, WeekEnum.Monday).ShouldBeTrue();
             FlagEnums.Contains(week, WeekEnum.Tuesday).ShouldBeTrue();
         }
     }
 }
-
-#endif

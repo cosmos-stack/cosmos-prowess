@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using CosmosProwessUT.EnumUT.Models;
-using CosmosStack.EnumUtils;
+using Cosmos.EnumUtils;
 using Shouldly;
 using Xunit;
 

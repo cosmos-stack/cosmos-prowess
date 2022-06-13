@@ -1,6 +1,6 @@
 ﻿using System.Linq;
-using CosmosStack;
-using CosmosStack.Text.Splitters;
+using Cosmos.Conversions;
+using Cosmos.Text.Splitters;
 using Shouldly;
 using Xunit;
 
