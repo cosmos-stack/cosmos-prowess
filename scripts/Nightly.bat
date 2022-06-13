@@ -1,7 +1,7 @@
 @echo off
 
 echo =======================================================================
-echo CosmosStack.Prowess
+echo Cosmos.Prowess
 echo =======================================================================
 
 ::go to parent folder
@@ -23,16 +23,16 @@ echo.
 ::start to package all projects
 
 ::CosmosStack-extensions
-dotnet pack src/CosmosStack.Extensions.CharMatchers        -c Release -o nuget_packages --no-restore
-dotnet pack src/CosmosStack.Extensions.Enums.Enhanced      -c Release -o nuget_packages --no-restore
-dotnet pack src/CosmosStack.Extensions.IdUtils             -c Release -o nuget_packages --no-restore
-dotnet pack src/CosmosStack.Extensions.Joiners             -c Release -o nuget_packages --no-restore
-dotnet pack src/CosmosStack.Extensions.Reflection.Enhanced -c Release -o nuget_packages --no-restore
-dotnet pack src/CosmosStack.Extensions.Splitters           -c Release -o nuget_packages --no-restore
-dotnet pack src/CosmosStack.Extensions.Text                -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.CharMatchers        -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Enums.Enhanced      -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.IdUtils             -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Joiners             -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Reflection.Enhanced -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Splitters           -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Extensions.Text                -c Release -o nuget_packages --no-restore
 
 ::CosmosStack-prowess
-dotnet pack src/CosmosStack.Prowess                        -c Release -o nuget_packages --no-restore
+dotnet pack src/Cosmos.Prowess                        -c Release -o nuget_packages --no-restore
 
 for /R "nuget_packages" %%s in (*symbols.nupkg) do (
     del "%%s"
@@ -43,7 +43,7 @@ echo.
 
 ::push nuget packages to server
 for /R "nuget_packages" %%s in (*.nupkg) do (
-    dotnet nuget push "%%s" -s "Nightly" --skip-duplicate
+    dotnet nuget push "%%s" -s "Nightly" --skip-duplicate --no-symbols
 	echo.
 )
 
