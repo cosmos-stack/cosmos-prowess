@@ -1,7 +1,9 @@
 <Project>
 
     <PropertyGroup>
-        <TargetFrameworks>net5.0;netcoreapp3.1;net48;net472;net462;net452;</TargetFrameworks>
+        <TargetFrameworks>net6.0;net5.0;netcoreapp3.1;</TargetFrameworks>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>disable</Nullable>
     </PropertyGroup>
 
     <PropertyGroup>
@@ -24,8 +26,12 @@
     <Import Project="asset/version.dev.props"/>
 
     <ItemGroup>
-        <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All"/>
-        <PackageReference Include="DotNetCore.SourceLink.Environment" Version="2.2.0" />
+        <PackageReference Include="DotNetCore.SourceLink.Environment" Version="3.1.0" />
     </ItemGroup>
+
+<!--    <ItemGroup>-->
+<!--        <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All"/>-->
+<!--        <PackageReference Include="DotNetCore.SourceLink.Environment" Version="2.2.0" />-->
+<!--    </ItemGroup>-->
 
 </Project>
