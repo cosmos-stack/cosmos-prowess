@@ -1,7 +1,6 @@
-﻿namespace CosmosProwessUT.ReflectionUT
+﻿namespace CosmosProwessUT.ReflectionUT;
+
+public class RefTestModel
 {
-    public class RefTestModel
-    {
-        public string Name { get; set; }
-    }
+    public string Name { get; set; }
 }

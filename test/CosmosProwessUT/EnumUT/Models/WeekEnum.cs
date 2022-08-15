@@ -1,17 +1,16 @@
 ﻿using System;
 
-namespace CosmosProwessUT.EnumUT.Models
+namespace CosmosProwessUT.EnumUT.Models;
+
+[Flags]
+public enum WeekEnum
 {
-    [Flags]
-    public enum WeekEnum
-    {
-        None = 0,
-        Monday = 1,
-        Tuesday = 2,
-        Wednesday = 4,
-        Thursday = 8,
-        Friday = 16,
-        Saturday = 32,
-        Sunday = 64
-    }
+    None = 0,
+    Monday = 1,
+    Tuesday = 2,
+    Wednesday = 4,
+    Thursday = 8,
+    Friday = 16,
+    Saturday = 32,
+    Sunday = 64
 }

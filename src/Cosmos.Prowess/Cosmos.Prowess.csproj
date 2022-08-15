@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <Configurations>Debug;Release;Gen-Xml</Configurations>
+        <Configurations>Debug;Release</Configurations>
         <Platforms>AnyCPU</Platforms>
     </PropertyGroup>
 
@@ -14,12 +14,9 @@
     <Import Project="..\..\common.props" />
 
     <ItemGroup>
-        <ProjectReference Include="..\Cosmos.Extensions.CharMatchers\Cosmos.Extensions.CharMatchers.csproj" />
         <ProjectReference Include="..\Cosmos.Extensions.Enums.Enhanced\Cosmos.Extensions.Enums.Enhanced.csproj" />
         <ProjectReference Include="..\Cosmos.Extensions.IdUtils\Cosmos.Extensions.IdUtils.csproj" />
-        <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj" />
         <ProjectReference Include="..\Cosmos.Extensions.Reflection.Enhanced\Cosmos.Extensions.Reflection.Enhanced.csproj" />
-        <ProjectReference Include="..\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj" />
         <ProjectReference Include="..\Cosmos.Extensions.Text\Cosmos.Extensions.Text.csproj" />
     </ItemGroup>
 

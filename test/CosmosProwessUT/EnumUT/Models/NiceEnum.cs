@@ -1,17 +1,16 @@
-﻿namespace CosmosProwessUT.EnumUT.Models
+﻿namespace CosmosProwessUT.EnumUT.Models;
+
+public enum NiceEnum
 {
-    public enum NiceEnum
-    {
-        One,
-        Two,
-        Three,
-        Four,
-        Five,
-        Six,
-        Seven,
-        Eight,
-        Nigh,
-        Ten,
-        Eleven
-    }
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nigh,
+    Ten,
+    Eleven
 }
