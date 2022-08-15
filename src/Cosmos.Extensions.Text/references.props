@@ -3,6 +3,7 @@
     <ItemGroup>
         <ProjectReference Include="..\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj" />
         <ProjectReference Include="..\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj" />
+        <ProjectReference Include="..\Cosmos.Extensions.CharMatchers\Cosmos.Extensions.CharMatchers.csproj" />
     </ItemGroup>
 
 </Project>

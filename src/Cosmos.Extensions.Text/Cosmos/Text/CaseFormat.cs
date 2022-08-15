@@ -1,5 +1,3 @@
-using Humanizer;
-
 namespace Cosmos.Text;
 
 /// <summary>

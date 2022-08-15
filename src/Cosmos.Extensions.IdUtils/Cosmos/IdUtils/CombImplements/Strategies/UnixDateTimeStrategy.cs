@@ -1,5 +1,3 @@
-using Cosmos.Collections;
-
 // ReSharper disable InconsistentNaming
 
 namespace Cosmos.IdUtils.CombImplements.Strategies;
@@ -18,12 +16,12 @@ internal class UnixDateTimeStrategy : IDateStrategy
         var ms = ToUnixTmeMilliseconds(timestamp);
         var msBytes = BitConverter.GetBytes(ms);
 
-        BitConverter.IsLittleEndian.IfTrue(msBytes.Reverse);
+        BitConverter.IsLittleEndian.IfTrue(() => Array.Reverse(msBytes));
 
         var ret = new byte[NumDateBytes];
         var index = msBytes.GetUpperBound(0) + 1 - NumDateBytes;
 
-        msBytes.Copy(index, ret, 0, NumDateBytes);
+        Array.Copy(msBytes, index, ret, 0, NumDateBytes);
 
         return ret;
     }
@@ -33,9 +31,9 @@ internal class UnixDateTimeStrategy : IDateStrategy
         var msBytes = new byte[8];
         var index = 8 - NumDateBytes;
 
-        value.Copy(0, msBytes, index, NumDateBytes);
+        Array.Copy(value, 0, msBytes, index, NumDateBytes);
 
-        BitConverter.IsLittleEndian.IfTrue(msBytes.Reverse);
+        BitConverter.IsLittleEndian.IfTrue(() => Array.Reverse(msBytes));
 
         var ms = BitConverter.ToInt64(msBytes, 0);
 

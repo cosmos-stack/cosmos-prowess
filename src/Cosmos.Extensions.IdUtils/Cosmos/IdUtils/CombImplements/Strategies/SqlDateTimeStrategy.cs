@@ -1,4 +1,3 @@
-using Cosmos.Collections;
 using Cosmos.Numeric;
 
 // ReSharper disable InconsistentNaming
@@ -30,8 +29,8 @@ internal class SqlDateTimeStrategy : IDateStrategy
         }
 
         var ret = new byte[NumDateBytes];
-        dayBytes.Copy(0, ret, 0, 2);
-        tickBytes.Copy(0, ret, 2, 4);
+        Array.Copy(dayBytes, 0, ret, 0, 2);
+        Array.Copy(tickBytes, 0, ret, 2, 4);
 
         return ret;
     }
@@ -40,8 +39,8 @@ internal class SqlDateTimeStrategy : IDateStrategy
     {
         var dayBytes = new byte[2];
         var tickBytes = new byte[4];
-        value.Copy(0, dayBytes, 0, 2);
-        value.Copy(2, tickBytes, 0, 4);
+        Array.Copy(value, 0, dayBytes, 0, 2);
+        Array.Copy(value, 2, tickBytes, 0, 4);
 
         if (BitConverter.IsLittleEndian)
         {

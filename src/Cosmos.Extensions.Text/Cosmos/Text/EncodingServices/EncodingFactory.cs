@@ -1,4 +1,6 @@
-﻿// ReSharper disable IdentifierTypo
+﻿#if !NET451 && !NET452
+
+// ReSharper disable IdentifierTypo
 // ReSharper disable InconsistentNaming
 
 namespace Cosmos.Text.EncodingServices;
@@ -717,3 +719,5 @@ public static class EncodingFactory
     /// </summary>
     public static Encoding X_MAC_UKRAINIAN => Z(10017);
 }
+
+#endif

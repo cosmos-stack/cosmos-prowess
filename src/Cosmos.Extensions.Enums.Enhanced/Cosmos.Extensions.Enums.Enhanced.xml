@@ -1,0 +1,1237 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cosmos.Extensions.Enums.Enhanced</name>
+    </assembly>
+    <members>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.AllowNegativeInputValuesAttribute">
+            <summary>
+            Allow negative input values attribute <br />
+            允许输入负值特性
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.AllowUnsafeFlagEnumValuesAttribute">
+            <summary>
+            Allow unsafe flag enum value attribute <br />
+            允许使用 Flag 枚举值特性
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums">
+            <summary>
+            Dynamic Enum Utilities <br />
+            动态枚举工具
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.FromName``2(System.String)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.FromName``2(System.String,System.Boolean)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.FromValue``2(``1)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.FromValue``2(``1,System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.FromValueSingle``2(``1)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一个成员值。
+            </summary>
+            <param name="value"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.FromValueSingle``2(``1,``0)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一个成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.FromValueToString``2(``1)">
+            <summary>
+            According to the dynamic enumeration type and the corresponding member, obtain the name of the dynamic enumeration value. <br />
+            根据动态枚举类型和对应的成员，获取动态枚举值的名称。
+            </summary>
+            <param name="value"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.TryFromName``2(System.String,``0@)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, try to get the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，尝试获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="result"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.TryFromName``2(System.String,System.Boolean,``0@)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, try to get the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，尝试获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <param name="result"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.TryFromValue``2(``1,System.Collections.Generic.List{``0}@)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, try to obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，尝试获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="results"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnums.TryFromValueToString``2(``1,System.String@)">
+            <summary>
+            According to the dynamic enumeration type and corresponding members, try to obtain the name of the dynamic enumeration value. <br />
+            根据动态枚举类型和对应的成员，尝试获取动态枚举值的名称。
+            </summary>
+            <param name="value"></param>
+            <param name="result"></param>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException">
+            <summary>
+            The exception that is thrown when a dynamic enum item is not found. <br />
+            未找到动态枚举项时引发的异常。
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException.#ctor">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException"/> instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException.#ctor(System.Int64)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException.#ctor(System.Int64,System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException.#ctor(System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumNotFoundException"/> instance.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumThen`2">
+            <summary>
+            When the specified conditions are met, or the specified enumeration is matched, the given action is executed. <br />
+            当满足指定条件，或匹配指定枚举时，执行给定的动作。
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumThen`2.Default(System.Action)">
+            <summary>
+            Default
+            </summary>
+            <param name="action"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumThen`2.When(Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnum)">
+            <summary>
+            When... <br />
+            当… （添加一个新的条件或枚举）
+            </summary>
+            <param name="instanceWhen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumThen`2.When(Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnum[])">
+            <summary>
+            When... <br />
+            当… （添加一个新的条件或枚举）
+            </summary>
+            <param name="instances"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumThen`2.When(System.Collections.Generic.IEnumerable{Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnum})">
+            <summary>
+            When... <br />
+            当… （添加一个新的条件或枚举）
+            </summary>
+            <param name="instances"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2">
+            <summary>
+            Set conditions or enumerations to determine whether to perform a given action. <br />
+            设置条件或枚举，用于判断是否执行给定的动作。
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2.Then(System.Action)">
+            <summary>
+            Then do... <br />
+            然后执行…
+            </summary>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`1">
+            <summary>
+            Dynamic Enum base <br />
+            动态枚举基类
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2">
+            <summary>
+            Dynamic Enum Base <br />
+            动态枚举基类
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <summary>
+            Dynamic Enum Base <br />
+            动态枚举基类
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.GetValueType">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.Value">
+            <summary>
+            Gets value <br />
+            获取值
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.GetAllKeys">
+            <summary>
+            Gets all keys <br />
+            获取所有键
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.GetAllValues">
+            <summary>
+            Gets all values <br />
+            获取所有值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.Equals(Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum{`0,`1})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.CompareTo(Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum{`0,`1})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.When(Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum{`0,`1})">
+            <summary>
+            Returns an instance of <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> that allows the given behavior to be performed when the given enumeration value is matched. <br />
+            返回一个 <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> 实例，当匹配给定的枚举值时，允许执行给定的行为。
+            </summary>
+            <param name="dynamicEnumWhen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.When(Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum{`0,`1}[])">
+            <summary>
+            Returns an instance of <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> that allows the given behavior to be performed when the given enumeration value is matched. <br />
+            返回一个 <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> 实例，当匹配给定的枚举值时，允许执行给定的行为。
+            </summary>
+            <param name="dynamicEnumWhens"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.When(System.Collections.Generic.IEnumerable{Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum{`0,`1}})">
+            <summary>
+            Returns an instance of <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> that allows the given behavior to be performed when the given enumeration value is matched. <br />
+            返回一个 <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> 实例，当匹配给定的枚举值时，允许执行给定的行为。
+            </summary>
+            <param name="dynamicEnumWhens"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.FromName(System.String)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.FromName(System.String,System.Boolean)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.FromValue(`1)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.FromValue(`1,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.FromValueSingle(`1)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一个成员值。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.FromValueSingle(`1,`0)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一个成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.FromValueToString(`1)">
+            <summary>
+            According to the dynamic enumeration type and the corresponding member, obtain the name of the dynamic enumeration value. <br />
+            根据动态枚举类型和对应的成员，获取动态枚举值的名称。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.TryFromName(System.String,`0@)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.TryFromName(System.String,System.Boolean,`0@)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.TryFromValue(`1,System.Collections.Generic.List{`0}@)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, try to obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，尝试获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="results"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnum`2.TryFromValueToString(`1,System.String@)">
+            <summary>
+            According to the dynamic enumeration type and corresponding members, try to obtain the name of the dynamic enumeration value. <br />
+            根据动态枚举类型和对应的成员，尝试获取动态枚举值的名称。
+            </summary>
+            <param name="value"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException">
+            <summary>
+            The exception that is thrown when a flag dynamic enum item is negative. <br />
+            当标志动态枚举项为负时抛出的异常。
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException.#ctor">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Int64)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Int64,System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumContainsNegativeValueException"/> instance.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException">
+            <summary>
+            The exception that is thrown when a <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`1"/> does not contain consecutive power of two values. <br />
+            当 <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`1"/> 不包含两个值的连续幂时抛出的异常。
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Int64)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Int64,System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumDoesNotContainPowerOfTwoValuesException"/> instance.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.AddMember(`0)">
+            <summary>
+            Add member <br />
+            添加成员
+            </summary>
+            <param name="member"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.AddMemberRange(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            Add a set of members <br />
+            添加一组成员
+            </summary>
+            <param name="members"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.GetMember(System.String)">
+            <summary>
+            Get member by name <br />
+            根据给定的名字，获取对应的动态枚举的成员值
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.GetMember(System.String,System.Boolean)">
+            <summary>
+            Get member by name <br />
+            根据给定的名字，获取对应的动态枚举的成员值
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.GetMembers(`1)">
+            <summary>
+            Get a set of members by the given value <br />
+            根据给定的动态枚举的底层类型的值，获取一组动态枚举的成员
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.TryGetMember(System.String,`0@)">
+            <summary>
+            Try to get member by name <br />
+            根据给定的名字，尝试获取对应的动态枚举的成员值
+            </summary>
+            <param name="name"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.TryGetMember(System.String,System.Boolean,`0@)">
+            <summary>
+            Try to get member by name <br />
+            根据给定的名字，尝试获取对应的动态枚举的成员值
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.TryGetMembers(`1,System.Collections.Generic.List{`0}@)">
+            <summary>
+            Try to get a set of members by the given value <br />
+            根据给定的动态枚举的底层类型的值，尝试获取一组动态枚举的成员
+            </summary>
+            <param name="value"></param>
+            <param name="members"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.GetAllKeys">
+            <summary>
+            Gets all keys <br />
+            获取所有键
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnumMembers`2.GetAllValues">
+            <summary>
+            Gets all values <br />
+            获取所有值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`1">
+            <summary>
+            Flag dynamic enum base <br />
+            带 Flag 的动态枚举基类
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2">
+            <summary>
+            Flag dynamic enum base <br />
+            带 Flag 的动态枚举基类
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <summary>
+            Flag dynamic enum base <br />
+            带 Flag 的动态枚举基类
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <typeparam name="TValue"></typeparam>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.GetValueType">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.Value">
+            <summary>
+            Gets value <br />
+            获取值
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.GetAllKeys">
+            <summary>
+            Gets all keys <br />
+            获取所有键
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.GetAllValues">
+            <summary>
+            Gets all values <br />
+            获取所有值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.Equals(Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum{`0,`1})">
+            <inheritdoc />
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.When(Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum{`0,`1})">
+            <summary>
+            Returns an instance of <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> that allows the given behavior to be performed when the given enumeration value is matched. <br />
+            返回一个 <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> 实例，当匹配给定的枚举值时，允许执行给定的行为。
+            </summary>
+            <param name="dynamicEnumWhen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.When(Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum{`0,`1}[])">
+            <summary>
+            Returns an instance of <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> that allows the given behavior to be performed when the given enumeration value is matched. <br />
+            返回一个 <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> 实例，当匹配给定的枚举值时，允许执行给定的行为。
+            </summary>
+            <param name="dynamicEnumWhens"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.When(System.Collections.Generic.IEnumerable{Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum{`0,`1}})">
+            <summary>
+            Returns an instance of <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> that allows the given behavior to be performed when the given enumeration value is matched. <br />
+            返回一个 <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.DynamicEnumWhen`2"/> 实例，当匹配给定的枚举值时，允许执行给定的行为。
+            </summary>
+            <param name="dynamicEnumWhens"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.FromName(System.String)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.FromName(System.String,System.Boolean)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.FromValue(`1)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.FromValue(`1,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.FromValueSingle(`1)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一个成员值。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.FromValueSingle(`1,`0)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, obtain a member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，获取动态枚举的一个成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.FromValueToString(`1)">
+            <summary>
+            According to the dynamic enumeration type and the corresponding member, obtain the name of the dynamic enumeration value. <br />
+            根据动态枚举类型和对应的成员，获取动态枚举值的名称。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.TryFromName(System.String,`0@)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.TryFromName(System.String,System.Boolean,`0@)">
+            <summary>
+            According to the dynamic enumeration type and the name of the given value, obtain the member value of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的值的名称，获取动态枚举的成员值。
+            </summary>
+            <param name="name"></param>
+            <param name="ignoreCase"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.TryFromValue(`1,System.Collections.Generic.List{`0}@)">
+            <summary>
+            According to the dynamic enumeration type and the value of the given underlying type, try to obtain a set of member values of the dynamic enumeration. <br />
+            根据动态枚举类型和给定的底层类型的值，尝试获取动态枚举的一组成员值。
+            </summary>
+            <param name="value"></param>
+            <param name="results"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.DynamicFlagEnum`2.TryFromValueToString(`1,System.String@)">
+            <summary>
+            According to the dynamic enumeration type and corresponding members, try to obtain the name of the dynamic enumeration value. <br />
+            根据动态枚举类型和对应的成员，尝试获取动态枚举值的名称。
+            </summary>
+            <param name="value"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnum">
+            <summary>
+            Dynamic Enum Interface <br />
+            动态枚举接口
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnum.GetValueType">
+            <summary>
+            Get value's type. <br />
+            获取值的类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnum.Name">
+            <summary>
+            Name <br />
+            名称
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnumMembers">
+            <summary>
+            Dynamic Enum Member <br />
+            动态枚举成员
+            </summary>
+        </member>
+        <member name="P:Cosmos.EnumUtils.DynamicEnumServices.IDynamicEnumMembers.EnumType">
+            <summary>
+            Type of enum <br />
+            枚举之类型
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException">
+            <summary>
+            The exception that is thrown when a flag dynamic enum item is invalid. <br />
+            当标志动态枚举项无效时抛出的异常。
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException.#ctor">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException"/> instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException"/> instance.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException.#ctor(System.Int64)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException"/> instance.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException.#ctor(System.Int64,System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException"/> instance.
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException.#ctor(System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException"/> instance.
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException"/> instance.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.InvalidFlagEnumValueParseException"/> instance.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException">
+            <summary>
+            The exception that is thrown when a negative value is provided as an argument value. <br />
+            当负值作为参数值提供时抛出的异常。
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException.#ctor">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException"/> instance.
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException"/> instance.
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException.#ctor(System.Int64)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException"/> instance.
+            </summary>
+            <param name="code"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException.#ctor(System.Int64,System.String)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException"/> instance.
+            </summary>
+            <param name="code"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException.#ctor(System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException"/> instance.
+            </summary>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException.#ctor(System.String,System.Exception)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException"/> instance.
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="M:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Create a new <see cref="T:Cosmos.EnumUtils.DynamicEnumServices.NegativeValueArgumentException"/> instance.
+            </summary>
+            <param name="info"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.Registry.DynamicEnumRegisterOptions">
+            <summary>
+            Dynamic Enum Register Options <br />
+            动态枚举注册器选项
+            </summary>
+        </member>
+        <member name="F:Cosmos.EnumUtils.DynamicEnumServices.Registry.DynamicEnumRegisterOptions.ScanGivenType">
+            <summary>
+            Scanning dynamic enumeration according to the given type <br />
+            根据给定的类型扫描动态枚举
+            </summary>
+        </member>
+        <member name="F:Cosmos.EnumUtils.DynamicEnumServices.Registry.DynamicEnumRegisterOptions.ScanAssembly">
+            <summary>
+            Scanning assembly registration dynamic enumeration <br />
+            扫描程序集注册动态枚举
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.DynamicEnumServices.Registry.DynamicFlagEnumRegistryExtensions">
+            <summary>
+            Dynamic flag enum registry extensions <br />
+            动态 Flag 枚举注册扩展
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.Enums">
+            <summary>
+            Enum Utilities <br />
+            枚举工具
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.Of``1(System.String,System.Boolean,``0)">
+            <summary>
+            Of <br />
+            将给定的字符串转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.Of``1(System.Object,``0)">
+            <summary>
+            Of <br />
+            将给定的对象转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="defaultVal"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.Of(System.String,System.Type,System.Boolean,System.Object)">
+            <summary>
+            Of <br />
+            将给定的字符串转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="ignoreCase"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.Of(System.Object,System.Type,System.Object)">
+            <summary>
+            Of <br />
+            将给定的对象转换为对应枚举类型的值
+            </summary>
+            <param name="member"></param>
+            <param name="enumType"></param>
+            <param name="defaultVal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.NameOf``1(``0)">
+            <summary>
+            Name of <br />
+            获取给定枚举值的名称
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.NameOf(System.Type,System.Object)">
+            <summary>
+            Name of <br />
+            获取给定枚举值的名称
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.DescriptionOf``1(``0)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="member"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.DescriptionOf(System.Type,System.Object)">
+            <summary>
+            Get description via <see cref="T:System.ComponentModel.DescriptionAttribute"/> <br />
+            获取描述，使用 <see cref="T:System.ComponentModel.DescriptionAttribute"/> 特性设置描述
+            </summary>
+            <param name="enumType"></param>
+            <param name="member"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.Count``1">
+            <summary>
+            Counts the number of enums values contained in a given enum type. <br />
+            计算给定枚举类型中包含的枚举值的数量。
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.GetValues``1">
+            <summary>
+            Get values <br />
+            从给定枚举类型中获取一组枚举值
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.GetValues(System.Type)">
+            <summary>
+            Get values <br />
+            从给定枚举类型中获取一组枚举值
+            </summary>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.Enums.RandomValue``1">
+            <summary>
+            Random value <br />
+            根据给定的枚举类型，随机获得一个枚举的值
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.FlagEnums">
+            <summary>
+            Enum Utilities <br />
+            枚举工具
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.FlagEnums.Add``1(``0@,``0[])">
+            <summary>
+            Add additional values to enumerated values marked with Flag <br />
+            向标记有 Flag 的枚举值中增加额外的值
+            </summary>
+            <param name="enum"></param>
+            <param name="enumValSet"></param>
+            <typeparam name="TEnum"></typeparam>
+        </member>
+        <member name="M:Cosmos.EnumUtils.FlagEnums.Remove``1(``0@,``0[])">
+            <summary>
+            Remove the specified value from the enumeration value marked with Flag <br />
+            从标记有 Flag 的枚举值中移除指定的值
+            </summary>
+            <param name="enum"></param>
+            <param name="enumValSet"></param>
+            <typeparam name="TEnum"></typeparam>
+        </member>
+        <member name="M:Cosmos.EnumUtils.FlagEnums.Contains``1(``0,``0)">
+            <summary>
+            Check whether the specified value is included in the enumeration value marked with Flag <br />
+            砸标记有 Flag 的枚举值中检查是否包含指定的值
+            </summary>
+            <param name="enum"></param>
+            <param name="anotherEnum"></param>
+            <typeparam name="TEnum"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.EnumVisit">
+            <summary>
+            Enum Visit <br />
+            枚举访问器
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum``1">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum(System.Type)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum(System.Reflection.MemberInfo)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum(System.Reflection.PropertyInfo)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum(System.Object,System.Type)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum(System.Object,System.Type,Cosmos.EnumUtils.IEnumVisitOptions)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <param name="type"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum``1(``0)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisit.IsEnum``1(``0,Cosmos.EnumUtils.IEnumVisitOptions)">
+            <summary>
+            Indicates whether the given type is an enumerated type <br />
+            指示给定的类型是否为枚举类型
+            </summary>
+            <param name="value"></param>
+            <param name="options"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="T:Cosmos.EnumUtils.IConfigurableEnumVisitOptions">
+            <summary>
+            Configurable Enum Visit Options Interface <br />
+            接口，用于可配置的枚举访问器
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.IEnumVisitOptions">
+            <summary>
+            Enum Visit Options Interface <br />
+            接口，枚举访问器选项
+            </summary>
+        </member>
+        <member name="P:Cosmos.EnumUtils.IEnumVisitOptions.Value">
+            <summary>
+            Get value <br />
+            获取值
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.EnumVisitOptions">
+            <summary>
+            Enum Visit Options <br />
+            枚举访问器选项
+            </summary>
+        </member>
+        <member name="P:Cosmos.EnumUtils.EnumVisitOptions.For">
+            <summary>
+            Obtain a configuration entry so that the new configuration can take effect. <br />
+            获取一个配置入口，以便能将新配置生效。
+            </summary>
+        </member>
+        <member name="T:Cosmos.EnumUtils.EnumVisitOptionsExtensions">
+            <summary>
+            Enum Visit Options Extensions <br />
+            枚举访问器选项扩展
+            </summary>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisitOptionsExtensions.Default(Cosmos.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Default <br />
+            默认
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisitOptionsExtensions.Type(Cosmos.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Type <br />
+            类型，判断给定类型是否为枚举
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisitOptionsExtensions.Value(Cosmos.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Value <br />
+            值，判断给定值是否为枚举
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Cosmos.EnumUtils.EnumVisitOptionsExtensions.TypeAndValue(Cosmos.EnumUtils.IConfigurableEnumVisitOptions)">
+            <summary>
+            Type and Value <br />
+            类型与值，判断给定的类型和值是否为枚举，任何一个为 True 则返回 True
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
