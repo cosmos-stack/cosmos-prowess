@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <AssemblyName>Cosmos.Extensions.CharMatchers</AssemblyName>
+        <AssemblyName>Cosmos.Extensions.Enums.Enhanced</AssemblyName>
         <PackageId>CosmosStack.Extensions.Enums.Enhanced</PackageId>
         <Description>An enhanced enum library, a part of Cosmos Prowess Expansion pack for Cosmos Stack</Description>
     </PropertyGroup>
