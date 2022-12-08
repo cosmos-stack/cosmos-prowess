@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <AssemblyName>Cosmos.Extensions.Collections.Enhanced</AssemblyName>
+        <PackageId>CosmosStack.Extensions.Collections.Enhanced</PackageId>
+        <Description>An enhanced collection library, a part of Cosmos Prowess Expansion pack for Cosmos Stack</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <None Remove="Cosmos.Extensions.Collections.Enhanced.xml" />
+    </ItemGroup>
+
+    <Import Project="..\..\common.props" />
+
+    <Import Project="dependency.props" />
+
+</Project>
