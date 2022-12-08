@@ -21,8 +21,7 @@ public static class ReflectionExpressionExtensions
     /// <exception cref="InvalidCastException"></exception>
     public static MethodInfo GetMethod<T>(this Expression<T> expression)
     {
-        if (expression is null)
-            throw new ArgumentNullException(nameof(expression));
+        ArgumentNullException.ThrowIfNull(expression);
 
         if (expression.Body is not MethodCallExpression methodCallExpression)
             throw new InvalidCastException("Cannot be converted to MethodCallExpression");

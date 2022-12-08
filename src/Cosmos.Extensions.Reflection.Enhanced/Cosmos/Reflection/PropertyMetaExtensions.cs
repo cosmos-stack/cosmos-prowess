@@ -44,7 +44,7 @@ public static class PropertyMetaExtensions
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static FieldInfo[] GetFields(this object obj)
     {
-        ObjectGuard.NotNull(obj, nameof(obj));
+        ObjectGuard.NotNull(obj);
         return TypeReflections.TypeCacheManager.GetTypeFields(obj.GetType());
     }
 
@@ -58,7 +58,7 @@ public static class PropertyMetaExtensions
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static FieldInfo[] GetFields(this object obj, BindingFlags bindingAttr)
     {
-        ObjectGuard.NotNull(obj, nameof(obj));
+        ObjectGuard.NotNull(obj);
         return obj.GetType().GetFields(bindingAttr);
     }
 
@@ -73,7 +73,7 @@ public static class PropertyMetaExtensions
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static MethodInfo GetMethod<T>(this T t, string methodName)
     {
-        return TypeReflections.TypeCacheManager.TypeMethodCache.GetOrAdd(typeof(T), t => t.GetMethods()).First(_ => _.Name == methodName);
+        return TypeReflections.TypeCacheManager.TypeMethodCache.GetOrAdd(typeof(T), v => v.GetMethods()).First(_ => _.Name == methodName);
     }
 
     /// <summary>

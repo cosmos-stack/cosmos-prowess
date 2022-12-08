@@ -11,6 +11,10 @@
         <Description>An enhanced reflection library, a further extension of Cosmos.Extensions.Reflection, and a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Cosmos.Extensions.Reflection.Enhanced.xml" />
+    </ItemGroup>
+
     <Import Project="..\..\common.props" />
 
     <Import Project="dependency.props" />

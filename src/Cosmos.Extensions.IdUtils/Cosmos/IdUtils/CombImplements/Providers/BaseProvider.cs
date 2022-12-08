@@ -17,9 +17,7 @@ internal abstract class BaseProvider : ICombProvider
         InternalGuidProvider customGuidProvider = null)
     {
         if (strategy.NumDateBytes != 4 && strategy.NumDateBytes != 6)
-        {
             throw new NotSupportedException("ICombDateTimeStrategy is limited to either 4 or 6 bytes.");
-        }
 
         _dateTimeStrategy = strategy;
         InternalTimeStampProvider = customTimeStampProvider ?? DefaultTimeStampProvider;

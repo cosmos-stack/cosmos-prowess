@@ -14,7 +14,7 @@ internal static class NamedGuidProvider
         {
             algorithm.TransformBlock(namespaceBytes, 0, namespaceBytes.Length, null, 0);
             algorithm.TransformFinalBlock(name, 0, name.Length);
-            hash = algorithm.Hash;
+            hash = algorithm.Hash!;
         }
 
         var guidBytes = new byte[16];

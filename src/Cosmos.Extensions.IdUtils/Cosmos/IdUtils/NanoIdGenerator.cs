@@ -46,11 +46,8 @@ public static class NanoIdGenerator
     /// <exception cref="ArgumentOutOfRangeException"></exception>
     public static string Generate(Random random, string alphabet = RandomIdGenerator.NANOWORDS, int size = 21)
     {
-        if (random is null)
-            throw new ArgumentNullException(nameof(random), "random cannot be null.");
-
-        if (alphabet is null)
-            throw new ArgumentNullException(nameof(alphabet), "alphabet cannot be null.");
+        ArgumentNullException.ThrowIfNull(random);
+        ArgumentNullException.ThrowIfNull(alphabet);
 
         if (alphabet.Length <= 0 || alphabet.Length >= 256)
             throw new ArgumentOutOfRangeException(nameof(alphabet.Length), "alphabet must contain between 1 and 255 symbols.");
@@ -64,13 +61,8 @@ public static class NanoIdGenerator
         var mask = (2 << 31 - Clz32((alphabet.Length - 1) | 1)) - 1;
         var step = (int)Math.Ceiling(1.6 * mask * size / alphabet.Length);
 
-#if !NETFRAMEWORK
         Span<char> idBuilder = stackalloc char[size];
         Span<byte> bytes = stackalloc byte[step];
-#else
-            var idBuilder = new char[size];
-            var bytes = new byte[step];
-#endif
 
         int cnt = 0;
 
@@ -123,10 +115,6 @@ internal class RandomForNanoId : Random
 {
     private static RandomNumberGenerator _generator;
 
-#if NETFRAMEWORK
-        private readonly byte[] _uint32Buffer = new byte[4];
-#endif
-
     static RandomForNanoId()
     {
         _generator = RandomNumberGenerator.Create();
@@ -134,28 +122,20 @@ internal class RandomForNanoId : Random
 
     public override void NextBytes(byte[] buffer)
     {
-        if (buffer is null)
-            throw new ArgumentNullException(nameof(buffer));
+        ArgumentNullException.ThrowIfNull(buffer);
         _generator.GetBytes(buffer);
     }
 
-#if !NETFRAMEWORK
     public override void NextBytes(Span<byte> buffer)
     {
         RandomNumberGenerator.Fill(buffer);
     }
-#endif
 
     public override double NextDouble()
     {
-#if !NETFRAMEWORK
         Span<byte> uint32Buffer = stackalloc byte[4];
         RandomNumberGenerator.Fill(uint32Buffer);
         return BitConverter.ToUInt32(uint32Buffer) / (1.0 + UInt32.MaxValue);
-#else
-            _generator.GetBytes(_uint32Buffer);
-            return BitConverter.ToUInt32(_uint32Buffer, 0) / (1.0 + UInt32.MaxValue);
-#endif
     }
 
     public override int Next(int minValue, int maxValue)

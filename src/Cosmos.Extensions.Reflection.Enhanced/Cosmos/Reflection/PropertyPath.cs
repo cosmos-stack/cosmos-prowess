@@ -47,9 +47,7 @@ public class PropertyPath
     /// <exception cref="ArgumentNullException"></exception>
     protected void Append(PropertyInfo property)
     {
-        if (property is null)
-            throw new ArgumentNullException(nameof(property));
-
+        ArgumentNullException.ThrowIfNull(property);
         Root._path.Enqueue(property);
     }
 

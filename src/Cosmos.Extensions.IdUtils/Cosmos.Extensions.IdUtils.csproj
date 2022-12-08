@@ -11,6 +11,10 @@
         <Description>IdUtils extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Cosmos.Extensions.IdUtils.xml" />
+    </ItemGroup>
+
     <Import Project="..\..\common.props" />
 
     <Import Project="dependency.props" />

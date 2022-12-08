@@ -1,6 +1,4 @@
-﻿using AspectCore.Extensions.Reflection;
-
-namespace Cosmos.Reflection.Core;
+﻿namespace Cosmos.Reflection.Core;
 
 internal class DefaultPropertyValueSetter : PropertyValueSetter
 {

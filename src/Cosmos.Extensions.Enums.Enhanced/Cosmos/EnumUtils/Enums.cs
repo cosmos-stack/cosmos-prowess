@@ -21,9 +21,7 @@ public static class Enums
     /// <returns></returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TEnum Of<TEnum>(string member, bool ignoreCase = false, TEnum defaultVal = default) where TEnum : struct, Enum
-    {
-        return EnumConv.ToEnum(member, ignoreCase, defaultVal);
-    }
+        => EnumConv.ToEnum(member, ignoreCase, defaultVal);
 
     /// <summary>
     /// Of <br />
@@ -35,9 +33,7 @@ public static class Enums
     /// <returns></returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static TEnum Of<TEnum>(object member, TEnum defaultVal = default) where TEnum : struct, Enum
-    {
-        return EnumConv.ToEnum(member, defaultVal);
-    }
+        => EnumConv.ToEnum(member, defaultVal);
 
     /// <summary>
     /// Of <br />
@@ -50,9 +46,7 @@ public static class Enums
     /// <returns></returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static object Of(string member, Type enumType, bool ignoreCase = false, object defaultVal = default)
-    {
-        return EnumConv.ToEnum(member, enumType, ignoreCase, defaultVal);
-    }
+        => EnumConv.ToEnum(member, enumType, ignoreCase, defaultVal);
 
     /// <summary>
     /// Of <br />
@@ -64,9 +58,7 @@ public static class Enums
     /// <returns></returns>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static object Of(object member, Type enumType, object defaultVal = default)
-    {
-        return EnumConv.ToEnum(member, enumType, defaultVal);
-    }
+        => EnumConv.ToEnum(member, enumType, defaultVal);
 
     #endregion
 

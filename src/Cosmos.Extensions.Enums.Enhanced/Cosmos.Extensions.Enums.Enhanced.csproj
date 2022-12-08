@@ -11,6 +11,10 @@
         <Description>An enhanced enum library, a part of Cosmos Prowess Expansion pack for Cosmos Stack</Description>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Cosmos.Extensions.Enums.Enhanced.xml" />
+    </ItemGroup>
+
     <Import Project="..\..\common.props" />
 
     <Import Project="dependency.props" />
