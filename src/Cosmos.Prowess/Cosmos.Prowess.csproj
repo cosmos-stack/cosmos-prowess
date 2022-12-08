@@ -14,6 +14,7 @@
     <Import Project="..\..\common.props" />
 
     <ItemGroup>
+<!--        <ProjectReference Include="..\Cosmos.Extensions.Collections.Enhanced\Cosmos.Extensions.Collections.Enhanced.csproj" />-->
         <ProjectReference Include="..\Cosmos.Extensions.Enums.Enhanced\Cosmos.Extensions.Enums.Enhanced.csproj" />
         <ProjectReference Include="..\Cosmos.Extensions.IdUtils\Cosmos.Extensions.IdUtils.csproj" />
         <ProjectReference Include="..\Cosmos.Extensions.Reflection.Enhanced\Cosmos.Extensions.Reflection.Enhanced.csproj" />

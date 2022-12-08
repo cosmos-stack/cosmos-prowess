@@ -30,7 +30,8 @@ public class CaseFormat
     /// <returns></returns>
     public string To(Style style, string sequence)
     {
-        var list = _splitter.SplitToList(sequence);
+        var splitter = _splitter ?? Splitter.On(new Regex("[-_ ]+"));
+        var list = splitter.SplitToList(sequence);
         IJoiner joiner;
         switch (style)
         {

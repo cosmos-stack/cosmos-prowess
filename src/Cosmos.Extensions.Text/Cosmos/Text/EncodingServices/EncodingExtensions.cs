@@ -9,7 +9,6 @@ namespace Cosmos.Text.EncodingServices;
 /// </summary>
 public static class EncodingExtensions
 {
-#if !NETFRAMEWORK
     /// <summary>
     /// Get the string safely <br />
     /// 安全地获取字符串
@@ -27,9 +26,7 @@ public static class EncodingExtensions
 
         return encoding.GetString(bytes);
     }
-#endif
 
-#if !NET451 && !NET452
     /// <summary>
     /// Get the string safely <br />
     /// 安全地获取字符串
@@ -45,7 +42,6 @@ public static class EncodingExtensions
 
         return Try.Create(() => encoding.GetString(bytes, byteCount)).GetSafeValue(string.Empty);
     }
-#endif
 
     /// <summary>
     /// Get the string safely <br />
@@ -88,7 +84,6 @@ public static class EncodingExtensions
         return encoding.GetString(bytes, index, count);
     }
 
-#if !NETFRAMEWORK //&& !NETCOREAPP3_1
     /// <summary>
     /// Get the string safely <br />
     /// 安全地获取字符串
@@ -104,11 +99,6 @@ public static class EncodingExtensions
         if (bytes.IsEmpty)
             return string.Empty;
 
-#if NET5_0_OR_GREATER
         return encoding.GetString(in bytes);
-#else
-        return encoding.GetString(bytes.FirstSpan);
-#endif
     }
-#endif
 }

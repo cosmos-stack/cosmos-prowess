@@ -12,10 +12,13 @@
         <Description>Text extensions, a part of Cosmos Prowess Expansion pack for Cosmos loops</Description>
     </PropertyGroup>
 
+    <ItemGroup>
+      <None Remove="Cosmos.Extensions.Text.csproj.DotSettings" />
+      <None Remove="Cosmos.Extensions.Text.xml" />
+    </ItemGroup>
+
     <Import Project="..\..\common.props" />
 
     <Import Project="dependency.props" />
-
-    <Import Project="references.props" />
 
 </Project>

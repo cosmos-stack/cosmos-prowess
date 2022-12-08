@@ -6,12 +6,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{E81D6D
 ProjectSection(SolutionItems) = preProject
 	asset\images\icon.back.png = asset\images\icon.back.png
 	asset\images\icon.png = asset\images\icon.png
+	asset\images\icon,back3.png = asset\images\icon,back3.png
+	asset\images\icon.back2.png = asset\images\icon.back2.png
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "props", "props", "{A539D4BF-AE4C-407F-B9FA-0271F6CCF0A4}"
 ProjectSection(SolutionItems) = preProject
 	asset\props\misc.props = asset\props\misc.props
 	asset\props\package.props = asset\props\package.props
+	asset\props\target.feature.props = asset\props\target.feature.props
 EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{2D5B1D61-417B-4251-A9FC-C38470CD6B2E}"
@@ -26,7 +29,7 @@ ProjectSection(SolutionItems) = preProject
 	common.tests.props = common.tests.props
 	LICENSE = LICENSE
 	logo.png = logo.png
-	asset\version.dev.props = asset\version.dev.props
+	asset\version.ref.props = asset\version.ref.props
 	asset\version.props = asset\version.props
 EndProjectSection
 EndProject
@@ -36,13 +39,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{088246B9-1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Prowess", "src\Cosmos.Prowess\Cosmos.Prowess.csproj", "{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Joiners", "src\Cosmos.Extensions.Joiners\Cosmos.Extensions.Joiners.csproj", "{E3F90AB8-3B87-42AE-815A-2F468601345B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.CharMatchers", "src\Cosmos.Extensions.CharMatchers\Cosmos.Extensions.CharMatchers.csproj", "{9B1D4AB8-CF1C-4821-B713-57A16E34EE06}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "functions", "functions", "{6354F69A-DDC4-4731-BD7B-5275D0789565}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Splitters", "src\Cosmos.Extensions.Splitters\Cosmos.Extensions.Splitters.csproj", "{DC521C6A-370E-4C14-8A44-0E315B19BFC7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Text", "src\Cosmos.Extensions.Text\Cosmos.Extensions.Text.csproj", "{A739AED2-444C-4955-BDA0-BD3906778738}"
 EndProject
@@ -64,6 +61,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{3634
 		scripts\Release_WithoutBuild.bat = scripts\Release_WithoutBuild.bat
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cosmos.Extensions.Collections.Enhanced", "src\Cosmos.Extensions.Collections.Enhanced\Cosmos.Extensions.Collections.Enhanced.csproj", "{2A4B9AAC-A890-46F7-9012-5D4BE1FA1C7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -74,32 +73,18 @@ Global
 		{A539D4BF-AE4C-407F-B9FA-0271F6CCF0A4} = {5ABECF80-731C-4D4B-B7B2-47C5AAA9D2E1}
 		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE} = {662E6957-33CA-4FFA-80D3-A6A1D16D3E3F}
 		{6354F69A-DDC4-4731-BD7B-5275D0789565} = {662E6957-33CA-4FFA-80D3-A6A1D16D3E3F}
-		{9B1D4AB8-CF1C-4821-B713-57A16E34EE06} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
-		{E3F90AB8-3B87-42AE-815A-2F468601345B} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
-		{DC521C6A-370E-4C14-8A44-0E315B19BFC7} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 		{A739AED2-444C-4955-BDA0-BD3906778738} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 		{97648E0D-66C8-4DDB-9912-253A13D8F48C} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 		{2D3949CB-4831-49B7-8EC4-6A3A1B04173B} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 		{AE7927F2-91A9-4A6A-AA5C-3E1FE725B617} = {088246B9-1B92-479C-8279-AF2F04EFA365}
 		{7FA047A7-02C4-4490-9BEC-316DCC8E6668} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
+		{2A4B9AAC-A890-46F7-9012-5D4BE1FA1C7F} = {6354F69A-DDC4-4731-BD7B-5275D0789565}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F3664A-B67D-4B3F-9B2A-B7FCEDF52FEE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E3F90AB8-3B87-42AE-815A-2F468601345B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E3F90AB8-3B87-42AE-815A-2F468601345B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E3F90AB8-3B87-42AE-815A-2F468601345B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E3F90AB8-3B87-42AE-815A-2F468601345B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B1D4AB8-CF1C-4821-B713-57A16E34EE06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B1D4AB8-CF1C-4821-B713-57A16E34EE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B1D4AB8-CF1C-4821-B713-57A16E34EE06}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B1D4AB8-CF1C-4821-B713-57A16E34EE06}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DC521C6A-370E-4C14-8A44-0E315B19BFC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DC521C6A-370E-4C14-8A44-0E315B19BFC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DC521C6A-370E-4C14-8A44-0E315B19BFC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DC521C6A-370E-4C14-8A44-0E315B19BFC7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A739AED2-444C-4955-BDA0-BD3906778738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A739AED2-444C-4955-BDA0-BD3906778738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A739AED2-444C-4955-BDA0-BD3906778738}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -120,5 +105,9 @@ Global
 		{7FA047A7-02C4-4490-9BEC-316DCC8E6668}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FA047A7-02C4-4490-9BEC-316DCC8E6668}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FA047A7-02C4-4490-9BEC-316DCC8E6668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A4B9AAC-A890-46F7-9012-5D4BE1FA1C7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A4B9AAC-A890-46F7-9012-5D4BE1FA1C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A4B9AAC-A890-46F7-9012-5D4BE1FA1C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A4B9AAC-A890-46F7-9012-5D4BE1FA1C7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
